@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>福岡県の老人ホーム・介護施設｜費用相場・エリア別の選び方 | CareSpace</title>
+  <meta name="description" content="福岡県の老人ホーム・特養・グループホームの費用相場と選び方を解説。福岡市・北九州市・久留米市など地域別の特徴、特養の待機状況、有料老人ホームの月額費用目安をわかりやすく紹介します。">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:#FFFAF0; color:#2D3748; line-height:1.8; }
+    nav { background:#fff; border-bottom:1px solid #E2E8F0; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+    .logo { font-size:20px; font-weight:700; color:#2D3748; text-decoration:none; }
+    .logo span { color:#DD6B20; }
+    .back-link { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .back-link:hover { text-decoration:underline; }
+
+    .hero { background:linear-gradient(135deg,#EBF8FF,#E6FFFA); padding:48px 40px; border-bottom:1px solid #E2E8F0; }
+    .breadcrumb { font-size:13px; color:#718096; margin-bottom:16px; }
+    .breadcrumb a { color:#DD6B20; text-decoration:none; }
+    .hero h1 { font-size:30px; font-weight:700; color:#1A202C; line-height:1.4; margin-bottom:12px; }
+    .hero-desc { color:#4A5568; font-size:15px; max-width:640px; }
+    .hero-tags { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+    .hero-tag { background:rgba(49,130,206,0.1); color:#3182CE; font-size:12px; font-weight:600; padding:4px 12px; border-radius:20px; }
+
+    .container { max-width:900px; margin:0 auto; padding:48px 24px; }
+
+    .summary-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:40px; }
+    .summary-card { background:#fff; border:1px solid #E2E8F0; border-radius:12px; padding:20px; text-align:center; }
+    .summary-card-label { font-size:12px; color:#718096; margin-bottom:6px; }
+    .summary-card-value { font-size:22px; font-weight:700; color:#DD6B20; }
+    .summary-card-sub { font-size:11px; color:#A0AEC0; margin-top:4px; }
+
+    .content-block { background:#fff; border-radius:16px; padding:36px; box-shadow:0 2px 12px rgba(45,55,72,0.06); margin-bottom:24px; }
+    .content-block h2 { font-size:20px; font-weight:700; color:#2D3748; margin:0 0 20px; padding:12px 16px; border-left:4px solid #DD6B20; background:rgba(221,107,32,0.04); border-radius:0 8px 8px 0; }
+    .content-block h3 { font-size:16px; font-weight:700; color:#4A5568; margin:24px 0 12px; padding-left:12px; border-left:2px solid #CBD5E0; }
+    .content-block p { font-size:15px; line-height:1.9; margin-bottom:16px; color:#4A5568; }
+    .content-block ul { padding-left:20px; margin-bottom:16px; }
+    .content-block li { font-size:14px; margin-bottom:8px; color:#4A5568; line-height:1.7; }
+    .content-block strong { color:#2D3748; }
+
+    .cost-table { width:100%; border-collapse:collapse; margin:16px 0 24px; font-size:14px; }
+    .cost-table th { background:#F7FAFC; padding:10px 14px; text-align:left; font-weight:700; color:#4A5568; border-bottom:2px solid #E2E8F0; }
+    .cost-table td { padding:10px 14px; border-bottom:1px solid #F0F4F8; color:#2D3748; }
+    .cost-table tr:last-child td { border-bottom:none; }
+    .cost-table .high { color:#C05621; font-weight:700; }
+    .cost-table .mid { color:#DD6B20; }
+    .cost-table .low { color:#38A169; }
+
+    .area-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:16px 0; }
+    .area-card { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:10px; padding:16px 18px; }
+    .area-card-name { font-size:15px; font-weight:700; color:#2D3748; margin-bottom:6px; }
+    .area-card-desc { font-size:13px; color:#718096; line-height:1.6; }
+    .area-card-badge { display:inline-block; font-size:11px; padding:2px 8px; border-radius:10px; margin-top:8px; font-weight:600; }
+    .badge-high { background:#FFF5F5; color:#C53030; }
+    .badge-mid { background:#FFFBEB; color:#744210; }
+    .badge-low { background:#F0FFF4; color:#276749; }
+
+    .warn-box { background:#FFFBEB; border:1px solid #F6E05E; border-radius:10px; padding:16px 20px; margin:16px 0; font-size:13px; color:#744210; line-height:1.7; }
+    .info-box { background:#EBF8FF; border:1px solid #BEE3F8; border-radius:10px; padding:16px 20px; margin:16px 0; font-size:13px; color:#2A4365; line-height:1.7; }
+    .point-box { background:rgba(221,107,32,0.06); border:1px solid rgba(221,107,32,0.2); border-radius:10px; padding:18px 22px; margin:16px 0; }
+    .point-box-title { font-size:13px; font-weight:700; color:#DD6B20; margin-bottom:10px; }
+    .point-box ul { margin:0; padding-left:20px; }
+    .point-box li { font-size:14px; margin-bottom:6px; }
+
+    .merit-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin:16px 0; }
+    .merit-card { background:#F0FFF4; border:1px solid #C6F6D5; border-radius:10px; padding:16px; text-align:center; }
+    .merit-icon { font-size:24px; margin-bottom:8px; }
+    .merit-title { font-size:13px; font-weight:700; color:#276749; margin-bottom:4px; }
+    .merit-desc { font-size:12px; color:#4A5568; line-height:1.5; }
+
+    .faq-list { margin:0; }
+    .faq-item { border-bottom:1px solid #E2E8F0; padding:20px 0; }
+    .faq-item:last-child { border-bottom:none; }
+    .faq-q { font-size:15px; font-weight:700; color:#2D3748; margin-bottom:10px; display:flex; gap:10px; }
+    .faq-q::before { content:"Q"; background:#DD6B20; color:#fff; font-size:12px; font-weight:700; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+    .faq-a { font-size:14px; color:#4A5568; line-height:1.8; padding-left:32px; }
+
+    .cta-box { background:linear-gradient(135deg,#744210,#C05621); border-radius:16px; padding:36px; text-align:center; margin:32px 0; }
+    .cta-box h2 { color:#fff; font-size:20px; font-weight:700; margin-bottom:10px; }
+    .cta-box p { color:rgba(255,255,255,0.8); font-size:14px; margin-bottom:20px; }
+    .cta-btn { display:inline-block; background:#fff; color:#744210; padding:12px 36px; border-radius:8px; font-weight:700; font-size:15px; text-decoration:none; }
+
+    .related { margin-top:32px; }
+    .related-title { font-size:16px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .related-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .related-card { background:#fff; border:1px solid #E2E8F0; border-radius:10px; padding:16px; text-decoration:none; color:inherit; transition:border-color 0.2s; }
+    .related-card:hover { border-color:#DD6B20; }
+    .related-card-tag { font-size:11px; color:#DD6B20; font-weight:600; margin-bottom:6px; }
+    .related-card-title { font-size:13px; font-weight:600; color:#2D3748; line-height:1.5; }
+
+    .city-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; margin:10px 0 16px; }
+    .city-link { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:6px; padding:8px 4px; text-align:center; text-decoration:none; color:#4A5568; font-size:12px; font-weight:500; transition:all 0.15s; display:block; line-height:1.3; }
+    .city-link:hover { border-color:#DD6B20; background:#FFF8F0; color:#DD6B20; }
+    .route-block { margin-bottom:16px; }
+    .route-block-name { font-size:13px; font-weight:700; color:#4A5568; margin-bottom:8px; padding-left:8px; border-left:3px solid #DD6B20; }
+    .route-tags { display:flex; flex-wrap:wrap; gap:6px; }
+    .route-tag { background:#EBF8FF; border:1px solid #BEE3F8; border-radius:6px; padding:6px 12px; text-decoration:none; color:#2B6CB0; font-size:12px; font-weight:500; transition:all 0.15s; white-space:nowrap; }
+    .route-tag:hover { background:#BEE3F8; color:#1A365D; }
+
+    footer { text-align:center; padding:48px; color:#A0AEC0; font-size:13px; background:#fff; border-top:1px solid #E2E8F0; margin-top:48px; }
+
+    @media (max-width:768px) {
+      nav { padding:0 16px; }
+      .hero { padding:32px 20px; }
+      .hero h1 { font-size:22px; }
+      .container { padding:32px 16px; }
+      .summary-cards { grid-template-columns:1fr 1fr; }
+      .area-grid { grid-template-columns:1fr; }
+      .merit-grid { grid-template-columns:1fr; }
+      .related-grid { grid-template-columns:1fr; }
+      .content-block { padding:24px 20px; }
+      .city-grid { grid-template-columns:repeat(4,1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">Care<span>Space</span></a>
+  <a href="index.html" class="back-link">← 地域一覧</a>
+</nav>
+
+<div class="hero">
+  <div class="breadcrumb">
+    <a href="../index.html">CareSpace</a> &rsaquo;
+    <a href="index.html">地域から探す</a> &rsaquo;
+    福岡県
+  </div>
+  <h1>福岡県の老人ホーム・介護施設<br>費用相場とエリア別の選び方</h1>
+  <p class="hero-desc">福岡県の老人ホーム・特養・グループホームの費用相場、特養の待機状況、エリア別の特徴をまとめました。全国平均を下回る費用水準が特徴で、九州最大の施設数を誇ります。</p>
+  <div class="hero-tags">
+    <span class="hero-tag">有料老人ホーム月額平均 約15〜16万円（全国平均を下回る）</span>
+    <span class="hero-tag">施設数 九州最多・全国上位</span>
+    <span class="hero-tag">特養の整備が進み待機期間が比較的短い</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="summary-cards">
+    <div class="summary-card">
+      <div class="summary-card-label">有料老人ホーム月額平均</div>
+      <div class="summary-card-value">約15〜16万円</div>
+      <div class="summary-card-sub">全国平均を大きく下回る</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-label">特養の月額（目安）</div>
+      <div class="summary-card-value">6〜12万円</div>
+      <div class="summary-card-sub">所得に応じた減額制度あり</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-label">施設の特徴</div>
+      <div class="summary-card-value">費用安め</div>
+      <div class="summary-card-sub">東京・大阪より大幅に安い</div>
+    </div>
+  </div>
+
+  <!-- 市区町村リンク集 -->
+  <div class="content-block">
+    <h2 id="cities">福岡県の市区町村から施設を探す</h2>
+    <h3>福岡市（7区）</h3>
+    <div class="city-grid">
+      <a href="../chat.html" class="city-link">東区</a>
+      <a href="../chat.html" class="city-link">博多区</a>
+      <a href="../chat.html" class="city-link">中央区</a>
+      <a href="../chat.html" class="city-link">南区</a>
+      <a href="../chat.html" class="city-link">城南区</a>
+      <a href="../chat.html" class="city-link">早良区</a>
+      <a href="../chat.html" class="city-link">西区</a>
+    </div>
+    <h3>北九州市（7区）</h3>
+    <div class="city-grid">
+      <a href="../chat.html" class="city-link">門司区</a>
+      <a href="../chat.html" class="city-link">若松区</a>
+      <a href="../chat.html" class="city-link">戸畑区</a>
+      <a href="../chat.html" class="city-link">小倉北区</a>
+      <a href="../chat.html" class="city-link">小倉南区</a>
+      <a href="../chat.html" class="city-link">八幡東区</a>
+      <a href="../chat.html" class="city-link">八幡西区</a>
+    </div>
+    <h3>その他の市町村</h3>
+    <div class="city-grid">
+      <a href="../chat.html" class="city-link">久留米市</a>
+      <a href="../chat.html" class="city-link">大牟田市</a>
+      <a href="../chat.html" class="city-link">飯塚市</a>
+      <a href="../chat.html" class="city-link">田川市</a>
+      <a href="../chat.html" class="city-link">柳川市</a>
+      <a href="../chat.html" class="city-link">八女市</a>
+      <a href="../chat.html" class="city-link">筑後市</a>
+      <a href="../chat.html" class="city-link">大川市</a>
+      <a href="../chat.html" class="city-link">行橋市</a>
+      <a href="../chat.html" class="city-link">豊前市</a>
+      <a href="../chat.html" class="city-link">中間市</a>
+      <a href="../chat.html" class="city-link">直方市</a>
+      <a href="../chat.html" class="city-link">宮若市</a>
+      <a href="../chat.html" class="city-link">春日市</a>
+      <a href="../chat.html" class="city-link">大野城市</a>
+      <a href="../chat.html" class="city-link">太宰府市</a>
+      <a href="../chat.html" class="city-link">筑紫野市</a>
+      <a href="../chat.html" class="city-link">那珂川市</a>
+      <a href="../chat.html" class="city-link">糸島市</a>
+      <a href="../chat.html" class="city-link">古賀市</a>
+      <a href="../chat.html" class="city-link">福津市</a>
+      <a href="../chat.html" class="city-link">宗像市</a>
+      <a href="../chat.html" class="city-link">朝倉市</a>
+      <a href="../chat.html" class="city-link">うきは市</a>
+      <a href="../chat.html" class="city-link">小郡市</a>
+      <a href="../chat.html" class="city-link">みやま市</a>
+      <a href="../chat.html" class="city-link">嘉麻市</a>
+      <a href="../chat.html" class="city-link">遠賀郡</a>
+      <a href="../chat.html" class="city-link">粕屋郡</a>
+      <a href="../chat.html" class="city-link">糸島郡</a>
+    </div>
+    <p style="font-size:12px;color:#A0AEC0;margin-top:8px;">※ 各エリアのリンクをクリックするとAI相談でエリア別の施設情報を確認できます</p>
+  </div>
+
+  <!-- 福岡県の特徴 -->
+  <div class="content-block">
+    <h2 id="feature">福岡県の介護施設の特徴</h2>
+    <p>福岡県は全国的に見て<strong>介護施設の費用が安い都道府県</strong>のひとつです。有料老人ホームの月額費用は東京都の約半分、全国平均を大きく下回る水準で、費用面での安心感が大きな特徴です。</p>
+    <p>また九州・山口地方の中心都市として医療機関も充実しており、医療と介護の連携体制が整った施設が多い点も強みです。特養の整備も比較的進んでおり、東京・大阪ほどの長期待機にならないケースも多くなっています。</p>
+
+    <div class="merit-grid">
+      <div class="merit-card">
+        <div class="merit-icon">💰</div>
+        <div class="merit-title">費用が安い</div>
+        <div class="merit-desc">月額費用が全国平均を下回り、東京の約半分〜2/3程度</div>
+      </div>
+      <div class="merit-card">
+        <div class="merit-icon">🏥</div>
+        <div class="merit-title">医療連携が充実</div>
+        <div class="merit-desc">九州大学・九州医療センターなど大病院と連携した施設が多い</div>
+      </div>
+      <div class="merit-card">
+        <div class="merit-icon">⏱</div>
+        <div class="merit-title">特養の待機が比較的短い</div>
+        <div class="merit-desc">施設整備が進んでおり、東京・大阪ほどの長期待機になりにくい</div>
+      </div>
+    </div>
+
+    <div class="point-box">
+      <div class="point-box-title">福岡県の施設探しで押さえるべきポイント</div>
+      <ul>
+        <li>費用が安いため、有料老人ホームでも月15万円以下の選択肢がある</li>
+        <li>福岡市（天神・博多周辺）は他エリアより費用がやや高くなる傾向</li>
+        <li>北九州市・久留米市・大牟田市は特に費用が安く、施設の選択肢も豊富</li>
+        <li>認知症対応施設はグループホームが九州全体で整備が進んでいる</li>
+        <li>佐賀県・熊本県・山口県の施設も隣接しているため比較検討が可能</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 施設タイプ別費用 -->
+  <div class="content-block">
+    <h2 id="cost">福岡県の施設タイプ別 費用相場</h2>
+    <p style="font-size:13px;color:#718096;margin-bottom:12px;">出典：LIFULL介護・みんなの介護 福岡県費用データ、厚生労働省 介護サービス情報公表システム（2024〜2025年データ）をもとに作成</p>
+
+    <table class="cost-table">
+      <tr>
+        <th>施設タイプ</th>
+        <th>月額費用の目安</th>
+        <th>入居一時金</th>
+        <th>待機・空き</th>
+      </tr>
+      <tr>
+        <td><strong>特別養護老人ホーム（特養）</strong></td>
+        <td class="low">6〜12万円</td>
+        <td>なし</td>
+        <td class="mid">東京・大阪より待機が短い傾向</td>
+      </tr>
+      <tr>
+        <td><strong>介護老人保健施設（老健）</strong></td>
+        <td class="low">8〜14万円</td>
+        <td>なし</td>
+        <td class="mid">3〜6ヶ月ごとに在宅復帰審査あり</td>
+      </tr>
+      <tr>
+        <td><strong>有料老人ホーム（介護付）</strong></td>
+        <td class="low">平均約15〜16万円</td>
+        <td>0〜数十万円</td>
+        <td class="low">比較的入りやすい</td>
+      </tr>
+      <tr>
+        <td><strong>有料老人ホーム（住宅型）</strong></td>
+        <td class="low">10〜18万円</td>
+        <td>0〜数十万円</td>
+        <td class="low">比較的入りやすい</td>
+      </tr>
+      <tr>
+        <td><strong>グループホーム</strong></td>
+        <td class="low">11〜17万円</td>
+        <td>10〜20万円程度</td>
+        <td class="mid">施設による</td>
+      </tr>
+      <tr>
+        <td><strong>サービス付き高齢者向け住宅</strong></td>
+        <td class="low">8〜15万円</td>
+        <td>敷金程度</td>
+        <td class="low">比較的入りやすい</td>
+      </tr>
+    </table>
+
+    <div class="info-box">
+      💡 福岡県は全国的に見ても費用が抑えられる地域です。首都圏・関西圏で施設探しに苦労している方が、福岡に親族がいる場合に「Uターン介護」として福岡の施設を選ぶケースも増えています。
+    </div>
+  </div>
+
+  <!-- エリア別特徴 -->
+  <div class="content-block">
+    <h2 id="area">エリア別の特徴</h2>
+    <p>福岡県は「福岡市圏域」「北九州市圏域」「久留米・筑後エリア」「筑豊・飯塚エリア」の4つのエリアで施設の特徴が異なります。</p>
+
+    <h3>福岡市圏域（福岡市・春日市・大野城市・糸島市など）</h3>
+    <div class="area-grid">
+      <div class="area-card">
+        <div class="area-card-name">福岡市内（博多区・中央区・天神周辺）</div>
+        <div class="area-card-desc">交通・医療が充実。県内では費用がやや高めだが、全国平均比では依然安い。急性期病院との連携も強み。</div>
+        <span class="area-card-badge badge-mid">費用：県内では中〜高め</span>
+      </div>
+      <div class="area-card">
+        <div class="area-card-name">東区・西区・早良区・城南区</div>
+        <div class="area-card-desc">住宅地としての落ち着きと利便性を兼ね備えたエリア。中央区より費用を抑えやすい施設も多い。</div>
+        <span class="area-card-badge badge-low">費用：中程度</span>
+      </div>
+      <div class="area-card">
+        <div class="area-card-name">春日市・大野城市・太宰府市</div>
+        <div class="area-card-desc">福岡市のベッドタウン。市内へのアクセスが良く、市内より費用を抑えた施設が選びやすい。</div>
+        <span class="area-card-badge badge-low">費用：比較的安め</span>
+      </div>
+      <div class="area-card">
+        <div class="area-card-name">糸島市・那珂川市</div>
+        <div class="area-card-desc">郊外の自然環境の中でゆったり過ごせる施設が多い。費用は比較的安め。医療機関へのアクセスは要確認。</div>
+        <span class="area-card-badge badge-low">費用：安め</span>
+      </div>
+    </div>
+
+    <h3>北九州市圏域（北九州市・中間市・遠賀郡など）</h3>
+    <div class="area-grid">
+      <div class="area-card">
+        <div class="area-card-name">北九州市（小倉北・小倉南・八幡東西）</div>
+        <div class="area-card-desc">政令市として医療・介護インフラが充実。高齢化率が高くサービスが発達しており、費用は福岡市より安め。</div>
+        <span class="area-card-badge badge-low">費用：安め</span>
+      </div>
+      <div class="area-card">
+        <div class="area-card-name">北九州市（門司区・戸畑区・若松区）</div>
+        <div class="area-card-desc">歴史ある工業地域で、施設の費用は市内でも比較的安い水準。特養の整備も進んでいる。</div>
+        <span class="area-card-badge badge-low">費用：安め</span>
+      </div>
+    </div>
+
+    <h3>久留米・筑後エリア（久留米市・大牟田市・柳川市など）</h3>
+    <div class="area-grid">
+      <div class="area-card">
+        <div class="area-card-name">久留米市</div>
+        <div class="area-card-desc">久留米大学病院など医療機関と連携した施設が多い。福岡市・北九州市より費用を抑えやすく、安心感のある医療体制が整っている。</div>
+        <span class="area-card-badge badge-low">費用：安め</span>
+      </div>
+      <div class="area-card">
+        <div class="area-card-name">大牟田市・柳川市・八女市</div>
+        <div class="area-card-desc">県南部は特に費用が安い傾向。月額10万円以下の施設も見つかりやすい。熊本県との県境エリアも選択肢に。</div>
+        <span class="area-card-badge badge-low">費用：特に安め</span>
+      </div>
+    </div>
+
+    <div class="info-box">
+      💡 福岡市から久留米・大牟田方面へ移動するだけで施設費用が月2〜5万円安くなることがあります。特急で1時間程度のアクセスがある場合は、郊外施設との比較をおすすめします。
+    </div>
+  </div>
+
+  <!-- 路線別リンク集 -->
+  <div class="content-block">
+    <h2 id="routes">路線・沿線から施設を探す</h2>
+    <p style="font-size:14px;color:#718096;margin-bottom:20px;">よく利用される路線沿いの施設をAIに相談できます。</p>
+    <div class="route-block">
+      <div class="route-block-name">JR九州</div>
+      <div class="route-tags">
+        <a href="../chat.html" class="route-tag">鹿児島本線</a>
+        <a href="../chat.html" class="route-tag">筑肥線</a>
+        <a href="../chat.html" class="route-tag">篠栗線（福北ゆたか線）</a>
+        <a href="../chat.html" class="route-tag">香椎線</a>
+        <a href="../chat.html" class="route-tag">日田彦山線</a>
+        <a href="../chat.html" class="route-tag">長崎本線</a>
+      </div>
+    </div>
+    <div class="route-block">
+      <div class="route-block-name">西日本鉄道（西鉄）</div>
+      <div class="route-tags">
+        <a href="../chat.html" class="route-tag">天神大牟田線</a>
+        <a href="../chat.html" class="route-tag">太宰府線</a>
+        <a href="../chat.html" class="route-tag">甘木線</a>
+        <a href="../chat.html" class="route-tag">貝塚線</a>
+      </div>
+    </div>
+    <div class="route-block">
+      <div class="route-block-name">福岡市地下鉄</div>
+      <div class="route-tags">
+        <a href="../chat.html" class="route-tag">空港線</a>
+        <a href="../chat.html" class="route-tag">箱崎線</a>
+        <a href="../chat.html" class="route-tag">七隈線</a>
+      </div>
+    </div>
+    <div class="route-block">
+      <div class="route-block-name">北九州エリア</div>
+      <div class="route-tags">
+        <a href="../chat.html" class="route-tag">北九州モノレール（小倉線）</a>
+        <a href="../chat.html" class="route-tag">JR鹿児島本線（北九州区間）</a>
+        <a href="../chat.html" class="route-tag">JR日豊本線</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 特養について -->
+  <div class="content-block">
+    <h2 id="tokuyou">福岡県の特養（特別養護老人ホーム）について</h2>
+    <p>福岡県の特養は、東京・大阪と比べて<strong>待機期間が比較的短い傾向</strong>にあります。これは県内の施設整備が進んでいることと、高齢化の進む北九州市を中心に特養の定員が増やされてきた背景があります。</p>
+    <p>ただし、福岡市内の人気施設や認知症専門の施設では待機が生じているケースもあります。<strong>要介護3以上が入所条件</strong>であることは全国共通ですが、認定後は早めの申し込みを行いましょう。</p>
+
+    <h3>特養を申し込む際のポイント</h3>
+    <ul>
+      <li>要介護3以上が入所条件——認定後すぐに担当ケアマネジャーと相談</li>
+      <li>複数施設に同時申し込みが可能——エリアを広げると空きが見つかりやすい</li>
+      <li>北九州市・久留米市・大牟田市は比較的待機が短いと言われる</li>
+      <li>「介護サービス情報公表システム（厚生労働省）」で福岡県内の特養を一覧検索できる</li>
+      <li>特養入所まで老健やショートステイで繋ぐことも有効</li>
+    </ul>
+
+    <div class="warn-box">
+      ⚠️ 「待機が短い」とはいえ、人気施設や立地条件が良い施設は数ヶ月〜1年以上かかるケースもあります。早めの申し込みと、複数施設への並行申し込みが重要です。
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="content-block">
+    <h2 id="faq">よくある質問</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">福岡県で月10万円以下の施設を探すことはできますか？</div>
+        <div class="faq-a">特養に入所できれば月額6〜12万円（所得による減額制度あり）で入居可能です。また大牟田市・柳川市・八女市など県南部ではサービス付き高齢者向け住宅（サ高住）でも月8〜12万円程度の施設が見つかることがあります。費用の詳細はケアマネジャーへの相談か、施設への直接問い合わせで確認しましょう。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">東京から親を福岡の施設に移すことはできますか？</div>
+        <div class="faq-a">可能です。施設入居の場合は住民票を移すことになりますが、介護保険の手続きは転居後の市区町村で新たに行います。親が福岡出身で、子どもが東京に住んでいる「遠距離介護」のケースでは、費用の安い福岡の施設を選ぶ方も増えています。転居に伴う手続きはケアマネジャーが案内してくれます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">福岡県の認知症対応施設はどうやって探せばいいですか？</div>
+        <div class="faq-a">認知症の方には「グループホーム（認知症対応型共同生活介護）」が適しています。福岡県はグループホームの整備が進んでおり、選択肢が比較的多いエリアです。住民票のある市区町村内の施設が対象になりますが、担当ケアマネジャーへの相談が最も確実です。「みんなの介護」「LIFULL介護」でも福岡県の認知症対応施設を検索できます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">北九州市と福岡市、施設選びでどちらがおすすめですか？</div>
+        <div class="faq-a">費用を重視するなら北九州市が有利です。有料老人ホームは福岡市より月2〜4万円程度安い施設が多く、高齢化率が高い分だけ施設整備も進んでいます。一方、医療機関へのアクセスや交通利便性を重視するなら福岡市が優位です。ご家族の面会のしやすさも含めて総合的に判断することをおすすめします。</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#F7FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:24px;margin:0 0 16px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+    <div>
+      <div style="font-size:12px;font-weight:700;color:#DD6B20;margin-bottom:4px;">RANKING</div>
+      <div style="font-size:16px;font-weight:700;color:#2D3748;margin-bottom:4px;">福岡県 施設タイプ別ランキング</div>
+      <div style="font-size:13px;color:#718096;">費用・入居しやすさ・認知症対応など目的別に比較</div>
+    </div>
+    <a href="fukuoka-ranking.html" style="background:#DD6B20;color:#fff;padding:10px 24px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;">ランキングを見る →</a>
+  </div>
+
+  <div class="cta-box">
+    <h2>福岡県の施設を無料で探してみる</h2>
+    <p>希望条件（エリア・費用・施設タイプ・認知症対応など）を伝えるだけで、<br>専門スタッフが合う施設を無料でご提案します。</p>
+    <a href="../chat.html" class="cta-btn">AIに相談して施設を探す</a>
+  </div>
+
+  <div class="related">
+    <div class="related-title">介護施設選びに役立つ記事</div>
+    <div class="related-grid">
+      <a href="../articles/care-facility-types.html" class="related-card">
+        <div class="related-card-tag">施設選び</div>
+        <div class="related-card-title">特養・有料老人ホーム・グループホームの違いと選び方</div>
+      </a>
+      <a href="../articles/tokuyou-application.html" class="related-card">
+        <div class="related-card-tag">施設選び</div>
+        <div class="related-card-title">特養の申し込みと入所待機の基礎知識</div>
+      </a>
+      <a href="../articles/care-facility-visit.html" class="related-card">
+        <div class="related-card-tag">施設選び</div>
+        <div class="related-card-title">老人ホーム見学チェックリスト30項目</div>
+      </a>
+      <a href="../articles/long-distance-care.html" class="related-card">
+        <div class="related-card-tag">遠距離介護</div>
+        <div class="related-card-title">遠距離介護の乗り越え方｜頼れるサービスと連絡体制</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>© 2026 CareSpace. All rights reserved.</footer>
+
+</body>
+</html>

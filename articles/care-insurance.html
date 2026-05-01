@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>介護保険の使い方と自己負担額の基本知識 | よりそい介護</title>
+  <meta name="description" content="介護保険って何？どう使うの？自己負担はいくら？要介護度別のサービス例、利用限度額、申請の手順をわかりやすく解説します。">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:#FFFAF0; color:#2D3748; line-height:1.8; }
+    nav { background:#fff; border-bottom:1px solid #E2E8F0; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+    .logo { font-size:20px; font-weight:700; color:#2D3748; text-decoration:none; }
+    .logo span { color:#DD6B20; }
+    .back-link { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .back-link:hover { text-decoration:underline; }
+    .container { max-width:780px; margin:48px auto; padding:0 24px; }
+    .article-header { margin-bottom:32px; }
+    .cat-tag { display:inline-block; background:rgba(221,107,32,0.1); color:#DD6B20; font-size:12px; font-weight:600; padding:4px 12px; border-radius:20px; margin-bottom:12px; }
+    h1 { font-size:28px; font-weight:700; color:#1A202C; line-height:1.4; margin-bottom:16px; }
+    .article-meta { display:flex; gap:20px; font-size:13px; color:#718096; flex-wrap:wrap; }
+    .toc { background:#fff; border:1px solid #E2E8F0; border-radius:12px; padding:24px 28px; margin-bottom:32px; }
+    .toc-title { font-size:14px; font-weight:700; color:#2D3748; margin-bottom:12px; }
+    .toc ol { padding-left:20px; }
+    .toc li { margin-bottom:8px; }
+    .toc a { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .toc a:hover { text-decoration:underline; }
+    .article-body { background:#fff; border-radius:16px; padding:40px; box-shadow:0 2px 12px rgba(45,55,72,0.06); margin-bottom:24px; }
+    .article-body h2 { font-size:22px; font-weight:700; color:#2D3748; margin:40px 0 16px; padding:12px 16px; border-left:4px solid #DD6B20; background:rgba(221,107,32,0.04); border-radius:0 8px 8px 0; }
+    .article-body h2:first-child { margin-top:0; }
+    .article-body h3 { font-size:17px; font-weight:700; color:#4A5568; margin:28px 0 12px; padding-left:12px; border-left:2px solid #CBD5E0; }
+    .article-body p { margin-bottom:18px; font-size:16px; line-height:2.0; }
+    .article-body ul, .article-body ol { margin:12px 0 20px 24px; }
+    .article-body li { margin-bottom:10px; font-size:15px; line-height:1.7; }
+    .article-body strong { color:#2D3748; font-weight:700; }
+    .point-box { background:rgba(221,107,32,0.06); border:1px solid rgba(221,107,32,0.2); border-radius:10px; padding:20px 24px; margin:24px 0; }
+    .point-box-title { font-size:13px; font-weight:700; color:#DD6B20; margin-bottom:10px; }
+    .point-box ul { margin:0; padding-left:20px; }
+    .point-box li { font-size:14px; margin-bottom:6px; }
+    .warn-box { background:#FFFBEB; border:1px solid #F6E05E; border-radius:10px; padding:16px 20px; margin:24px 0; font-size:13px; color:#744210; line-height:1.7; }
+    table { width:100%; border-collapse:collapse; margin:20px 0; font-size:14px; }
+    th { background:rgba(221,107,32,0.08); color:#744210; font-weight:700; padding:10px 14px; text-align:left; border-bottom:2px solid rgba(221,107,32,0.2); }
+    td { padding:10px 14px; border-bottom:1px solid #E2E8F0; }
+    tr:last-child td { border-bottom:none; }
+    .summary-box { background:linear-gradient(135deg,#FFF5E6,#FEF3C7); border-radius:12px; padding:28px; margin:32px 0; }
+    .summary-box h3 { font-size:18px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .summary-box ol { padding-left:20px; }
+    .summary-box li { margin-bottom:10px; font-size:14px; font-weight:600; color:#4A5568; }
+    .cta-box { background:linear-gradient(135deg,#744210,#C05621); border-radius:12px; padding:28px; text-align:center; margin-top:32px; }
+    .cta-box p { color:rgba(255,255,255,0.85); font-size:14px; margin-bottom:16px; }
+    .cta-btn { display:inline-block; background:#fff; color:#744210; padding:12px 32px; border-radius:8px; font-weight:700; font-size:15px; text-decoration:none; }
+    .disclaimer { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:14px 18px; font-size:12px; color:#718096; line-height:1.7; margin-top:24px; }
+    .related { margin-top:32px; }
+    .related-title { font-size:16px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .related-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .related-card { background:#fff; border:1px solid #E2E8F0; border-radius:10px; padding:16px; text-decoration:none; color:inherit; transition:border-color 0.2s; }
+    .related-card:hover { border-color:#DD6B20; }
+    .related-card-tag { font-size:11px; color:#DD6B20; font-weight:600; margin-bottom:6px; }
+    .related-card-title { font-size:13px; font-weight:600; color:#2D3748; line-height:1.5; }
+    footer { text-align:center; padding:48px; color:#A0AEC0; font-size:13px; margin-top:48px; }
+    @media (max-width:768px) {
+      nav { padding:0 16px; }
+      .container { margin:24px auto; }
+      h1 { font-size:22px; }
+      .article-body { padding:24px 20px; }
+      .related-grid { grid-template-columns:1fr; }
+      table { font-size:12px; }
+      th, td { padding:8px 10px; }
+    }
+  
+    .source-box { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:16px 20px; margin:24px 0 0; }
+    .source-box-title { font-size:12px; font-weight:700; color:#4A5568; margin-bottom:10px; }
+    .source-box ul { padding-left:16px; margin:0; }
+    .source-box li { font-size:11px; color:#718096; margin-bottom:6px; line-height:1.7; }
+    .source-box a { color:#DD6B20; text-decoration:none; }
+    .source-box a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">よりそい<span>介護</span></a>
+  <a href="../article-list.html" class="back-link">← 記事一覧に戻る</a>
+</nav>
+
+<div class="container">
+  <div class="article-header">
+    <span class="cat-tag">介護費用・保険</span>
+    <h1>介護保険の使い方と自己負担額の基本知識</h1>
+    <div class="article-meta">
+      <span>2026年4月29日</span>
+      <span>読了時間：約8分</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">目次</div>
+    <ol>
+      <li><a href="#what">介護保険とは何か</a></li>
+      <li><a href="#nintei">要介護認定の仕組み</a></li>
+      <li><a href="#limit">利用限度額と自己負担</a></li>
+      <li><a href="#services">使えるサービスの種類</a></li>
+      <li><a href="#reduce">自己負担を減らす制度</a></li>
+      <li><a href="#summary">まとめ</a></li>
+    </ol>
+  </div>
+
+  <div class="article-body">
+
+    <h2 id="what">介護保険とは何か</h2>
+    <p>介護保険は、40歳以上が保険料を払い、介護が必要になったときにサービスを1〜3割の自己負担で使える国の制度です。市区町村が運営しています。</p>
+    <p>65歳以上（第1号被保険者）は年齢だけで対象になります。40〜64歳（第2号被保険者）は、特定の病気（脳梗塞・認知症・がん末期など16種類）が原因で介護が必要になった場合に限り対象です。</p>
+
+    <h2 id="nintei">要介護認定の仕組み</h2>
+    <p>介護保険サービスを使うには、まず<strong>要介護認定</strong>を受ける必要があります。認定の結果で使えるサービス量と限度額が決まります。</p>
+
+    <div class="point-box">
+      <div class="point-box-title">要介護度の区分</div>
+      <ul>
+        <li>要支援1・2：日常生活はほぼ自立、一部支援が必要</li>
+        <li>要介護1：立ち上がりや歩行が不安定、認知機能の低下が見られる</li>
+        <li>要介護2：歩行や日常動作に介助が必要</li>
+        <li>要介護3：日常生活全般に介助が必要</li>
+        <li>要介護4：ほぼ全面的な介助が必要</li>
+        <li>要介護5：全面的な介助が必要（寝たきり状態も含む）</li>
+      </ul>
+    </div>
+
+    <h3>認定の流れ</h3>
+    <ol>
+      <li>市区町村の窓口に申請する（家族が代理申請も可）</li>
+      <li>認定調査員が自宅または病院へ来て聞き取り調査をする</li>
+      <li>主治医が「意見書」を作成する</li>
+      <li>介護認定審査会が審査して要介護度を決定する</li>
+      <li>申請から約1〜2ヶ月で結果が届く</li>
+    </ol>
+
+    <h2 id="limit">利用限度額と自己負担</h2>
+    <p>介護保険サービスには要介護度ごとに月あたりの利用限度額があります。限度額内で使えば1〜3割の自己負担で済みますが、限度額を超えた分は全額自己負担です。</p>
+
+    <table>
+      <tr>
+        <th>要介護度</th>
+        <th>月の利用限度額（目安）</th>
+        <th>1割負担の場合</th>
+      </tr>
+      <tr>
+        <td>要支援1</td>
+        <td>約50,320円</td>
+        <td>約5,032円</td>
+      </tr>
+      <tr>
+        <td>要支援2</td>
+        <td>約105,310円</td>
+        <td>約10,531円</td>
+      </tr>
+      <tr>
+        <td>要介護1</td>
+        <td>約167,650円</td>
+        <td>約16,765円</td>
+      </tr>
+      <tr>
+        <td>要介護2</td>
+        <td>約197,050円</td>
+        <td>約19,705円</td>
+      </tr>
+      <tr>
+        <td>要介護3</td>
+        <td>約270,480円</td>
+        <td>約27,048円</td>
+      </tr>
+      <tr>
+        <td>要介護4</td>
+        <td>約309,380円</td>
+        <td>約30,938円</td>
+      </tr>
+      <tr>
+        <td>要介護5</td>
+        <td>約362,170円</td>
+        <td>約36,217円</td>
+      </tr>
+    </table>
+
+    <p>自己負担割合は所得によって1割・2割・3割のいずれかになります。65歳以上で単身の場合、年収280万円未満なら1割負担が一般的です。</p>
+
+    <h2 id="services">使えるサービスの種類</h2>
+
+    <h3>在宅サービス</h3>
+    <ul>
+      <li><strong>訪問介護（ホームヘルプ）</strong>：ヘルパーが自宅に来て生活援助・身体介助をする</li>
+      <li><strong>訪問看護</strong>：看護師が自宅で医療的ケアを行う</li>
+      <li><strong>デイサービス（通所介護）</strong>：日帰りで施設に通い、入浴・食事・レクリエーションを受ける</li>
+      <li><strong>ショートステイ（短期入所）</strong>：数日〜数週間、施設に泊まれる</li>
+      <li><strong>福祉用具の貸与</strong>：車椅子・ベッドなどのレンタル</li>
+    </ul>
+
+    <h3>施設サービス</h3>
+    <ul>
+      <li>特別養護老人ホーム（特養）：要介護3以上が対象。公的施設で費用が比較的安い</li>
+      <li>介護老人保健施設（老健）：リハビリ中心。在宅復帰を目指す施設</li>
+      <li>介護医療院：医療ケアが必要な方向けの長期療養施設</li>
+    </ul>
+
+    <h2 id="reduce">自己負担を減らす制度</h2>
+
+    <h3>高額介護サービス費</h3>
+    <p>同じ月の介護保険サービスの自己負担額が上限を超えた場合、超えた分が後から払い戻される制度です。上限額は所得によって異なります（一般的な世帯で月44,400円が上限）。</p>
+
+    <h3>負担限度額認定（特定入所者介護サービス費）</h3>
+    <p>施設に入所する際の食費・居住費を、所得・資産に応じて軽減できる制度です。市区町村に申請します。</p>
+
+    <div class="warn-box">
+      ⚠️ 申請しないと戻ってきません。自己負担が多いと感じたら、担当ケアマネジャーや市区町村に相談しましょう。
+    </div>
+
+    <div class="summary-box">
+      <h3>まとめ</h3>
+      <ol>
+        <li>介護保険は40歳以上が対象の公的制度。自己負担は所得に応じて1〜3割</li>
+        <li>サービスを使うには要介護認定が必要。申請は市区町村の窓口へ</li>
+        <li>要介護度ごとに月の利用限度額がある。超えた分は全額自己負担</li>
+        <li>高額介護サービス費・負担限度額認定を活用すると費用を抑えられる</li>
+        <li>わからないことはケアマネジャーか地域包括支援センターに相談を</li>
+      </ol>
+    </div>
+
+    <div class="cta-box">
+      <p>介護費用や保険のこと、もっと詳しく知りたい方はAIに相談できます。</p>
+      <a href="../chat.html?category=money" class="cta-btn">AIに匿名で相談する（無料）</a>
+    </div>
+
+    
+    <div class="source-box">
+      <div class="source-box-title">📌 参考・出典</div>
+      <ul>
+        <li>厚生労働省「介護保険制度の概要」→ <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/gaiyo/index.html" target="_blank" rel="noopener">https://www.mhlw.go.jp/</a></li>
+        <li>厚生労働省「要介護認定について」→ <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/nintei/index.html" target="_blank" rel="noopener">https://www.mhlw.go.jp/</a></li>
+        <li>e-Gov 法令検索「介護保険法」→ <a href="https://laws.e-gov.go.jp/law/409AC0000000123" target="_blank" rel="noopener">https://laws.e-gov.go.jp/</a></li>
+      </ul>
+    </div>
+    <div class="disclaimer">
+      ※ 記載の金額は2024年度の制度に基づく目安です。改定される場合がありますので、最新情報は市区町村窓口でご確認ください。
+    </div>
+
+  </div>
+
+  <div class="related">
+    <div class="related-title">関連記事</div>
+    <div class="related-grid">
+      <a href="sudden-caregiving.html" class="related-card">
+        <div class="related-card-tag">急な介護開始</div>
+        <div class="related-card-title">親が突然倒れた…介護が始まったとき最初にすること</div>
+      </a>
+      <a href="care-facility-types.html" class="related-card">
+        <div class="related-card-tag">施設選び</div>
+        <div class="related-card-title">特養・有料老人ホーム・グループホームの違いと選び方</div>
+      </a>
+      <a href="dementia-diagnosis.html" class="related-card">
+        <div class="related-card-tag">認知症</div>
+        <div class="related-card-title">親が認知症と診断されたら最初にすること</div>
+      </a>
+      <a href="care-work-balance.html" class="related-card">
+        <div class="related-card-tag">仕事との両立</div>
+        <div class="related-card-title">介護と仕事の両立｜介護離職を避けるために</div>
+      </a>
+      <a href="../../よりそい保険/articles/insurance-review-timing.html" class="related-card" style="border-color:#BEE3F8;">
+        <div class="related-card-tag" style="color:#3182CE;">↗ よりそい保険</div>
+        <div class="related-card-title">保険の見直しに最適なタイミング7つ｜介護が始まる前に確認を</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 よりそい介護 — 介護の悩みを匿名で相談できるサイト<br><a href="../privacy.html" style="color:#A0AEC0;font-size:12px;">プライバシーポリシー</a></p>
+</footer>
+
+</body>
+</html>

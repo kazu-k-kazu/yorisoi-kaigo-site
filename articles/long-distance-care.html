@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>遠距離介護を乗り越える方法｜離れて暮らす親のサポート術 | よりそい介護</title>
+  <meta name="description" content="「実家が遠くて介護できない」という不安を抱えていませんか。遠距離介護を現実的に乗り切るための連携・ツール・相談先をまとめました。">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:#FFFAF0; color:#2D3748; line-height:1.8; }
+    nav { background:#fff; border-bottom:1px solid #E2E8F0; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+    .logo { font-size:20px; font-weight:700; color:#2D3748; text-decoration:none; }
+    .logo span { color:#DD6B20; }
+    .back-link { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .back-link:hover { text-decoration:underline; }
+    .container { max-width:780px; margin:48px auto; padding:0 24px; }
+    .article-header { margin-bottom:32px; }
+    .cat-tag { display:inline-block; background:rgba(221,107,32,0.1); color:#DD6B20; font-size:12px; font-weight:600; padding:4px 12px; border-radius:20px; margin-bottom:12px; }
+    h1 { font-size:28px; font-weight:700; color:#1A202C; line-height:1.4; margin-bottom:16px; }
+    .article-meta { display:flex; gap:20px; font-size:13px; color:#718096; flex-wrap:wrap; }
+    .toc { background:#fff; border:1px solid #E2E8F0; border-radius:12px; padding:24px 28px; margin-bottom:32px; }
+    .toc-title { font-size:14px; font-weight:700; color:#2D3748; margin-bottom:12px; }
+    .toc ol { padding-left:20px; }
+    .toc li { margin-bottom:8px; }
+    .toc a { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .toc a:hover { text-decoration:underline; }
+    .article-body { background:#fff; border-radius:16px; padding:40px; box-shadow:0 2px 12px rgba(45,55,72,0.06); margin-bottom:24px; }
+    .article-body h2 { font-size:22px; font-weight:700; color:#2D3748; margin:40px 0 16px; padding:12px 16px; border-left:4px solid #DD6B20; background:rgba(221,107,32,0.04); border-radius:0 8px 8px 0; }
+    .article-body h2:first-child { margin-top:0; }
+    .article-body h3 { font-size:17px; font-weight:700; color:#4A5568; margin:28px 0 12px; padding-left:12px; border-left:2px solid #CBD5E0; }
+    .article-body p { margin-bottom:18px; font-size:16px; line-height:2.0; }
+    .article-body ul, .article-body ol { margin:12px 0 20px 24px; }
+    .article-body li { margin-bottom:10px; font-size:15px; line-height:1.7; }
+    .article-body strong { color:#2D3748; font-weight:700; }
+    .point-box { background:rgba(221,107,32,0.06); border:1px solid rgba(221,107,32,0.2); border-radius:10px; padding:20px 24px; margin:24px 0; }
+    .point-box-title { font-size:13px; font-weight:700; color:#DD6B20; margin-bottom:10px; }
+    .point-box ul { margin:0; padding-left:20px; }
+    .point-box li { font-size:14px; margin-bottom:8px; }
+    .warn-box { background:#FFFBEB; border:1px solid #F6E05E; border-radius:10px; padding:16px 20px; margin:24px 0; font-size:13px; color:#744210; line-height:1.7; }
+    .step-box { counter-reset:step; margin:24px 0; }
+    .step-item { display:flex; gap:16px; margin-bottom:20px; align-items:flex-start; }
+    .step-num { background:#DD6B20; color:#fff; font-size:13px; font-weight:700; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+    .step-body strong { display:block; font-size:15px; margin-bottom:4px; color:#2D3748; }
+    .step-body p { font-size:14px; color:#4A5568; margin:0; line-height:1.7; }
+    .summary-box { background:linear-gradient(135deg,#FFF5E6,#FEF3C7); border-radius:12px; padding:28px; margin:32px 0; }
+    .summary-box h3 { font-size:18px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .summary-box ol { padding-left:20px; }
+    .summary-box li { margin-bottom:10px; font-size:14px; font-weight:600; color:#4A5568; }
+    .cta-box { background:linear-gradient(135deg,#744210,#C05621); border-radius:12px; padding:28px; text-align:center; margin-top:32px; }
+    .cta-box p { color:rgba(255,255,255,0.85); font-size:14px; margin-bottom:16px; }
+    .cta-btn { display:inline-block; background:#fff; color:#744210; padding:12px 32px; border-radius:8px; font-weight:700; font-size:15px; text-decoration:none; }
+    .disclaimer { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:14px 18px; font-size:12px; color:#718096; line-height:1.7; margin-top:24px; }
+    .related { margin-top:32px; }
+    .related-title { font-size:16px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .related-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .related-card { background:#fff; border:1px solid #E2E8F0; border-radius:10px; padding:16px; text-decoration:none; color:inherit; transition:border-color 0.2s; }
+    .related-card:hover { border-color:#DD6B20; }
+    .related-card-tag { font-size:11px; color:#DD6B20; font-weight:600; margin-bottom:6px; }
+    .related-card-title { font-size:13px; font-weight:600; color:#2D3748; line-height:1.5; }
+    .experience-box { background:#FFF8F0; border-left:4px solid #DD6B20; border-radius:0 10px 10px 0; padding:20px 24px; margin:28px 0; }
+    .experience-header { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+    .experience-icon { font-size:28px; line-height:1; }
+    .experience-name { font-size:14px; font-weight:700; color:#2D3748; display:block; }
+    .experience-sub { font-size:12px; color:#718096; }
+    .experience-body { font-size:14px; color:#4A5568; line-height:1.85; margin:0; }
+    .experience-body::before { content:'"'; color:#DD6B20; font-size:20px; line-height:0; vertical-align:-4px; margin-right:2px; }
+    .experience-body::after  { content:'"'; color:#DD6B20; font-size:20px; line-height:0; vertical-align:-4px; margin-left:2px; }
+    footer { text-align:center; padding:48px; color:#A0AEC0; font-size:13px; margin-top:48px; }
+    @media (max-width:768px) {
+      nav { padding:0 16px; }
+      .container { margin:24px auto; }
+      h1 { font-size:22px; }
+      .article-body { padding:24px 20px; }
+      .related-grid { grid-template-columns:1fr; }
+    }
+  
+    .source-box { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:16px 20px; margin:24px 0 0; }
+    .source-box-title { font-size:12px; font-weight:700; color:#4A5568; margin-bottom:10px; }
+    .source-box ul { padding-left:16px; margin:0; }
+    .source-box li { font-size:11px; color:#718096; margin-bottom:6px; line-height:1.7; }
+    .source-box a { color:#DD6B20; text-decoration:none; }
+    .source-box a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">よりそい<span>介護</span></a>
+  <a href="../article-list.html" class="back-link">← 記事一覧に戻る</a>
+</nav>
+
+<div class="container">
+  <div class="article-header">
+    <span class="cat-tag">遠距離介護</span>
+    <h1>遠距離介護を乗り越える方法｜離れて暮らす親のサポート術</h1>
+    <div class="article-meta">
+      <span>2026年4月29日</span>
+      <span>読了時間：約8分</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">目次</div>
+    <ol>
+      <li><a href="#reality">遠距離介護の実態</a></li>
+      <li><a href="#prepare">帰省前に準備すること</a></li>
+      <li><a href="#network">現地サポートのネットワークを作る</a></li>
+      <li><a href="#tools">日常の見守りに使えるツール</a></li>
+      <li><a href="#visit">帰省時に必ずやること</a></li>
+      <li><a href="#summary">まとめ</a></li>
+    </ol>
+  </div>
+
+  <div class="article-body">
+
+    <h2 id="reality">遠距離介護の実態</h2>
+    <p>「実家まで飛行機で2時間」「新幹線で3時間かかる」——そんな距離に親が住んでいる場合、介護が必要になったとき途方に暮れる方は多くいます。</p>
+    <p>実は、介護が必要な高齢者の家族の約4割が、同居せずに介護を担っているというデータがあります。遠距離介護は特殊なケースではなく、現代の介護の"普通の形"になりつつあります。</p>
+    <p>重要なのは「自分が全部やろうとしない」ことです。遠距離介護を長く続けている人の共通点は、<strong>地域のサービスと人の力をうまく借りている</strong>点にあります。</p>
+
+    <div class="experience-box">
+      <div class="experience-header">
+        <span class="experience-icon">👩</span>
+        <div>
+          <span class="experience-name">山田典子さん（仮名）・40代・パート勤務</span>
+          <span class="experience-sub">神奈川在住・母の実家は静岡。新幹線で約1時間半</span>
+        </div>
+      </div>
+      <p class="experience-body">母が一人暮らしになってから、月に1〜2回は様子を見に行っていました。でも行くたびに「ちゃんとできてる」って言うし、電話でも元気そうで。安心していたら、近所の方から「最近お母さん、同じことを何度も聞きに来る」って連絡があって。会いに行ったら冷蔵庫の中が空っぽで、体重も明らかに減っていて。「大丈夫」って言葉を信じすぎていました。遠くにいると、本当のことが見えないんだって思い知らされました。</p>
+    </div>
+
+    <div class="point-box">
+      <div class="point-box-title">遠距離介護でよくある失敗パターン</div>
+      <ul>
+        <li>「なんとかなる」と先送りにして、緊急入院で初めて介護が始まる</li>
+        <li>自分だけで抱え込み、有給休暇を使い果たして仕事に支障が出る</li>
+        <li>現地のサービスを知らず、費用だけがかさむ</li>
+        <li>兄弟・親戚との役割分担を決めないまま、感情的なトラブルになる</li>
+      </ul>
+    </div>
+
+    <h2 id="prepare">帰省前に準備すること</h2>
+    <p>「元気なうちに」話し合いをしておくことが、遠距離介護を乗り切る最大のコツです。親が健康なうちに以下の情報を整理しておきましょう。</p>
+
+    <h3>確認しておくべき情報リスト</h3>
+    <ul>
+      <li><strong>かかりつけ医の名前・連絡先・診察券の保管場所</strong></li>
+      <li><strong>服用している薬の名前と量</strong>（お薬手帳のコピーを取っておく）</li>
+      <li><strong>介護保険証・健康保険証の保管場所</strong></li>
+      <li><strong>緊急連絡先（隣人・民生委員・かかりつけ医）</strong></li>
+      <li><strong>銀行口座・年金の受取口座</strong>（本人同意のうえで把握する）</li>
+      <li><strong>本人の希望</strong>：「施設には入りたくない」「延命治療は望まない」など</li>
+    </ul>
+
+    <div class="warn-box">
+      ⚠️ お金の話や「もしもの話」は「縁起でもない」と嫌がる親も多いです。「自分自身も考えておきたいから教えて」という切り出し方が受け入れられやすいです。
+    </div>
+
+    <h2 id="network">現地サポートのネットワークを作る</h2>
+    <p>遠距離介護を支えるのは、現地にいる「人」とのネットワークです。以下の3つを早期に押さえておきましょう。</p>
+
+    <div class="step-box">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <strong>地域包括支援センターに連絡する</strong>
+          <p>親の住む地域の「地域包括支援センター」は、介護相談の総合窓口です。遠方から電話で相談でき、地域のサービスや担当ケアマネジャーの紹介も受けられます。まず最初にここに電話しましょう。</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <strong>ケアマネジャーを決める</strong>
+          <p>要介護認定を受けたら、ケアマネジャーが介護サービス計画（ケアプラン）を作成してくれます。遠距離介護の場合、ケアマネジャーが「現地の目」になってくれる存在です。何かあればすぐ連絡をもらえる関係を作りましょう。</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <strong>近隣の協力者を確保する</strong>
+          <p>隣人・自治会・民生委員・昔からの友人——親の周りに「何かあったときに声をかけてくれる人」がいるかどうかを確認しましょう。デイサービスの送迎スタッフが日常の変化に気づいてくれることもあります。</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="tools">日常の見守りに使えるツール</h2>
+    <p>毎日電話するのが難しい場合、テクノロジーを活用することで安否確認の負担を減らせます。</p>
+
+    <h3>手軽に使える見守りサービス</h3>
+    <ul>
+      <li><strong>スマートスピーカー（Amazon Echo・Google Home）</strong>：ビデオ通話機能で顔を見て会話できる。操作が簡単でシニアでも使いやすい</li>
+      <li><strong>見守りカメラ</strong>：自宅内の様子をスマホで確認できる。本人の同意と設置場所の配慮が必要</li>
+      <li><strong>電球型センサー</strong>：電球の点灯・消灯パターンで生活リズムを遠隔確認。プライバシーへの抵抗感が低い</li>
+      <li><strong>GPS端末・スマートウォッチ</strong>：認知症による徘徊の位置確認に有効</li>
+      <li><strong>郵便局の見守りサービス</strong>：郵便局員が月1回自宅を訪問し、家族にレポートする有料サービス</li>
+    </ul>
+
+    <div class="point-box">
+      <div class="point-box-title">ポイント：ツールより「人の目」が基本</div>
+      <ul>
+        <li>テクノロジーはあくまで補助。ケアマネ・ヘルパー・近隣など「人のネットワーク」が根幹</li>
+        <li>導入前に必ず本人の了解を取る。「監視されている」と感じると関係が悪化する</li>
+        <li>完璧な見守りを目指さず、「何かあれば気づける仕組み」を作ることが目標</li>
+      </ul>
+    </div>
+
+    <h2 id="visit">帰省時に必ずやること</h2>
+    <p>年に数回しか帰省できない場合、限られた時間で最大限の情報収集と手続きを進めることが大切です。</p>
+
+    <ul>
+      <li><strong>ケアマネジャーと直接面談する</strong>：電話やメールでは伝わらない日常の様子を聞く</li>
+      <li><strong>かかりつけ医に同席する</strong>：診察に付き添い、医師から直接説明を受ける（本人の同意が必要）</li>
+      <li><strong>家の中を確認する</strong>：冷蔵庫の中身・薬の飲み残し・通帳の記帳内容など、生活の実態を確認する</li>
+      <li><strong>転倒・事故防止の対策を確認する</strong>：浴室・階段・玄関の手すり設置、段差解消など</li>
+      <li><strong>本人の希望を改めて聞く</strong>：気持ちは変わることがある。押しつけず会話する</li>
+    </ul>
+
+    <div class="summary-box">
+      <h3>まとめ</h3>
+      <ol>
+        <li>遠距離介護は珍しくない。「自分だけでやらない」と決めることが出発点</li>
+        <li>元気なうちにかかりつけ医・薬・保険証の情報を把握しておく</li>
+        <li>地域包括支援センターとケアマネジャーが「現地の目」になってくれる</li>
+        <li>見守りツールは本人の同意を得て、人のネットワークを補う形で活用する</li>
+        <li>帰省時はケアマネ・医師との面談を最優先に動く</li>
+      </ol>
+    </div>
+
+    <div class="cta-box">
+      <p>「遠くに住む親のこと、何から始めればいい？」<br>具体的な悩みをAIに匿名で相談できます。</p>
+      <a href="../chat.html" class="cta-btn">AIに匿名で相談する（無料）</a>
+    </div>
+
+    
+    <div class="source-box">
+      <div class="source-box-title">📌 参考・出典</div>
+      <ul>
+        <li>厚生労働省「地域包括支援センター（遠距離介護の相談先）」→ <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/chiiki-houkatsu/" target="_blank" rel="noopener">https://www.mhlw.go.jp/</a></li>
+        <li>厚生労働省「介護保険制度の概要」→ <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/gaiyo/index.html" target="_blank" rel="noopener">https://www.mhlw.go.jp/</a></li>
+      </ul>
+    </div>
+    <div class="disclaimer">
+      ※ 本記事は一般的な情報提供を目的としています。各サービスの詳細や費用は地域・事業者によって異なります。具体的な手続きはケアマネジャーや地域包括支援センターにご相談ください。
+    </div>
+
+  </div>
+
+  <div class="related">
+    <div class="related-title">関連記事</div>
+    <div class="related-grid">
+      <a href="sudden-caregiving.html" class="related-card">
+        <div class="related-card-tag">急な介護開始</div>
+        <div class="related-card-title">親が突然倒れた…介護が始まったとき最初にすること</div>
+      </a>
+      <a href="home-care-limit.html" class="related-card">
+        <div class="related-card-tag">在宅介護・施設入所</div>
+        <div class="related-card-title">在宅介護の限界サイン｜施設入所を考えるタイミングと準備</div>
+      </a>
+      <a href="care-work-balance.html" class="related-card">
+        <div class="related-card-tag">仕事との両立</div>
+        <div class="related-card-title">介護と仕事の両立｜介護離職を避けるために</div>
+      </a>
+      <a href="care-insurance.html" class="related-card">
+        <div class="related-card-tag">介護費用・保険</div>
+        <div class="related-card-title">介護保険の使い方と自己負担額の基本知識</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 よりそい介護 — 介護の悩みを匿名で相談できるサイト<br><a href="../privacy.html" style="color:#A0AEC0;font-size:12px;">プライバシーポリシー</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>きょうだい間の介護の役割分担問題｜揉めないための話し合いのコツ | よりそい介護</title>
+  <meta name="description" content="「自分ばかり介護している」「お金だけ出すと言われた」——きょうだい間の介護で揉めないための役割分担と話し合いの進め方を解説します。">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:#FFFAF0; color:#2D3748; line-height:1.8; }
+    nav { background:#fff; border-bottom:1px solid #E2E8F0; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+    .logo { font-size:20px; font-weight:700; color:#2D3748; text-decoration:none; }
+    .logo span { color:#DD6B20; }
+    .back-link { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .back-link:hover { text-decoration:underline; }
+    .container { max-width:780px; margin:48px auto; padding:0 24px; }
+    .article-header { margin-bottom:32px; }
+    .cat-tag { display:inline-block; background:rgba(221,107,32,0.1); color:#DD6B20; font-size:12px; font-weight:600; padding:4px 12px; border-radius:20px; margin-bottom:12px; }
+    h1 { font-size:28px; font-weight:700; color:#1A202C; line-height:1.4; margin-bottom:16px; }
+    .article-meta { display:flex; gap:20px; font-size:13px; color:#718096; flex-wrap:wrap; }
+    .toc { background:#fff; border:1px solid #E2E8F0; border-radius:12px; padding:24px 28px; margin-bottom:32px; }
+    .toc-title { font-size:14px; font-weight:700; color:#2D3748; margin-bottom:12px; }
+    .toc ol { padding-left:20px; }
+    .toc li { margin-bottom:8px; }
+    .toc a { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .toc a:hover { text-decoration:underline; }
+    .article-body { background:#fff; border-radius:16px; padding:40px; box-shadow:0 2px 12px rgba(45,55,72,0.06); margin-bottom:24px; }
+    .article-body h2 { font-size:22px; font-weight:700; color:#2D3748; margin:40px 0 16px; padding:12px 16px; border-left:4px solid #DD6B20; background:rgba(221,107,32,0.04); border-radius:0 8px 8px 0; }
+    .article-body h2:first-child { margin-top:0; }
+    .article-body h3 { font-size:17px; font-weight:700; color:#4A5568; margin:28px 0 12px; padding-left:12px; border-left:2px solid #CBD5E0; }
+    .article-body p { margin-bottom:18px; font-size:16px; line-height:2.0; }
+    .article-body ul, .article-body ol { margin:12px 0 20px 24px; }
+    .article-body li { margin-bottom:10px; font-size:15px; line-height:1.7; }
+    .article-body strong { color:#2D3748; font-weight:700; }
+    .point-box { background:rgba(221,107,32,0.06); border:1px solid rgba(221,107,32,0.2); border-radius:10px; padding:20px 24px; margin:24px 0; }
+    .point-box-title { font-size:13px; font-weight:700; color:#DD6B20; margin-bottom:10px; }
+    .point-box ul { margin:0; padding-left:20px; }
+    .point-box li { font-size:14px; margin-bottom:8px; }
+    .warn-box { background:#FFFBEB; border:1px solid #F6E05E; border-radius:10px; padding:16px 20px; margin:24px 0; font-size:13px; color:#744210; line-height:1.7; }
+    .role-table { width:100%; border-collapse:collapse; margin:20px 0; font-size:14px; }
+    .role-table th { background:rgba(221,107,32,0.08); color:#744210; font-weight:700; padding:10px 14px; text-align:left; border-bottom:2px solid rgba(221,107,32,0.2); }
+    .role-table td { padding:10px 14px; border-bottom:1px solid #E2E8F0; vertical-align:top; }
+    .role-table tr:last-child td { border-bottom:none; }
+    .summary-box { background:linear-gradient(135deg,#FFF5E6,#FEF3C7); border-radius:12px; padding:28px; margin:32px 0; }
+    .summary-box h3 { font-size:18px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .summary-box ol { padding-left:20px; }
+    .summary-box li { margin-bottom:10px; font-size:14px; font-weight:600; color:#4A5568; }
+    .cta-box { background:linear-gradient(135deg,#744210,#C05621); border-radius:12px; padding:28px; text-align:center; margin-top:32px; }
+    .cta-box p { color:rgba(255,255,255,0.85); font-size:14px; margin-bottom:16px; }
+    .cta-btn { display:inline-block; background:#fff; color:#744210; padding:12px 32px; border-radius:8px; font-weight:700; font-size:15px; text-decoration:none; }
+    .disclaimer { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:14px 18px; font-size:12px; color:#718096; line-height:1.7; margin-top:24px; }
+    .related { margin-top:32px; }
+    .related-title { font-size:16px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .related-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .related-card { background:#fff; border:1px solid #E2E8F0; border-radius:10px; padding:16px; text-decoration:none; color:inherit; transition:border-color 0.2s; }
+    .related-card:hover { border-color:#DD6B20; }
+    .related-card-tag { font-size:11px; color:#DD6B20; font-weight:600; margin-bottom:6px; }
+    .related-card-title { font-size:13px; font-weight:600; color:#2D3748; line-height:1.5; }
+    footer { text-align:center; padding:48px; color:#A0AEC0; font-size:13px; margin-top:48px; }
+    @media (max-width:768px) {
+      nav { padding:0 16px; }
+      .container { margin:24px auto; }
+      h1 { font-size:22px; }
+      .article-body { padding:24px 20px; }
+      .related-grid { grid-template-columns:1fr; }
+    }
+  
+    .source-box { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:16px 20px; margin:24px 0 0; }
+    .source-box-title { font-size:12px; font-weight:700; color:#4A5568; margin-bottom:10px; }
+    .source-box ul { padding-left:16px; margin:0; }
+    .source-box li { font-size:11px; color:#718096; margin-bottom:6px; line-height:1.7; }
+    .source-box a { color:#DD6B20; text-decoration:none; }
+    .source-box a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">よりそい<span>介護</span></a>
+  <a href="../article-list.html" class="back-link">← 記事一覧に戻る</a>
+</nav>
+
+<div class="container">
+  <div class="article-header">
+    <span class="cat-tag">家族・きょうだい問題</span>
+    <h1>きょうだい間の介護の役割分担問題｜揉めないための話し合いのコツ</h1>
+    <div class="article-meta">
+      <span>2026年4月29日</span>
+      <span>読了時間：約8分</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">目次</div>
+    <ol>
+      <li><a href="#typical">よくある揉めパターン</a></li>
+      <li><a href="#divide">役割分担の考え方</a></li>
+      <li><a href="#meeting">介護会議の開き方</a></li>
+      <li><a href="#money">お金の管理と透明化</a></li>
+      <li><a href="#conflict">それでも揉めたときの対処法</a></li>
+      <li><a href="#summary">まとめ</a></li>
+    </ol>
+  </div>
+
+  <div class="article-body">
+
+    <h2 id="typical">よくある揉めパターン</h2>
+    <p>親の介護をきっかけにきょうだい関係が悪化するのは珍しくありません。「まさかうちの家族がこんなことに」と感じている方も多いでしょう。まずよくある揉めパターンを整理します。</p>
+
+    <ul>
+      <li><strong>「自分ばかり介護している」と感じる</strong>：近くに住む子が日常のケアを担い、遠方の子は動かない</li>
+      <li><strong>「お金だけ出す」「手は出さない」のアンバランス</strong>：経済的支援と身体的介護の貢献度が見えにくく不満が溜まる</li>
+      <li><strong>介護方針の対立</strong>：「施設に入れたい」vs「在宅で看たい」で意見が割れる</li>
+      <li><strong>親への資産管理で不信感</strong>：通帳を預かっている兄弟がお金の使途を報告しない</li>
+      <li><strong>過去の確執が再燃する</strong>：昔の遺産分割・親の愛情への不満が介護問題に重なる</li>
+    </ul>
+
+    <div class="warn-box">
+      ⚠️ 介護の問題は「昔から抱えていた家族の問題」を浮き彫りにします。感情的な口論は関係修復が難しくなるため、できるだけ早い段階で「仕組み」で解決する意識が大切です。
+    </div>
+
+    <h2 id="divide">役割分担の考え方</h2>
+    <p>介護の貢献には「身体的な介護」「経済的な支援」「精神的なサポート」「情報収集・手続き」など様々な形があります。「やっていない」と決めつける前に、それぞれが何を担えるかを整理しましょう。</p>
+
+    <table class="role-table">
+      <tr>
+        <th>貢献の種類</th>
+        <th>具体的な内容例</th>
+        <th>向いている人</th>
+      </tr>
+      <tr>
+        <td><strong>身体的介護</strong></td>
+        <td>日常の見守り・食事・入浴介助・通院同行</td>
+        <td>近くに住む子</td>
+      </tr>
+      <tr>
+        <td><strong>経済的支援</strong></td>
+        <td>介護費用の一部負担・施設費用の補填</td>
+        <td>遠方・収入が多い子</td>
+      </tr>
+      <tr>
+        <td><strong>手続き・調整</strong></td>
+        <td>ケアマネとの連絡・書類作成・役所手続き</td>
+        <td>仕事の融通が利く子</td>
+      </tr>
+      <tr>
+        <td><strong>精神的サポート</strong></td>
+        <td>週1回の電話・帰省時の集中ケア・介護者のフォロー</td>
+        <td>遠方の子・感情サポートが得意な子</td>
+      </tr>
+      <tr>
+        <td><strong>緊急対応</strong></td>
+        <td>急な入院時の対応・緊急時の同行</td>
+        <td>最も近くにいる子</td>
+      </tr>
+    </table>
+
+    <p>「近くにいるから介護する」「遠くにいるから関係ない」ではなく、<strong>それぞれが担える形で貢献し合う</strong>という認識を共有することが出発点です。</p>
+
+    <h2 id="meeting">介護会議の開き方</h2>
+    <p>感情的にならないためには、「介護会議」という形で定期的に情報共有と役割確認の場を設けることが有効です。</p>
+
+    <h3>開催のポイント</h3>
+    <ul>
+      <li><strong>全員が集まれる機会（帰省・お盆・正月）を活用する</strong>：日常の延長で話すより、「介護について話す場」として設定すると効果的</li>
+      <li><strong>ケアマネジャーに同席してもらう</strong>：第三者が入ることで感情的になりにくく、専門的な情報も得られる</li>
+      <li><strong>議題を事前に決めておく</strong>：「今後の方針」「費用分担」「担当の決め直し」など、テーマを絞って話す</li>
+      <li><strong>結論を文書化する</strong>：「言った言わない」を防ぐために、決めたことをメモ・LINEなどで残す</li>
+    </ul>
+
+    <h3>話し合いで決めておきたいこと</h3>
+    <ul>
+      <li>誰がケアマネジャーとの窓口になるか</li>
+      <li>費用は誰がどれだけ負担するか（親の資産でまかなうのか、子が補填するか）</li>
+      <li>通帳・資産の管理者と報告の頻度・方法</li>
+      <li>施設入所の基準（「こうなったら施設を検討する」という目安）</li>
+      <li>緊急時の連絡・対応ルール</li>
+    </ul>
+
+    <h2 id="money">お金の管理と透明化</h2>
+    <p>介護費用のお金の管理は、最もトラブルになりやすい領域です。管理者を決めたら、<strong>使途の透明化</strong>を仕組みとして作りましょう。</p>
+
+    <div class="point-box">
+      <div class="point-box-title">お金の透明化に役立つ方法</div>
+      <ul>
+        <li>介護専用の銀行口座を親名義で作り、介護費用はそこから出す</li>
+        <li>月1回、費用の明細を全員にLINEやメールで共有する</li>
+        <li>領収書はすべて保管し、必要なら開示できるようにする</li>
+        <li>複数人が関われる仕組み（複数人がネットバンキングで残高確認できるなど）を作る</li>
+        <li>不安なら弁護士・司法書士に「任意後見」「家族信託」を相談する</li>
+      </ul>
+    </div>
+
+    <h2 id="conflict">それでも揉めたときの対処法</h2>
+    <p>話し合いをしても関係が修復しない場合、第三者の力を借りましょう。</p>
+
+    <ul>
+      <li><strong>ケアマネジャーに間に入ってもらう</strong>：家族の意見調整を行う専門家として機能してくれる場合がある</li>
+      <li><strong>地域包括支援センターへ相談</strong>：介護に関する家族の問題を相談できる窓口</li>
+      <li><strong>弁護士・家族問題カウンセラーへの相談</strong>：財産・相続が絡む場合は弁護士が有効。感情面の問題はカウンセラーが助けになる</li>
+      <li><strong>家庭裁判所の調停</strong>：資産管理・後見の問題が解決しない場合の最終手段</li>
+    </ul>
+
+    <div class="point-box">
+      <div class="point-box-title">主介護者が燃え尽きる前にできること</div>
+      <ul>
+        <li>「私ばかり」と感じたら、早めに「困っていること」を具体的に伝える（感情論より事実で話す）</li>
+        <li>「〇〇をやってほしい」と具体的に依頼する。「もっと協力して」は伝わりにくい</li>
+        <li>介護サービスを増やして家族の負担を減らす方向を先に検討する</li>
+      </ul>
+    </div>
+
+    <div class="summary-box">
+      <h3>まとめ</h3>
+      <ol>
+        <li>「自分ばかり」「お金だけ」「方針の対立」が揉める三大パターン</li>
+        <li>身体的介護だけでなく、経済的支援・手続き・精神サポートも「貢献」として認める</li>
+        <li>ケアマネを交えた定期的な介護会議で、決めたことを文書化する</li>
+        <li>お金の管理は専用口座と月次報告で透明化する</li>
+        <li>感情が先行する前に、第三者（ケアマネ・地域包括・弁護士）に相談する</li>
+      </ol>
+    </div>
+
+    <div class="cta-box">
+      <p>「きょうだいと介護の話がうまくいかない」<br>第三者として、AIに匿名で話を聞いてもらえます。</p>
+      <a href="../chat.html" class="cta-btn">AIに匿名で相談する（無料）</a>
+    </div>
+
+    
+    <div class="source-box">
+      <div class="source-box-title">📌 参考・出典</div>
+      <ul>
+        <li>法務省「成年後見制度について」→ <a href="https://www.moj.go.jp/MINJI/minji95.html" target="_blank" rel="noopener">https://www.moj.go.jp/</a></li>
+        <li>法テラス（家族間トラブルの法律相談）→ <a href="https://www.houterasu.or.jp/" target="_blank" rel="noopener">https://www.houterasu.or.jp/</a></li>
+      </ul>
+    </div>
+    <div class="disclaimer">
+      ※ 家族間の財産管理・後見問題については弁護士・司法書士にご相談ください。本記事は一般的な情報提供を目的としています。
+    </div>
+
+  </div>
+
+  <div class="related">
+    <div class="related-title">関連記事</div>
+    <div class="related-grid">
+      <a href="caregiver-burnout.html" class="related-card">
+        <div class="related-card-tag">介護者のメンタルケア</div>
+        <div class="related-card-title">介護ストレスと燃え尽き症候群を防ぐ方法</div>
+      </a>
+      <a href="care-money-prep.html" class="related-card">
+        <div class="related-card-tag">介護費用・保険</div>
+        <div class="related-card-title">介護にかかるお金の現実｜費用の目安と親の資産管理</div>
+      </a>
+      <a href="home-care-limit.html" class="related-card">
+        <div class="related-card-tag">在宅介護・施設入所</div>
+        <div class="related-card-title">在宅介護の限界サイン｜施設入所を考えるタイミングと準備</div>
+      </a>
+      <a href="long-distance-care.html" class="related-card">
+        <div class="related-card-tag">遠距離介護</div>
+        <div class="related-card-title">遠距離介護を乗り越える方法｜離れて暮らす親のサポート術</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 よりそい介護 — 介護の悩みを匿名で相談できるサイト<br><a href="../privacy.html" style="color:#A0AEC0;font-size:12px;">プライバシーポリシー</a></p>
+</footer>
+
+</body>
+</html>

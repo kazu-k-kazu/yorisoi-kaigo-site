@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ケアマネジャーとの上手な付き合い方｜相談・変更・活用のコツ | よりそい介護</title>
+  <meta name="description" content="ケアマネジャーは介護の「司令塔」。でも何を相談すればいいか分からない、変えたいけど言いにくい——そんな悩みに答えます。上手な活用法と担当変更の手順を解説。">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:#FFFAF0; color:#2D3748; line-height:1.8; }
+    nav { background:#fff; border-bottom:1px solid #E2E8F0; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+    .logo { font-size:20px; font-weight:700; color:#2D3748; text-decoration:none; }
+    .logo span { color:#DD6B20; }
+    .back-link { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .back-link:hover { text-decoration:underline; }
+    .container { max-width:780px; margin:48px auto; padding:0 24px; }
+    .article-header { margin-bottom:32px; }
+    .cat-tag { display:inline-block; background:rgba(221,107,32,0.1); color:#DD6B20; font-size:12px; font-weight:600; padding:4px 12px; border-radius:20px; margin-bottom:12px; }
+    h1 { font-size:28px; font-weight:700; color:#1A202C; line-height:1.4; margin-bottom:16px; }
+    .article-meta { display:flex; gap:20px; font-size:13px; color:#718096; flex-wrap:wrap; }
+    .toc { background:#fff; border:1px solid #E2E8F0; border-radius:12px; padding:24px 28px; margin-bottom:32px; }
+    .toc-title { font-size:14px; font-weight:700; color:#2D3748; margin-bottom:12px; }
+    .toc ol { padding-left:20px; }
+    .toc li { margin-bottom:8px; }
+    .toc a { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .toc a:hover { text-decoration:underline; }
+    .article-body { background:#fff; border-radius:16px; padding:40px; box-shadow:0 2px 12px rgba(45,55,72,0.06); margin-bottom:24px; }
+    .article-body h2 { font-size:22px; font-weight:700; color:#2D3748; margin:40px 0 16px; padding:12px 16px; border-left:4px solid #DD6B20; background:rgba(221,107,32,0.04); border-radius:0 8px 8px 0; }
+    .article-body h2:first-child { margin-top:0; }
+    .article-body h3 { font-size:17px; font-weight:700; color:#4A5568; margin:28px 0 12px; padding-left:12px; border-left:2px solid #CBD5E0; }
+    .article-body p { margin-bottom:18px; font-size:16px; line-height:2.0; }
+    .article-body ul, .article-body ol { margin:12px 0 20px 24px; }
+    .article-body li { margin-bottom:10px; font-size:15px; line-height:1.7; }
+    .article-body strong { color:#2D3748; font-weight:700; }
+    .point-box { background:rgba(221,107,32,0.06); border:1px solid rgba(221,107,32,0.2); border-radius:10px; padding:20px 24px; margin:24px 0; }
+    .point-box-title { font-size:13px; font-weight:700; color:#DD6B20; margin-bottom:10px; }
+    .point-box ul { margin:0; padding-left:20px; }
+    .point-box li { font-size:14px; margin-bottom:8px; }
+    .warn-box { background:#FFFBEB; border:1px solid #F6E05E; border-radius:10px; padding:16px 20px; margin:24px 0; font-size:13px; color:#744210; line-height:1.7; }
+    .info-box { background:#EBF8FF; border:1px solid #BEE3F8; border-radius:10px; padding:16px 20px; margin:24px 0; font-size:13px; color:#2A4365; line-height:1.7; }
+    .check-box { background:#F0FFF4; border:1px solid #9AE6B4; border-radius:10px; padding:20px 24px; margin:24px 0; }
+    .check-box-title { font-size:13px; font-weight:700; color:#276749; margin-bottom:12px; }
+    .check-item { display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; font-size:14px; line-height:1.6; color:#2D3748; }
+    .check-item::before { content:"☐"; font-size:16px; color:#68D391; flex-shrink:0; margin-top:1px; }
+    .step-list { counter-reset:step; margin:24px 0; }
+    .step-item { display:flex; gap:16px; margin-bottom:20px; align-items:flex-start; }
+    .step-num { background:#DD6B20; color:#fff; font-size:13px; font-weight:700; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+    .step-body { flex:1; }
+    .step-title { font-size:15px; font-weight:700; color:#2D3748; margin-bottom:4px; }
+    .step-desc { font-size:14px; color:#4A5568; line-height:1.7; }
+    .tip-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:24px 0; }
+    .tip-card { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:10px; padding:16px 20px; }
+    .tip-card-icon { font-size:24px; margin-bottom:8px; }
+    .tip-card-title { font-size:14px; font-weight:700; color:#2D3748; margin-bottom:6px; }
+    .tip-card-body { font-size:13px; color:#4A5568; line-height:1.7; }
+    .ng-box { background:#FFF5F5; border:1px solid #FEB2B2; border-radius:10px; padding:20px 24px; margin:24px 0; }
+    .ng-box-title { font-size:13px; font-weight:700; color:#C53030; margin-bottom:12px; }
+    .ng-item { display:flex; gap:10px; margin-bottom:10px; font-size:14px; line-height:1.6; color:#2D3748; }
+    .ng-item::before { content:"✗"; font-size:14px; color:#FC8181; flex-shrink:0; }
+    .summary-box { background:linear-gradient(135deg,#FFF5E6,#FEF3C7); border-radius:12px; padding:28px; margin:32px 0; }
+    .summary-box h3 { font-size:18px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .summary-box ol { padding-left:20px; }
+    .summary-box li { margin-bottom:10px; font-size:14px; font-weight:600; color:#4A5568; }
+    .cta-box { background:linear-gradient(135deg,#744210,#C05621); border-radius:12px; padding:28px; text-align:center; margin-top:32px; }
+    .cta-box p { color:rgba(255,255,255,0.85); font-size:14px; margin-bottom:16px; }
+    .cta-btn { display:inline-block; background:#fff; color:#744210; padding:12px 32px; border-radius:8px; font-weight:700; font-size:15px; text-decoration:none; }
+    .disclaimer { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:14px 18px; font-size:12px; color:#718096; line-height:1.7; margin-top:24px; }
+    .related { margin-top:32px; }
+    .related-title { font-size:16px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .related-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .related-card { background:#fff; border:1px solid #E2E8F0; border-radius:10px; padding:16px; text-decoration:none; color:inherit; transition:border-color 0.2s; }
+    .related-card:hover { border-color:#DD6B20; }
+    .related-card-tag { font-size:11px; color:#DD6B20; font-weight:600; margin-bottom:6px; }
+    .related-card-title { font-size:13px; font-weight:600; color:#2D3748; line-height:1.5; }
+    .experience-box { background:#FFF8F0; border-left:4px solid #DD6B20; border-radius:0 10px 10px 0; padding:20px 24px; margin:28px 0; }
+    .experience-header { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+    .experience-icon { font-size:28px; line-height:1; }
+    .experience-name { font-size:14px; font-weight:700; color:#2D3748; display:block; }
+    .experience-sub { font-size:12px; color:#718096; }
+    .experience-body { font-size:14px; color:#4A5568; line-height:1.85; margin:0; }
+    .experience-body::before { content:'"'; color:#DD6B20; font-size:20px; line-height:0; vertical-align:-4px; margin-right:2px; }
+    .experience-body::after  { content:'"'; color:#DD6B20; font-size:20px; line-height:0; vertical-align:-4px; margin-left:2px; }
+    footer { text-align:center; padding:48px; color:#A0AEC0; font-size:13px; margin-top:48px; }
+    @media (max-width:768px) {
+      nav { padding:0 16px; }
+      .container { margin:24px auto; }
+      h1 { font-size:22px; }
+      .article-body { padding:24px 20px; }
+      .related-grid { grid-template-columns:1fr; }
+      .tip-grid { grid-template-columns:1fr; }
+    }
+  
+    .source-box { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:16px 20px; margin:24px 0 0; }
+    .source-box-title { font-size:12px; font-weight:700; color:#4A5568; margin-bottom:10px; }
+    .source-box ul { padding-left:16px; margin:0; }
+    .source-box li { font-size:11px; color:#718096; margin-bottom:6px; line-height:1.7; }
+    .source-box a { color:#DD6B20; text-decoration:none; }
+    .source-box a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">よりそい<span>介護</span></a>
+  <a href="../article-list.html" class="back-link">← 記事一覧に戻る</a>
+</nav>
+
+<div class="container">
+  <div class="article-header">
+    <span class="cat-tag">介護の始め方</span>
+    <h1>ケアマネジャーとの上手な付き合い方｜相談・活用・担当変更のコツ</h1>
+    <div class="article-meta">
+      <span>2026年4月29日</span>
+      <span>読了時間：約8分</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">目次</div>
+    <ol>
+      <li><a href="#role">ケアマネジャーは何をしてくれる人か</a></li>
+      <li><a href="#consult">何でも相談していい——ケアマネの活用法</a></li>
+      <li><a href="#tips">関係を良くする5つのコツ</a></li>
+      <li><a href="#ng">やってはいけないNG行動</a></li>
+      <li><a href="#change">担当を変えたいときの手順</a></li>
+      <li><a href="#summary">まとめ</a></li>
+    </ol>
+  </div>
+
+  <div class="article-body">
+
+    <h2 id="role">ケアマネジャーは何をしてくれる人か</h2>
+    <p>ケアマネジャー（介護支援専門員）は、介護が必要になった方とその家族を支える「介護の司令塔」です。具体的には、<strong>ケアプラン（介護サービス計画書）の作成・管理</strong>を担い、デイサービスや訪問介護などの各サービス事業者との調整を行います。</p>
+    <p>費用は<strong>介護保険で全額カバー</strong>されるため、家族の自己負担はゼロです。にもかかわらず「何を頼んでいいか分からない」「月1回来るだけで何もしてくれない気がする」と感じている家族は多く、ケアマネとの関係をうまく築けていないケースが少なくありません。</p>
+
+    <div class="info-box">
+      📋 <strong>ケアマネジャーの主な業務</strong><br>
+      ①ケアプランの作成と定期見直し（少なくとも月1回）／②介護サービス事業者との連絡・調整／③要介護認定の更新手続きサポート／④医療機関・行政との橋渡し／⑤緊急時・状態変化への対応
+    </div>
+
+    <p>つまりケアマネは「月に1回訪問する人」ではなく、<strong>介護に関するあらゆる相談窓口</strong>です。何か困ったことがあれば、まずケアマネに連絡するのが最も正しい行動です。</p>
+
+    <h2 id="consult">何でも相談していい——ケアマネの活用法</h2>
+    <p>「こんなことを相談してもいいのかな」と遠慮する必要はありません。ケアマネは以下のような相談を日常的に受けています。</p>
+
+    <div class="tip-grid">
+      <div class="tip-card">
+        <div class="tip-card-icon">🏥</div>
+        <div class="tip-card-title">医療・健康のこと</div>
+        <div class="tip-card-body">退院後の在宅環境、薬の管理が難しい、かかりつけ医と連携してほしい</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-icon">💰</div>
+        <div class="tip-card-title">費用・制度のこと</div>
+        <div class="tip-card-body">介護保険の限度額を超えそう、負担軽減制度を知りたい、福祉用具をレンタルしたい</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-icon">🏠</div>
+        <div class="tip-card-title">住環境のこと</div>
+        <div class="tip-card-body">バリアフリー改修の相談、自宅での転倒が心配、一人暮らしが不安になってきた</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-icon">💬</div>
+        <div class="tip-card-title">家族関係のこと</div>
+        <div class="tip-card-body">兄弟間で意見が食い違う、親が施設を拒否する、介護で仕事を辞めるべきか悩んでいる</div>
+      </div>
+    </div>
+
+    <div class="experience-box">
+      <div class="experience-header">
+        <span class="experience-icon">👩</span>
+        <div>
+          <span class="experience-name">田中恵子さん（仮名）・40代・会社員</span>
+          <span class="experience-sub">父親の介護開始から約半年後</span>
+        </div>
+      </div>
+      <p class="experience-body">最初は「専門的なことしか相談できない」と思っていて、「父が夜中に徘徊しかけてる」とか「自分が限界で泣いてる」とかは言えなかったんです。でもある時、もう限界で電話したら、ケアマネさんが「それ、もっと早く教えてほしかったです」って言ってくれて。そこから全部話すようにしたら、ナイトケアのサービスを追加してもらえて、夜ちゃんと眠れるようになりました。相談していいんだ、って気づくまでに時間かかりすぎました。</p>
+    </div>
+
+    <h2 id="tips">関係を良くする5つのコツ</h2>
+    <p>ケアマネジャーとの関係は、受け身でいると薄くなりがちです。積極的に関わることで、より手厚いサポートが得られます。</p>
+
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">変化は小さなうちに伝える</div>
+          <div class="step-desc">「先週から食欲が落ちた」「夜中に起きることが増えた」など、些細な変化でも早めに共有しましょう。ケアマネは変化を察知して先手を打つのが仕事です。月1回の訪問を待たず、気になったらすぐ電話でOKです。</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">「困っていること」より「望む生活」を伝える</div>
+          <div class="step-desc">「○○サービスを増やしてほしい」と要求するより、「父に週2回外出の機会を作りたい」「私が月2回くらい休める時間がほしい」と<strong>ゴールを伝える</strong>方が、ケアマネが提案しやすくなります。</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">本人の「好き・嫌い・こだわり」を共有する</div>
+          <div class="step-desc">「昔から几帳面な人で、他人に世話されることをとても嫌がる」「音楽が好きで、デイサービスでも歌う時間があると気分が良い」——こうした個性の情報は、サービス選びや対応方針に直結します。</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">フィードバックを忘れない</div>
+          <div class="step-desc">「先日追加してもらったサービス、父がとても気に入っています」という一言は、ケアマネにとって大きなモチベーションになります。逆に合わないサービスも、遠慮せず「合わないようです」と伝えましょう。</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <div class="step-title">家族の状況も話す</div>
+          <div class="step-desc">「来月、自分が入院することになった」「仕事が繁忙期で平日は対応できない」など、介護者自身の状況変化も積極的に共有してください。ケアマネはそれを踏まえてプランを調整します。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="point-box">
+      <div class="point-box-title">記録メモを活用しよう</div>
+      <ul>
+        <li>日々気になったことをスマホのメモアプリに記録しておく</li>
+        <li>ケアマネの訪問前に「今回話したいこと」を箇条書きにしておく</li>
+        <li>医療機関の診察結果・処方変更もケアマネに連絡する習慣を</li>
+      </ul>
+    </div>
+
+    <h2 id="ng">やってはいけないNG行動</h2>
+    <p>ケアマネとの関係が悪化するパターンを知っておくことも大切です。</p>
+
+    <div class="ng-box">
+      <div class="ng-box-title">NG行動リスト</div>
+      <div class="ng-item">複数のサービス事業者から直接サービスを勝手に契約する（ケアプランが崩れます）</div>
+      <div class="ng-item">不満を他の事業者に話して回り、ケアマネには何も言わない</div>
+      <div class="ng-item">「前のケアマネはやってくれた」と比較圧力をかける</div>
+      <div class="ng-item">訪問時間外に深夜・早朝に頻繁に連絡する（緊急時を除く）</div>
+      <div class="ng-item">金銭や物品を渡そうとする（倫理規定上受け取れません）</div>
+    </div>
+
+    <p>特に多いのが「直接契約」のトラブルです。知人に勧められたサービスをケアマネに相談せず利用し始めると、<strong>介護保険の給付限度額を超えてしまったり、他のサービスとの調整が取れなくなったり</strong>します。新しいサービスを使いたい時は、必ずケアマネに相談してからにしましょう。</p>
+
+    <h2 id="change">担当を変えたいときの手順</h2>
+    <p>「このケアマネとは合わない」「連絡がとれない」「提案が少ない」——そう感じたとき、担当変更は<strong>権利として認められています</strong>。遠慮する必要はまったくありません。</p>
+
+    <h3>担当変更が必要なサイン</h3>
+    <div class="check-box">
+      <div class="check-box-title">こんな状況なら変更を検討しましょう</div>
+      <div class="check-item">連絡しても折り返しが来ない、または数日かかる</div>
+      <div class="check-item">こちらの話をきちんと聞いてもらえない、または途中で話を遮られる</div>
+      <div class="check-item">ケアプランが何ヶ月も変わらない（状態が変わっているのに）</div>
+      <div class="check-item">「それはできません」ばかりで代替案を提示してくれない</div>
+      <div class="check-item">親の様子を見に来る訪問がほとんどなく、書類確認だけになっている</div>
+      <div class="check-item">担当者会議を開いてくれない（半年以上)</div>
+    </div>
+
+    <h3>担当変更の具体的な手順</h3>
+
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">新しい居宅介護支援事業所を探す</div>
+          <div class="step-desc">市区町村の窓口や地域包括支援センターに「ケアマネを変えたい」と相談すると、事業所リストをもらえます。知人の紹介や病院のソーシャルワーカーに紹介してもらうのも一般的です。</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">新しい事業所に連絡・面談する</div>
+          <div class="step-desc">「今の担当から変更したいのですが」と伝えれば、手続きの流れを説明してくれます。面談で相性を確認してから決めましょう。</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">現在の事業所に変更を伝える</div>
+          <div class="step-desc">「別の事業所にお願いすることにしました」と伝えるだけでOKです。理由を詳しく説明する義務はありません。引き継ぎは事業所間で行います。</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">市区町村に「居宅サービス計画作成依頼届出書」を提出</div>
+          <div class="step-desc">新しい事業所が手続きを案内してくれます。書類1枚の手続きです。この間、サービスは継続して利用できます。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      ⚠️ 担当変更を伝える前に、まず「今の担当者に直接不満を伝える」ことも選択肢のひとつです。改善されるケースもあります。ただし、何度伝えても改善されない場合や、信頼関係が修復できないと感じる場合は、変更を躊躇わないでください。
+    </div>
+
+    <h2 id="summary">まとめ</h2>
+
+    <div class="summary-box">
+      <h3>ケアマネ活用のポイント</h3>
+      <ol>
+        <li>ケアマネは介護の「なんでも相談窓口」——遠慮なく使う</li>
+        <li>困ったことではなく「望む生活のゴール」を伝える</li>
+        <li>状態変化・家族の状況変化は月1回の訪問を待たずに連絡</li>
+        <li>フィードバックを返すことで関係と質が高まる</li>
+        <li>「合わない」と感じたら担当変更は正当な権利——遠慮不要</li>
+      </ol>
+    </div>
+
+    <p>ケアマネジャーはあなたの家族の介護を一緒に支えるチームメンバーです。一方的にサービスを受けるのではなく、<strong>情報を共有し、ゴールを共有する関係</strong>を作ることで、介護の質は大きく変わります。</p>
+
+    <div class="cta-box">
+      <p>老人ホーム・グループホームへの入居を検討されている方へ<br>ケアマネへの相談と並行して、施設の資料請求・見学の準備を始めましょう。</p>
+      <a href="#" class="cta-btn">施設を無料で探してみる</a>
+    </div>
+
+    
+    <div class="source-box">
+      <div class="source-box-title">📌 参考・出典</div>
+      <ul>
+        <li>厚生労働省「介護支援専門員（ケアマネジャー）について」→ <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/gaiyo/index.html" target="_blank" rel="noopener">https://www.mhlw.go.jp/</a></li>
+      </ul>
+    </div>
+    <div class="disclaimer">
+      ※本記事は一般的な情報提供を目的としています。個別の状況については、担当ケアマネジャーや地域包括支援センターにご相談ください。
+    </div>
+  </div>
+
+  <div class="related">
+    <div class="related-title">関連記事</div>
+    <div class="related-grid">
+      <a href="care-service-guide.html" class="related-card">
+        <div class="related-card-tag">在宅介護サービス</div>
+        <div class="related-card-title">デイサービス・訪問介護を使いこなす完全ガイド</div>
+      </a>
+      <a href="sudden-caregiving.html" class="related-card">
+        <div class="related-card-tag">急な介護開始</div>
+        <div class="related-card-title">親が突然倒れた…介護が始まったとき最初にすること</div>
+      </a>
+      <a href="caregiver-burnout.html" class="related-card">
+        <div class="related-card-tag">介護者のメンタルケア</div>
+        <div class="related-card-title">介護ストレスと燃え尽き症候群を防ぐ方法</div>
+      </a>
+      <a href="home-care-limit.html" class="related-card">
+        <div class="related-card-tag">在宅介護・施設入所</div>
+        <div class="related-card-title">在宅介護の限界サイン｜施設入所を考えるタイミング</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 よりそい介護. All rights reserved.</footer>
+
+</body>
+</html>

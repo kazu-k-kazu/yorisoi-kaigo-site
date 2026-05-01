@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>看取りの選択｜家・病院・施設、どこで最期を迎えるか家族で決めるために | よりそい介護</title>
+  <meta name="description" content="看取りの場所を家族で決めるのは、とても難しいことです。家・病院・施設それぞれの現実と、後悔しない選択のために知っておきたいことを解説します。">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:#FFFAF0; color:#2D3748; line-height:1.8; }
+    nav { background:#fff; border-bottom:1px solid #E2E8F0; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+    .logo { font-size:20px; font-weight:700; color:#2D3748; text-decoration:none; }
+    .logo span { color:#DD6B20; }
+    .back-link { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .back-link:hover { text-decoration:underline; }
+    .container { max-width:780px; margin:48px auto; padding:0 24px; }
+    .article-header { margin-bottom:32px; }
+    .cat-tag { display:inline-block; background:rgba(221,107,32,0.1); color:#DD6B20; font-size:12px; font-weight:600; padding:4px 12px; border-radius:20px; margin-bottom:12px; }
+    h1 { font-size:28px; font-weight:700; color:#1A202C; line-height:1.4; margin-bottom:16px; }
+    .article-meta { display:flex; gap:20px; font-size:13px; color:#718096; flex-wrap:wrap; }
+    .toc { background:#fff; border:1px solid #E2E8F0; border-radius:12px; padding:24px 28px; margin-bottom:32px; }
+    .toc-title { font-size:14px; font-weight:700; color:#2D3748; margin-bottom:12px; }
+    .toc ol { padding-left:20px; }
+    .toc li { margin-bottom:8px; }
+    .toc a { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .toc a:hover { text-decoration:underline; }
+    .article-body { background:#fff; border-radius:16px; padding:40px; box-shadow:0 2px 12px rgba(45,55,72,0.06); margin-bottom:24px; }
+    .article-body h2 { font-size:22px; font-weight:700; color:#2D3748; margin:40px 0 16px; padding:12px 16px; border-left:4px solid #DD6B20; background:rgba(221,107,32,0.04); border-radius:0 8px 8px 0; }
+    .article-body h2:first-child { margin-top:0; }
+    .article-body h3 { font-size:17px; font-weight:700; color:#4A5568; margin:28px 0 12px; padding-left:12px; border-left:2px solid #CBD5E0; }
+    .article-body p { margin-bottom:18px; font-size:16px; line-height:2.0; }
+    .article-body ul, .article-body ol { margin:12px 0 20px 24px; }
+    .article-body li { margin-bottom:10px; font-size:15px; line-height:1.7; }
+    .article-body strong { color:#2D3748; font-weight:700; }
+    .point-box { background:rgba(221,107,32,0.06); border:1px solid rgba(221,107,32,0.2); border-radius:10px; padding:20px 24px; margin:24px 0; }
+    .point-box-title { font-size:13px; font-weight:700; color:#DD6B20; margin-bottom:10px; }
+    .point-box ul { margin:0; padding-left:20px; }
+    .point-box li { font-size:14px; margin-bottom:6px; }
+    .warn-box { background:#FFFBEB; border:1px solid #F6E05E; border-radius:10px; padding:16px 20px; margin:24px 0; font-size:13px; color:#744210; line-height:1.7; }
+    .summary-box { background:linear-gradient(135deg,#FFF5E6,#FEF3C7); border-radius:12px; padding:28px; margin:32px 0; }
+    .summary-box h3 { font-size:18px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .summary-box ol { padding-left:20px; }
+    .summary-box li { margin-bottom:10px; font-size:14px; font-weight:600; color:#4A5568; }
+    .cta-box { background:linear-gradient(135deg,#744210,#C05621); border-radius:12px; padding:28px; text-align:center; margin-top:32px; }
+    .cta-box p { color:rgba(255,255,255,0.85); font-size:14px; margin-bottom:16px; }
+    .cta-btn { display:inline-block; background:#fff; color:#744210; padding:12px 32px; border-radius:8px; font-weight:700; font-size:15px; text-decoration:none; }
+    .disclaimer { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:14px 18px; font-size:12px; color:#718096; line-height:1.7; margin-top:24px; }
+    .related { margin-top:32px; }
+    .related-title { font-size:16px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .related-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .related-card { background:#fff; border:1px solid #E2E8F0; border-radius:10px; padding:16px; text-decoration:none; color:inherit; transition:border-color 0.2s; }
+    .related-card:hover { border-color:#DD6B20; }
+    .related-card-tag { font-size:11px; color:#DD6B20; font-weight:600; margin-bottom:6px; }
+    .related-card-title { font-size:13px; font-weight:600; color:#2D3748; line-height:1.5; }
+    .experience-box { background:#FFF8F0; border-left:4px solid #DD6B20; border-radius:0 10px 10px 0; padding:20px 24px; margin:28px 0; }
+    .experience-header { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+    .experience-icon { font-size:28px; line-height:1; }
+    .experience-name { font-size:14px; font-weight:700; color:#2D3748; display:block; }
+    .experience-sub { font-size:12px; color:#718096; }
+    .experience-body { font-size:14px; color:#4A5568; line-height:1.85; margin:0; }
+    .experience-body::before { content:'"'; color:#DD6B20; font-size:20px; line-height:0; vertical-align:-4px; margin-right:2px; }
+    .experience-body::after  { content:'"'; color:#DD6B20; font-size:20px; line-height:0; vertical-align:-4px; margin-left:2px; }
+    .compare-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin:20px 0; }
+    .compare-card { border:1px solid #E2E8F0; border-radius:10px; padding:16px; }
+    .compare-card-title { font-size:13px; font-weight:700; color:#DD6B20; margin-bottom:10px; border-bottom:1px solid #E2E8F0; padding-bottom:8px; }
+    .compare-card ul { padding-left:16px; margin:0; }
+    .compare-card li { font-size:12px; line-height:1.7; margin-bottom:4px; color:#4A5568; }
+    footer { text-align:center; padding:48px; color:#A0AEC0; font-size:13px; margin-top:48px; }
+    @media (max-width:768px) {
+      nav { padding:0 16px; }
+      .container { margin:24px auto; }
+      h1 { font-size:22px; }
+      .article-body { padding:24px 20px; }
+      .related-grid { grid-template-columns:1fr; }
+      .compare-grid { grid-template-columns:1fr; }
+    }
+  
+    .source-box { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:16px 20px; margin:24px 0 0; }
+    .source-box-title { font-size:12px; font-weight:700; color:#4A5568; margin-bottom:10px; }
+    .source-box ul { padding-left:16px; margin:0; }
+    .source-box li { font-size:11px; color:#718096; margin-bottom:6px; line-height:1.7; }
+    .source-box a { color:#DD6B20; text-decoration:none; }
+    .source-box a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">よりそい<span>介護</span></a>
+  <a href="../article-list.html" class="back-link">← 記事一覧に戻る</a>
+</nav>
+
+<div class="container">
+  <div class="article-header">
+    <span class="cat-tag">看取り・終末期</span>
+    <h1>看取りの選択｜家・病院・施設、どこで最期を迎えるか家族で決めるために</h1>
+    <div class="article-meta">
+      <span>2026年4月30日</span>
+      <span>読了時間：約10分</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">目次</div>
+    <ol>
+      <li><a href="#reality">「どこで最期を」という問いと向き合う</a></li>
+      <li><a href="#stats">日本人はどこで亡くなっているか</a></li>
+      <li><a href="#home">自宅で看取るということ</a></li>
+      <li><a href="#hospital">病院で看取るということ</a></li>
+      <li><a href="#facility">施設で看取るということ</a></li>
+      <li><a href="#howto">家族でどう話し合うか</a></li>
+      <li><a href="#prepare">今から準備できること</a></li>
+      <li><a href="#summary">まとめ</a></li>
+    </ol>
+  </div>
+
+  <div class="article-body">
+
+    <h2 id="reality">「どこで最期を」という問いと向き合う</h2>
+
+    <p>「看取り」という言葉を、まだ遠い話だと感じていますか。</p>
+
+    <p>介護が始まって数ヶ月の方にとっては、まだ先のことに思えるかもしれません。でも実際には、「気づいたら考える時間がなかった」「急に病院から決断を迫られた」という経験をする家族が非常に多いのです。</p>
+
+    <p>看取りの場所を決めることは、本人の最後の時間をどう過ごしてほしいか、家族としてどう関わりたいかを考えることです。タブーではありません。むしろ、元気なうちに話し合っておくことが、後悔を減らす最善の方法です。</p>
+
+    <p>この記事では、自宅・病院・施設それぞれの「現実」を正直に伝えたうえで、家族として準備できることを整理します。</p>
+
+    <div class="experience-box">
+      <div class="experience-header">
+        <span class="experience-icon">👩</span>
+        <div>
+          <span class="experience-name">山田美智子さん（仮名）・60代・専業主婦</span>
+          <span class="experience-sub">夫婦2人暮らし／義母を3年間在宅介護</span>
+        </div>
+      </div>
+      <p class="experience-body">「最後は家で死にたい」って、義母はずっと言っていました。でも実際に容態が悪くなったとき、私たちは慌てて救急車を呼んでしまって。病院で亡くなりました。義母の望みを叶えてあげられなかったという気持ちが、ずっと残っています。事前に在宅医を決めておけば、選択肢があったのに。あのとき知っていれば、と今でも思います。</p>
+    </div>
+
+    <h2 id="stats">日本人はどこで亡くなっているか</h2>
+
+    <p>厚生労働省の調査によると、日本人の死亡場所は以下のように分布しています。</p>
+
+    <ul>
+      <li><strong>病院：約65%</strong></li>
+      <li><strong>介護施設・老人ホーム：約14%</strong></li>
+      <li><strong>自宅：約17%</strong></li>
+      <li>その他：約4%</li>
+    </ul>
+
+    <p>一方で、「自宅で最期を迎えたい」と希望する人は約70%以上という調査もあります。希望と現実の間には、大きなギャップがあります。</p>
+
+    <p>このギャップが生まれる理由の多くは、「準備が間に合わなかった」「急変して選択肢がなかった」「家族が対応できる自信がなかった」というものです。逆に言えば、準備があれば選択肢は広がります。</p>
+
+    <h2 id="home">自宅で看取るということ</h2>
+
+    <p>自宅での看取りは、本人にとって慣れ親しんだ環境で、家族と近くにいながら最期を過ごせるという点で、希望する方が多い選択です。しかし、その現実を正直に知っておく必要があります。</p>
+
+    <h3>在宅での看取りに必要なこと</h3>
+    <p>自宅で最期を迎えるには、<strong>在宅医（訪問診療を行う医師）との契約が不可欠</strong>です。在宅医がいれば、容態が変化したときに往診してもらえます。深夜に亡くなった場合でも、在宅医が死亡診断書を書くことで、救急車を呼ばずに対応できます。</p>
+
+    <p>逆に在宅医がいない状態で自宅で亡くなると、警察による検視が必要になるケースがあります。「静かに家で送り出したい」と思っているなら、在宅医との契約は早めに済ませておくことが重要です。</p>
+
+    <div class="point-box">
+      <div class="point-box-title">在宅看取りに必要な準備</div>
+      <ul>
+        <li>在宅医（訪問診療医）との契約</li>
+        <li>訪問看護師のサポート体制</li>
+        <li>急変時の対応方針（蘇生処置を望むか否か）の事前確認</li>
+        <li>24時間対応できる家族・サポーターの確保</li>
+        <li>ターミナル期の症状（呼吸変化・意識低下等）についての理解</li>
+      </ul>
+    </div>
+
+    <h3>在宅看取りの正直な難しさ</h3>
+    <p>自宅での看取りは、家族にとって身体的にも精神的にも非常に負担が大きいものです。容態が変化するたびに動揺し、眠れない夜が続くこともあります。「自分のせいで苦しませているのではないか」という不安が生まれることもあります。</p>
+    <p>それでも、「家にいられてよかった」「自分たちで看取れた」という達成感と安心感を感じる家族も多くいます。難しさを知った上で、それでも選びたいかどうかを家族で話し合うことが大切です。</p>
+
+    <h2 id="hospital">病院で看取るということ</h2>
+
+    <p>急変時に救急搬送され、そのまま病院で亡くなるケースは日本では最も多いパターンです。医療的なサポートが充実しており、苦痛を和らげる処置（緩和ケア）を受けながら過ごせるという安心感があります。</p>
+
+    <h3>病院看取りのメリット</h3>
+    <ul>
+      <li>医師・看護師が24時間対応し、苦痛管理（鎮痛剤等）が適切に行われる</li>
+      <li>急変時に迅速な医療対応が受けられる</li>
+      <li>家族の身体的負担が少ない</li>
+    </ul>
+
+    <h3>病院看取りの現実</h3>
+    <p>ただし、病院での看取りには「面会時間の制限」「複数人部屋では別室での面会ができないこともある」「本人が慣れない環境で最期を過ごす」といった側面もあります。</p>
+
+    <p>近年は「緩和ケア病棟（ホスピス）」を持つ病院も増えており、延命治療を行わず、苦痛を和らげることに特化した環境で過ごせる選択肢もあります。かかりつけ医に「緩和ケア病棟への入院は可能か」を早めに相談しておくことをおすすめします。</p>
+
+    <div class="warn-box">
+      ⚠️ 緩和ケア病棟は空きが少なく、申し込んでから入院まで数週間〜数ヶ月かかることもあります。「いざとなったら」ではなく、早い段階で相談を始めておくことが大切です。
+    </div>
+
+    <h2 id="facility">施設で看取るということ</h2>
+
+    <p>特別養護老人ホームや有料老人ホームなど、介護施設での看取りに対応する施設が近年増えています。施設によって「看取り対応の有無」が異なるため、入居時または入居前に確認が必要です。</p>
+
+    <h3>施設看取りのメリット</h3>
+    <ul>
+      <li>すでに生活に慣れた環境で最期を迎えられる</li>
+      <li>介護スタッフがそばにいるため家族の負担が軽い</li>
+      <li>看取り対応の施設では、医師・看護師と連携した緩和ケアが受けられる</li>
+    </ul>
+
+    <h3>確認すべきこと</h3>
+    <div class="point-box">
+      <div class="point-box-title">施設入居前・入居時に確認しておくこと</div>
+      <ul>
+        <li>看取り対応を行っているか（行っていない施設では病院搬送になる）</li>
+        <li>看取り期の家族への連絡体制はどうなっているか</li>
+        <li>協力医・訪問診療医との連携はあるか</li>
+        <li>最期の時間に家族が泊まり込めるか</li>
+        <li>本人の希望（延命処置の有無等）をスタッフと共有できるか</li>
+      </ul>
+    </div>
+
+    <h3>3つの選択肢を比較する</h3>
+    <div class="compare-grid">
+      <div class="compare-card">
+        <div class="compare-card-title">自宅</div>
+        <ul>
+          <li>慣れた環境で過ごせる</li>
+          <li>家族が近くにいられる</li>
+          <li>在宅医の確保が必須</li>
+          <li>家族の負担が大きい</li>
+          <li>24時間体制の準備が必要</li>
+        </ul>
+      </div>
+      <div class="compare-card">
+        <div class="compare-card-title">病院</div>
+        <ul>
+          <li>医療サポートが充実</li>
+          <li>苦痛管理がしやすい</li>
+          <li>緩和ケア病棟は申込が必要</li>
+          <li>面会制限がある場合も</li>
+          <li>慣れない環境になりやすい</li>
+        </ul>
+      </div>
+      <div class="compare-card">
+        <div class="compare-card-title">施設</div>
+        <ul>
+          <li>生活の場で看取れる</li>
+          <li>家族の身体的負担が少ない</li>
+          <li>施設ごとに対応差がある</li>
+          <li>入居前の確認が重要</li>
+          <li>協力医との連携が鍵</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 id="howto">家族でどう話し合うか</h2>
+
+    <p>「最期の話」を親に切り出すことを、ためらう家族は多いです。「縁起でもない」「まだそんな話をする必要はない」と感じるのは自然なことです。</p>
+
+    <p>それでも、話し合いは早ければ早いほど良い。本人が意思を伝えられる状態のうちに、希望を確認しておくことが後悔を減らします。</p>
+
+    <h3>話し合いを始めるきっかけの作り方</h3>
+    <ul>
+      <li>「入院したとき延命治療はどうしたい？」から入ると比較的話しやすい</li>
+      <li>テレビや記事の話題から自然につなげる</li>
+      <li>「もしもの話をしておきたいんだけど」と正直に切り出す</li>
+      <li>エンディングノートを一緒に書く機会を作る</li>
+    </ul>
+
+    <h3>確認しておきたい本人の意思</h3>
+    <div class="point-box">
+      <div class="point-box-title">できれば本人から聞いておきたいこと</div>
+      <ul>
+        <li>最期はどこで過ごしたいか（自宅・施設・病院）</li>
+        <li>延命治療（人工呼吸器・胃ろう・心臓マッサージ等）を望むか</li>
+        <li>苦痛を和らげることを優先してほしいか</li>
+        <li>葬儀・お墓についての希望</li>
+        <li>会わせたい人・会いたくない人はいるか</li>
+      </ul>
+    </div>
+
+    <p>話し合った内容は、本人が書いた文書（エンディングノートや「事前指示書」）として残しておくことをおすすめします。医療現場での判断を支援する大切な資料になります。</p>
+
+    <h2 id="prepare">今から準備できること</h2>
+
+    <p>「まだ先の話」と思っていても、今から動いておけることがあります。急変時に選択肢を持てるかどうかは、準備にかかっています。</p>
+
+    <ul>
+      <li><strong>在宅医・訪問診療医を探しておく</strong>：自宅での看取りを希望するなら必須。早めに相談を始めましょう。</li>
+      <li><strong>かかりつけ医に希望を伝えておく</strong>：延命治療の希望・緩和ケアへの移行のタイミングなど、主治医と共有しておきます。</li>
+      <li><strong>施設入居中の方は施設の看取り方針を確認する</strong>：施設ごとに対応が異なります。今のうちに確認して、必要ならケアマネジャーに相談してください。</li>
+      <li><strong>エンディングノートを準備する</strong>：市区町村の窓口やインターネットで無料で手に入ります。本人と一緒に書いてみることが話し合いのきっかけになります。</li>
+    </ul>
+
+    <div class="summary-box">
+      <h3>まとめ：看取りの準備で大切なこと</h3>
+      <ol>
+        <li>本人の「どこで最期を迎えたいか」という希望を早めに確認する</li>
+        <li>自宅を希望するなら在宅医との契約を先に進める</li>
+        <li>施設なら看取り対応の有無を入居前に確認する</li>
+        <li>緩和ケア病棟を希望するなら早めにかかりつけ医に相談する</li>
+        <li>延命処置の意向を書面（エンディングノート等）で残しておく</li>
+        <li>急変時に慌てないよう、家族間で方針を共有しておく</li>
+      </ol>
+    </div>
+
+    <div class="cta-box">
+      <p>看取りのことを、誰にも話せずに抱えていませんか。匿名で話せます。</p>
+      <a href="../chat.html" class="cta-btn">AIに匿名で相談する（無料）</a>
+    </div>
+
+    
+    <div class="source-box">
+      <div class="source-box-title">📌 参考・出典</div>
+      <ul>
+        <li>厚生労働省「人生の最終段階における医療・ケアの決定プロセスに関するガイドライン」→ <a href="https://www.mhlw.go.jp/stf/houdou/0000197665.html" target="_blank" rel="noopener">https://www.mhlw.go.jp/</a></li>
+        <li>厚生労働省「在宅医療・介護連携推進事業」→ <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/chiiki-houkatsu/zaitakuiryou/index.html" target="_blank" rel="noopener">https://www.mhlw.go.jp/</a></li>
+      </ul>
+    </div>
+    <div class="disclaimer">
+      ※ 本記事は一般的な情報提供を目的としており、個別の医療・法律アドバイスではありません。具体的な対応については、担当医やケアマネジャーにご相談ください。
+    </div>
+
+  </div>
+
+  <div class="related">
+    <div class="related-title">関連記事</div>
+    <div class="related-grid">
+      <a href="home-or-facility.html" class="related-card">
+        <div class="related-card-tag">施設・在宅の選択</div>
+        <div class="related-card-title">在宅介護か施設か｜後悔しない決断のための7つの判断基準</div>
+      </a>
+      <a href="home-care-limit.html" class="related-card">
+        <div class="related-card-tag">在宅介護</div>
+        <div class="related-card-title">在宅介護の限界サイン｜限界を超える前に知っておくこと</div>
+      </a>
+      <a href="dementia-diagnosis.html" class="related-card">
+        <div class="related-card-tag">認知症</div>
+        <div class="related-card-title">親が認知症と診断されたら最初にすること</div>
+      </a>
+      <a href="care-facility-types.html" class="related-card">
+        <div class="related-card-tag">施設選び</div>
+        <div class="related-card-title">特養・有料老人ホーム・グループホームの違いと選び方</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 よりそい介護 — 介護の悩みを匿名で相談できるサイト<br><a href="../privacy.html" style="color:#A0AEC0;font-size:12px;">プライバシーポリシー</a></p>
+</footer>
+
+</body>
+</html>

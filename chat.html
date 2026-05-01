@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI相談 | CareSpace</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --accent: #DD6B20;
+      --accent2: #C05621;
+      --bg: #FFFAF0;
+      --white: #FFFFFF;
+      --text: #2D3748;
+      --text-light: #718096;
+      --border: #E2E8F0;
+    }
+    body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:var(--bg); color:var(--text); height:100vh; display:flex; flex-direction:column; }
+    nav { background:var(--white); border-bottom:1px solid var(--border); padding:0 24px; height:56px; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; }
+    .logo { font-size:18px; font-weight:700; color:var(--text); text-decoration:none; }
+    .logo span { color:var(--accent); }
+    .nav-badge { background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; font-size:11px; padding:3px 10px; border-radius:20px; font-weight:600; }
+    .layout { display:flex; flex:1; overflow:hidden; max-width:1100px; width:100%; margin:0 auto; padding:16px; gap:16px; }
+    .chat-area { flex:1; display:flex; flex-direction:column; background:var(--white); border-radius:16px; border:1px solid var(--border); overflow:hidden; }
+    .chat-header { padding:16px 20px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:12px; }
+    .ai-avatar { width:40px; height:40px; background:linear-gradient(135deg,var(--accent),var(--accent2)); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+    .ai-info h3 { font-size:15px; font-weight:700; }
+    .ai-info p { font-size:12px; color:var(--text-light); }
+    .online-dot { width:8px; height:8px; background:#48BB78; border-radius:50%; display:inline-block; margin-right:4px; }
+    .messages { flex:1; overflow-y:auto; padding:20px; display:flex; flex-direction:column; gap:16px; }
+    .msg { display:flex; gap:10px; max-width:85%; }
+    .msg.user { align-self:flex-end; flex-direction:row-reverse; }
+    .msg-avatar { width:32px; height:32px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:14px; }
+    .msg.ai .msg-avatar { background:linear-gradient(135deg,var(--accent),var(--accent2)); }
+    .msg.user .msg-avatar { background:#E2E8F0; }
+    .msg-body { display:flex; flex-direction:column; gap:4px; }
+    .msg.user .msg-body { align-items:flex-end; }
+    .bubble { padding:12px 16px; border-radius:16px; font-size:14px; line-height:1.7; }
+    .msg.ai .bubble { background:var(--bg); border-radius:4px 16px 16px 16px; }
+    .msg.user .bubble { background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; border-radius:16px 4px 16px 16px; }
+    .msg-time { font-size:11px; color:#A0AEC0; }
+    .typing .bubble { background:var(--bg); padding:14px 18px; }
+    .typing-dots { display:flex; gap:4px; align-items:center; }
+    .typing-dots span { width:7px; height:7px; background:var(--text-light); border-radius:50%; animation:bounce 1.2s infinite; }
+    .typing-dots span:nth-child(2) { animation-delay:0.2s; }
+    .typing-dots span:nth-child(3) { animation-delay:0.4s; }
+    @keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+    .affiliate-card { border:1px solid var(--border); border-radius:12px; padding:14px 16px; background:var(--white); margin-top:8px; text-decoration:none; color:inherit; display:flex; align-items:center; gap:12px; transition:box-shadow 0.2s,border-color 0.2s; position:relative; }
+    .affiliate-card:hover { box-shadow:0 4px 16px rgba(221,107,32,0.15); border-color:var(--accent); }
+    .affiliate-icon { font-size:28px; flex-shrink:0; }
+    .affiliate-info { flex:1; }
+    .pr-badge { position:absolute; top:8px; right:8px; background:#718096; color:#fff; font-size:9px; font-weight:700; padding:2px 6px; border-radius:4px; letter-spacing:0.5px; }
+    .affiliate-label { font-size:10px; color:var(--accent); font-weight:600; margin-bottom:2px; }
+    .affiliate-name { font-size:13px; font-weight:700; color:var(--text); margin-bottom:2px; }
+    .affiliate-desc { font-size:11px; color:var(--text-light); }
+    .affiliate-arrow { color:var(--accent); font-size:18px; }
+    .line-banner { background:linear-gradient(135deg,#06C755,#00A041); border-radius:12px; padding:14px 16px; margin-top:8px; display:flex; align-items:center; gap:12px; cursor:pointer; text-decoration:none; }
+    .line-banner-text h4 { color:#fff; font-size:13px; font-weight:700; margin-bottom:2px; }
+    .line-banner-text p { color:rgba(255,255,255,0.85); font-size:11px; }
+    .line-icon { font-size:28px; }
+    .input-area { padding:16px; border-top:1px solid var(--border); display:flex; gap:10px; align-items:flex-end; }
+    .input-wrap { flex:1; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:10px 14px; display:flex; align-items:center; transition:border-color 0.2s; }
+    .input-wrap:focus-within { border-color:var(--accent); }
+    textarea { flex:1; background:none; border:none; outline:none; font-family:inherit; font-size:14px; color:var(--text); resize:none; max-height:100px; line-height:1.5; }
+    textarea::placeholder { color:#A0AEC0; }
+    .send-btn { width:40px; height:40px; background:linear-gradient(135deg,var(--accent),var(--accent2)); border:none; border-radius:10px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:opacity 0.2s; flex-shrink:0; }
+    .send-btn:hover { opacity:0.9; }
+    .send-btn svg { width:18px; height:18px; fill:#fff; }
+    .side-panel { width:280px; display:flex; flex-direction:column; gap:12px; flex-shrink:0; }
+    .panel-card { background:var(--white); border:1px solid var(--border); border-radius:16px; padding:20px; }
+    .panel-title { font-size:13px; font-weight:700; color:var(--text); margin-bottom:12px; }
+    .topic-btn { width:100%; text-align:left; background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:10px 12px; font-size:13px; color:var(--text); cursor:pointer; margin-bottom:6px; transition:all 0.2s; font-family:inherit; }
+    .topic-btn:last-child { margin-bottom:0; }
+    .topic-btn:hover { background:#FFF5E6; border-color:var(--accent); color:var(--accent2); }
+    .anon-note { font-size:12px; color:var(--text-light); line-height:1.7; }
+    .anon-note li { margin-left:16px; margin-bottom:4px; }
+    @media (max-width:768px) { .side-panel { display:none; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Care<span>Space</span></a>
+  <span class="nav-badge">AI相談 無料・匿名</span>
+</nav>
+<div class="layout">
+  <div class="chat-area">
+    <div class="chat-header">
+      <div class="ai-avatar">🤖</div>
+      <div class="ai-info">
+        <h3>CareSpace AI</h3>
+        <p><span class="online-dot"></span>オンライン・24時間対応</p>
+      </div>
+    </div>
+    <div class="messages" id="messages">
+      <div class="msg ai">
+        <div class="msg-avatar">🤖</div>
+        <div class="msg-body">
+          <div class="bubble">こんにちは。CareSpace AIです。<br>親の介護・認知症・施設探し・介護疲れなど、どんな悩みでも匿名で話してください。<br><br>一人で抱え込まなくて大丈夫です。</div>
+          <div class="msg-time">今</div>
+        </div>
+      </div>
+    </div>
+    <div class="input-area">
+      <div class="input-wrap">
+        <textarea id="userInput" placeholder="悩みを入力してください（匿名・無料）" rows="1"
+          onkeydown="handleKey(event)" oninput="autoResize(this)"
+          autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+      </div>
+      <button class="send-btn" onclick="sendMessage()">
+        <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="side-panel">
+    <div class="panel-card">
+      <div class="panel-title">💬 よくある相談</div>
+      <button class="topic-btn" onclick="setTopic('父が認知症と診断されました。これからどうすればいいですか')">認知症の診断後の対応</button>
+      <button class="topic-btn" onclick="setTopic('母を老人ホームに入れることを検討しています')">施設への入居を検討中</button>
+      <button class="topic-btn" onclick="setTopic('介護費用がいくらかかるのか不安です')">介護費用の不安</button>
+      <button class="topic-btn" onclick="setTopic('介護と仕事の両立が限界です')">介護と仕事の両立</button>
+      <button class="topic-btn" onclick="setTopic('在宅介護で疲れ果てています')">介護疲れ・限界</button>
+    </div>
+    <div class="panel-card">
+      <div class="panel-title">🔒 プライバシーについて</div>
+      <ul class="anon-note">
+        <li>名前・メール不要</li>
+        <li>会話履歴は保存しない</li>
+        <li>IPアドレスは記録しない</li>
+        <li>いつでも会話を終了できる</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  const affiliates = {
+    sudden: [
+      { icon:'🏥', label:'ケアマネ相談（アフィリエイト）', name:'介護サービス一括相談窓口', desc:'ケアマネジャーへの無料相談・介護認定サポート', url:'#' },
+      { icon:'📋', label:'介護サービス紹介', name:'介護保険サービス無料案内', desc:'使えるサービスをまとめて無料相談', url:'#' },
+    ],
+    dementia: [
+      { icon:'🧠', label:'専門機関紹介', name:'認知症専門 無料相談窓口', desc:'認知症の進行・日常ケア・法的手続きを相談', url:'#' },
+      { icon:'📱', label:'見守りサービス', name:'GPS見守り・認知症サポートアプリ', desc:'徘徊対策・位置確認・家族への通知', url:'#' },
+    ],
+    cost: [
+      { icon:'🏠', label:'施設紹介（高単価）', name:'老人ホーム・施設 無料相談', desc:'費用・空き状況・見学手配まで無料サポート', url:'#' },
+      { icon:'💰', label:'FP紹介', name:'介護費用FP無料相談', desc:'介護保険・高額療養費・補助金を整理', url:'#' },
+    ],
+    facility: [
+      { icon:'🏠', label:'施設紹介（高単価）', name:'老人ホーム 無料相談・見学予約', desc:'特養・有料老人ホーム・グループホームを比較', url:'#' },
+      { icon:'📊', label:'施設比較サービス', name:'みんなの介護 施設検索', desc:'口コミ・費用・空き状況を一括比較', url:'#' },
+    ],
+    work: [
+      { icon:'💼', label:'社労士紹介', name:'介護休業・両立支援 無料相談', desc:'介護休業給付・職場への相談方法をサポート', url:'#' },
+      { icon:'📖', label:'情報提供', name:'介護と仕事の両立ガイド（無料）', desc:'制度・手続き・体験談をまとめた無料資料', url:'#' },
+    ],
+    burnout: [
+      { icon:'💬', label:'カウンセリング紹介', name:'介護者向けカウンセリング', desc:'介護疲れ・燃え尽き症候群の専門相談', url:'#' },
+      { icon:'🏠', label:'施設紹介（高単価）', name:'ショートステイ・デイサービス案内', desc:'一時的に預けて自分の時間を取り戻す', url:'#' },
+    ],
+  };
+
+  const rules = [
+    {
+      keywords:['突然','倒れ','入院','退院','始まった','急に','どうすれば'],
+      category:'sudden',
+      responses:[
+        '突然のことで、頭が真っ白になっていますよね。今のお父様（お母様）の状態と、ご家族の状況を少し教えてもらえますか？',
+        'まず落ち着いて。介護が突然始まった場合、最初にすることは「介護認定の申請」です。お住まいの市区町村に連絡することから始められます。',
+        'つらい状況ですね。今、一番困っていることは何ですか？退院後の生活・費用・家族間の役割分担、どこから整理しましょうか？',
+      ],
+    },
+    {
+      keywords:['認知症','物忘れ','徘徊','怒','診断','アルツハイマー','記憶'],
+      category:'dementia',
+      responses:[
+        '認知症の診断は、本人も家族もとても不安ですよね。今はどの段階にいますか？診断されたばかりですか、それとも少し経ちますか？',
+        '徘徊は本当に心配ですね。夜中に出てしまうのは、介護する側にとって大きな負担です。今、どんな対策をとっていますか？',
+        '認知症の方への接し方で一番大切なのは「否定しない」ことです。今、どんな場面で特に困っていますか？',
+      ],
+    },
+    {
+      keywords:['費用','お金','いくら','介護保険','高い','払えない','負担'],
+      category:'cost',
+      responses:[
+        '介護費用の不安は多くの方が抱えています。今、要介護認定は受けていますか？認定を受けると介護保険が使えて費用が大きく変わります。',
+        '在宅介護と施設入居では月々の費用がかなり異なります。今の状況（要介護度・収入・資産）を教えてもらえますか？',
+        '介護保険を使えば自己負担は1〜3割に抑えられます。まだ申請していない場合は、市区町村の窓口への相談が最初のステップです。',
+      ],
+    },
+    {
+      keywords:['施設','老人ホーム','特養','有料','グループホーム','入居','入れる'],
+      category:'facility',
+      responses:[
+        '施設への入居を考えているんですね。特養・有料老人ホーム・グループホームで費用も特徴もかなり違います。今の要介護度と、月々の予算はどのくらいですか？',
+        '施設に入れることへの罪悪感を感じていませんか？それはとても自然な気持ちです。でも、施設入居は「見捨てる」ことではありません。',
+        '施設を選ぶ際に大切なポイントは、立地・費用・スタッフの質・看取り対応の4つです。どんな条件を重視していますか？',
+      ],
+    },
+    {
+      keywords:['仕事','両立','辞め','離職','会社','休業','有休'],
+      category:'work',
+      responses:[
+        '介護と仕事の両立は本当に大変ですね。今の職場には介護のことを伝えていますか？',
+        '介護離職は経済的にも精神的にも後々きつくなることが多いです。介護休業制度や介護休暇を使って、すぐに辞めない方法を一緒に考えてみましょう。',
+        '介護休業給付金という制度があり、休業中も給与の約67%が受け取れます。知っていましたか？',
+      ],
+    },
+    {
+      keywords:['疲れ','限界','もう嫌','つらい','自分の時間','休みたい','燃え尽き'],
+      category:'burnout',
+      responses:[
+        'ここまでよく頑張ってきましたね。今、どのくらいの頻度で介護をしていますか？一人でやっていますか？',
+        '「もう嫌だ」と思うのは当然のことです。介護者自身が疲弊すると、介護の質も下がってしまいます。あなたを休ませることが最優先です。',
+        '介護疲れを感じているなら、ショートステイ（短期施設入所）やデイサービスを使って、定期的に休む時間を作ることが大切です。',
+      ],
+    },
+  ];
+
+  const defaultResponses = [
+    'もう少し詳しく教えていただけますか？今一番困っていることは何ですか？',
+    '介護の悩みは本当に複雑で、一人で抱えていたら限界がきますよね。どんな状況か、少し教えてください。',
+    'お話を聞かせてください。今、介護をしているのはあなた一人ですか？',
+    'なるほど。その悩みはいつ頃から始まりましたか？',
+  ];
+
+  let messageCount = 0;
+  let shownLine = false;
+
+  function getTime() { return new Date().toLocaleTimeString('ja-JP',{hour:'2-digit',minute:'2-digit'}); }
+
+  function addMessage(role, text, extras = null) {
+    const messages = document.getElementById('messages');
+    const div = document.createElement('div');
+    div.className = `msg ${role}`;
+    let extrasHtml = '';
+    if (extras) {
+      if (extras.affiliates) {
+        extrasHtml += extras.affiliates.map(a=>`
+          <a href="${a.url}" class="affiliate-card" target="_blank" rel="noopener">
+            <span class="pr-badge">PR</span>
+            <div class="affiliate-icon">${a.icon}</div>
+            <div class="affiliate-info">
+              <div class="affiliate-label">${a.label}</div>
+              <div class="affiliate-name">${a.name}</div>
+              <div class="affiliate-desc">${a.desc}</div>
+            </div>
+            <div class="affiliate-arrow">›</div>
+          </a>`).join('');
+      }
+      if (extras.line) {
+        extrasHtml += `<a href="#" class="line-banner">
+          <div class="line-icon">💬</div>
+          <div class="line-banner-text">
+            <h4>LINEで続きを相談する</h4>
+            <p>施設探しのサポートもお伝えします</p>
+          </div>
+        </a>`;
+      }
+    }
+    div.innerHTML = `
+      <div class="msg-avatar">${role==='ai'?'🤖':'👤'}</div>
+      <div class="msg-body">
+        <div class="bubble">${text}</div>
+        ${extrasHtml}
+        <div class="msg-time">${getTime()}</div>
+      </div>`;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function showTyping() {
+    const messages = document.getElementById('messages');
+    const div = document.createElement('div');
+    div.className='msg ai typing'; div.id='typing';
+    div.innerHTML=`<div class="msg-avatar">🤖</div><div class="msg-body"><div class="bubble"><div class="typing-dots"><span></span><span></span><span></span></div></div></div>`;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function removeTyping() { const t=document.getElementById('typing'); if(t)t.remove(); }
+
+  function detectRule(text) {
+    for (const rule of rules) {
+      if (rule.keywords.some(k=>text.includes(k))) return rule;
+    }
+    return null;
+  }
+
+  function sendMessage() {
+    const input = document.getElementById('userInput');
+    const text = input.value.trim();
+    if (!text) return;
+    addMessage('user', text);
+    input.value=''; input.style.height='auto';
+    messageCount++;
+    showTyping();
+    setTimeout(() => {
+      removeTyping();
+      const rule = detectRule(text);
+      let response, extras = {};
+      if (rule) {
+        response = rule.responses[Math.floor(Math.random()*rule.responses.length)];
+        if (messageCount >= 2) extras.affiliates = affiliates[rule.category] || [];
+      } else {
+        response = defaultResponses[Math.min(messageCount-1, defaultResponses.length-1)];
+      }
+      if (messageCount >= 3 && !shownLine) { extras.line=true; shownLine=true; }
+      addMessage('ai', response, Object.keys(extras).length ? extras : null);
+    }, 1000 + Math.random()*800);
+  }
+
+  let isComposing = false;
+  document.getElementById('userInput').addEventListener('compositionstart', () => isComposing = true);
+  document.getElementById('userInput').addEventListener('compositionend', () => isComposing = false);
+  function handleKey(e) { if(e.key==='Enter'&&!e.shiftKey&&!isComposing){e.preventDefault();sendMessage();} }
+  function autoResize(el) { el.style.height='auto'; el.style.height=Math.min(el.scrollHeight,100)+'px'; }
+  function setTopic(text) { document.getElementById('userInput').value=text; document.getElementById('userInput').focus(); }
+</script>
+</body>
+</html>

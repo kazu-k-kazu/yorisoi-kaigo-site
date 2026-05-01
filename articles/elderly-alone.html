@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一人暮らしの親が心配｜見守りと安否確認の始め方 | よりそい介護</title>
+  <meta name="description" content="「親が一人で大丈夫か不安」「倒れていても気づけない」——高齢の一人暮らしの親を遠くから見守るための方法と、限界のサインを見逃さないポイントを解説します。">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:#FFFAF0; color:#2D3748; line-height:1.8; }
+    nav { background:#fff; border-bottom:1px solid #E2E8F0; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+    .logo { font-size:20px; font-weight:700; color:#2D3748; text-decoration:none; }
+    .logo span { color:#DD6B20; }
+    .back-link { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .back-link:hover { text-decoration:underline; }
+    .container { max-width:780px; margin:48px auto; padding:0 24px; }
+    .article-header { margin-bottom:32px; }
+    .cat-tag { display:inline-block; background:rgba(221,107,32,0.1); color:#DD6B20; font-size:12px; font-weight:600; padding:4px 12px; border-radius:20px; margin-bottom:12px; }
+    h1 { font-size:28px; font-weight:700; color:#1A202C; line-height:1.4; margin-bottom:16px; }
+    .article-meta { display:flex; gap:20px; font-size:13px; color:#718096; flex-wrap:wrap; }
+    .toc { background:#fff; border:1px solid #E2E8F0; border-radius:12px; padding:24px 28px; margin-bottom:32px; }
+    .toc-title { font-size:14px; font-weight:700; color:#2D3748; margin-bottom:12px; }
+    .toc ol { padding-left:20px; }
+    .toc li { margin-bottom:8px; }
+    .toc a { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .toc a:hover { text-decoration:underline; }
+    .article-body { background:#fff; border-radius:16px; padding:40px; box-shadow:0 2px 12px rgba(45,55,72,0.06); margin-bottom:24px; }
+    .article-body h2 { font-size:22px; font-weight:700; color:#2D3748; margin:40px 0 16px; padding:12px 16px; border-left:4px solid #DD6B20; background:rgba(221,107,32,0.04); border-radius:0 8px 8px 0; }
+    .article-body h2:first-child { margin-top:0; }
+    .article-body h3 { font-size:17px; font-weight:700; color:#4A5568; margin:28px 0 12px; padding-left:12px; border-left:2px solid #CBD5E0; }
+    .article-body p { margin-bottom:18px; font-size:16px; line-height:2.0; }
+    .article-body ul, .article-body ol { margin:12px 0 20px 24px; }
+    .article-body li { margin-bottom:10px; font-size:15px; line-height:1.7; }
+    .article-body strong { color:#2D3748; font-weight:700; }
+    .point-box { background:rgba(221,107,32,0.06); border:1px solid rgba(221,107,32,0.2); border-radius:10px; padding:20px 24px; margin:24px 0; }
+    .point-box-title { font-size:13px; font-weight:700; color:#DD6B20; margin-bottom:10px; }
+    .point-box ul { margin:0; padding-left:20px; }
+    .point-box li { font-size:14px; margin-bottom:8px; }
+    .warn-box { background:#FFFBEB; border:1px solid #F6E05E; border-radius:10px; padding:16px 20px; margin:24px 0; font-size:13px; color:#744210; line-height:1.7; }
+    .check-box { background:#EBF8FF; border:1px solid #90CDF4; border-radius:10px; padding:20px 24px; margin:24px 0; }
+    .check-box-title { font-size:13px; font-weight:700; color:#2B6CB0; margin-bottom:12px; }
+    .check-item { display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; font-size:14px; line-height:1.6; color:#2D3748; }
+    .check-item::before { content:"☐"; font-size:16px; color:#63B3ED; flex-shrink:0; margin-top:1px; }
+    .tool-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:24px 0; }
+    .tool-card { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:10px; padding:16px 20px; }
+    .tool-card-icon { font-size:24px; margin-bottom:8px; }
+    .tool-card-title { font-size:14px; font-weight:700; color:#2D3748; margin-bottom:6px; }
+    .tool-card-body { font-size:13px; color:#4A5568; line-height:1.7; }
+    .tool-card-cost { font-size:11px; color:#DD6B20; font-weight:600; margin-top:8px; }
+    .experience-box { background:#FFF8F0; border-left:4px solid #DD6B20; border-radius:0 10px 10px 0; padding:20px 24px; margin:28px 0; }
+    .experience-header { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+    .experience-icon { font-size:28px; line-height:1; }
+    .experience-name { font-size:14px; font-weight:700; color:#2D3748; display:block; }
+    .experience-sub { font-size:12px; color:#718096; }
+    .experience-body { font-size:14px; color:#4A5568; line-height:1.85; margin:0; }
+    .experience-body::before { content:'"'; color:#DD6B20; font-size:20px; line-height:0; vertical-align:-4px; margin-right:2px; }
+    .experience-body::after  { content:'"'; color:#DD6B20; font-size:20px; line-height:0; vertical-align:-4px; margin-left:2px; }
+    .summary-box { background:linear-gradient(135deg,#FFF5E6,#FEF3C7); border-radius:12px; padding:28px; margin:32px 0; }
+    .summary-box h3 { font-size:18px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .summary-box ol { padding-left:20px; }
+    .summary-box li { margin-bottom:10px; font-size:14px; font-weight:600; color:#4A5568; }
+    .cta-box { background:linear-gradient(135deg,#744210,#C05621); border-radius:12px; padding:28px; text-align:center; margin-top:32px; }
+    .cta-box p { color:rgba(255,255,255,0.85); font-size:14px; margin-bottom:16px; }
+    .cta-btn { display:inline-block; background:#fff; color:#744210; padding:12px 32px; border-radius:8px; font-weight:700; font-size:15px; text-decoration:none; }
+    .disclaimer { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:14px 18px; font-size:12px; color:#718096; line-height:1.7; margin-top:24px; }
+    .related { margin-top:32px; }
+    .related-title { font-size:16px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .related-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .related-card { background:#fff; border:1px solid #E2E8F0; border-radius:10px; padding:16px; text-decoration:none; color:inherit; transition:border-color 0.2s; }
+    .related-card:hover { border-color:#DD6B20; }
+    .related-card-tag { font-size:11px; color:#DD6B20; font-weight:600; margin-bottom:6px; }
+    .related-card-title { font-size:13px; font-weight:600; color:#2D3748; line-height:1.5; }
+    footer { text-align:center; padding:48px; color:#A0AEC0; font-size:13px; margin-top:48px; }
+    @media (max-width:768px) {
+      nav { padding:0 16px; }
+      .container { margin:24px auto; }
+      h1 { font-size:22px; }
+      .article-body { padding:24px 20px; }
+      .related-grid { grid-template-columns:1fr; }
+      .tool-grid { grid-template-columns:1fr; }
+    }
+  
+    .source-box { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:16px 20px; margin:24px 0 0; }
+    .source-box-title { font-size:12px; font-weight:700; color:#4A5568; margin-bottom:10px; }
+    .source-box ul { padding-left:16px; margin:0; }
+    .source-box li { font-size:11px; color:#718096; margin-bottom:6px; line-height:1.7; }
+    .source-box a { color:#DD6B20; text-decoration:none; }
+    .source-box a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">よりそい<span>介護</span></a>
+  <a href="../article-list.html" class="back-link">← 記事一覧に戻る</a>
+</nav>
+
+<div class="container">
+  <div class="article-header">
+    <span class="cat-tag">遠距離介護</span>
+    <h1>一人暮らしの親が心配｜見守りと安否確認の始め方</h1>
+    <div class="article-meta">
+      <span>2026年4月30日</span>
+      <span>読了時間：約8分</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">目次</div>
+    <ol>
+      <li><a href="#risk">一人暮らし高齢者のリスク</a></li>
+      <li><a href="#signs">「そろそろ限界」のサイン</a></li>
+      <li><a href="#tools">見守りに使えるツール・サービス</a></li>
+      <li><a href="#network">人のネットワークを作る</a></li>
+      <li><a href="#next">一人暮らしを続けるか、同居・施設かの判断</a></li>
+      <li><a href="#summary">まとめ</a></li>
+    </ol>
+  </div>
+
+  <div class="article-body">
+
+    <h2 id="risk">一人暮らし高齢者のリスク</h2>
+    <p>現在、65歳以上の一人暮らし世帯は約750万世帯（2020年国勢調査）。「まだ元気だから大丈夫」と思っていても、離れて住む家族には見えていないリスクが日々積み重なっています。</p>
+
+    <div class="experience-box">
+      <div class="experience-header">
+        <span class="experience-icon">👩</span>
+        <div>
+          <span class="experience-name">中村美智子さん（仮名）・50代・パート勤務</span>
+          <span class="experience-sub">父・79歳が一人暮らし。車で2時間の距離</span>
+        </div>
+      </div>
+      <p class="experience-body">父は「元気だから心配するな」って毎回言うんです。でも先日帰ったら、台所のコンロが消し忘れで黒焦げになっていて。「いつから？」って聞いたら「そんなことあったっけ」って。本人はケロッとしているけど、こっちは震えました。毎日電話しても「大丈夫」しか言わないから、本当のことは電話じゃ分からないんだってその時初めてわかりました。</p>
+    </div>
+
+    <div class="point-box">
+      <div class="point-box-title">一人暮らし高齢者に多いリスク</div>
+      <ul>
+        <li><strong>孤独死・発見の遅れ</strong>：転倒・脳卒中などで倒れても気づかれない</li>
+        <li><strong>火の不始末</strong>：認知機能の低下でコンロ・タバコの消し忘れ</li>
+        <li><strong>栄養不足・体重減少</strong>：買い物・料理が億劫になり食事が偏る</li>
+        <li><strong>詐欺被害</strong>：オレオレ詐欺・訪問販売・不審な契約</li>
+        <li><strong>服薬管理ミス</strong>：飲み忘れ・飲み過ぎ・処方薬の混在</li>
+        <li><strong>社会的孤立</strong>：外出が減り、人との関わりが消えていく</li>
+      </ul>
+    </div>
+
+    <h2 id="signs">「そろそろ限界」のサイン</h2>
+    <p>帰省した時や電話・ビデオ通話で以下のサインがあれば、一人暮らしの継続が難しくなってきているかもしれません。</p>
+
+    <div class="check-box">
+      <div class="check-box-title">一人暮らし継続が難しくなってきたサイン（3つ以上で要検討）</div>
+      <div class="check-item">冷蔵庫に賞味期限切れの食品が多い・食事の準備ができていない</div>
+      <div class="check-item">体重が明らかに減っている</div>
+      <div class="check-item">部屋が以前より散らかっている・においがする</div>
+      <div class="check-item">請求書・郵便物が開封されず溜まっている</div>
+      <div class="check-item">同じ話を繰り返す・最近あったことを覚えていない</div>
+      <div class="check-item">薬を正しく飲めていない（残りすぎている・なくなりすぎている）</div>
+      <div class="check-item">外出がほとんどなくなった・知人との交流が途絶えた</div>
+      <div class="check-item">転倒や小さな怪我が増えた</div>
+    </div>
+
+    <h2 id="tools">見守りに使えるツール・サービス</h2>
+
+    <div class="tool-grid">
+      <div class="tool-card">
+        <div class="tool-card-icon">💡</div>
+        <div class="tool-card-title">見守りセンサー（電球型）</div>
+        <div class="tool-card-body">電球の点灯パターンで生活リズムを確認。「今日まだ電気がついていない」でアラートが届く。プライバシー侵害感が低く親も受け入れやすい。</div>
+        <div class="tool-card-cost">月額500〜1,500円程度</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-icon">📱</div>
+        <div class="tool-card-title">スマートスピーカー</div>
+        <div class="tool-card-body">Amazon Echo・Google Homeでビデオ通話が簡単に。声だけで発信できるので高齢者でも使いやすい。顔を見て会話できるため安心感が高い。</div>
+        <div class="tool-card-cost">本体5,000〜15,000円・通信費別</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-icon">🚨</div>
+        <div class="tool-card-title">緊急通報ボタン</div>
+        <div class="tool-card-body">首にかけるペンダント型・据え置き型。ボタン1つで家族や警備会社に通報できる。転倒・急病時に自分で助けを呼べる。</div>
+        <div class="tool-card-cost">月額1,500〜3,000円程度</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-icon">📮</div>
+        <div class="tool-card-title">郵便局の見守りサービス</div>
+        <div class="tool-card-body">郵便局員が月1回自宅を訪問し、生活状況を家族にレポート。顔見知りの郵便局員が来るため親も安心して受け入れやすい。</div>
+        <div class="tool-card-cost">月額1,500〜2,500円程度</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-icon">🍱</div>
+        <div class="tool-card-title">配食サービス</div>
+        <div class="tool-card-body">毎日昼・夕食を届けてくれる宅配弁当。配達員が手渡しで安否確認もしてくれるサービスが多い。栄養管理と見守りを同時に解決できる。</div>
+        <div class="tool-card-cost">1食500〜800円程度</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card-icon">📷</div>
+        <div class="tool-card-title">見守りカメラ</div>
+        <div class="tool-card-body">スマホからリアルタイムで室内を確認できる。転倒の発見や生活リズムの把握に有効。必ず本人の同意を得てから設置する。</div>
+        <div class="tool-card-cost">本体3,000〜10,000円・月額不要なものも</div>
+      </div>
+    </div>
+
+    <h2 id="network">人のネットワークを作る</h2>
+    <p>ツールだけでなく、<strong>近くに住む「人の目」があることが最大の見守り</strong>です。</p>
+    <ul>
+      <li><strong>隣人・自治会への挨拶</strong>：「様子がおかしい時は連絡してほしい」と事前にお願いしておく</li>
+      <li><strong>民生委員との連携</strong>：定期的に様子を見てくれる地域のボランティア。市区町村に相談すると紹介してもらえる</li>
+      <li><strong>かかりつけ薬局の活用</strong>：処方薬の受け取りを通じて月1回は顔を見てもらえる</li>
+      <li><strong>デイサービスの活用</strong>：週1〜2回通うだけで、スタッフが日常の変化に気づいてくれる</li>
+      <li><strong>地域包括支援センターへの登録</strong>：「気になる高齢者」として登録しておくと、定期的に連絡をもらえる</li>
+    </ul>
+
+    <h2 id="next">一人暮らしを続けるか、同居・施設かの判断</h2>
+    <p>見守り体制を整えても「限界のサイン」が複数出ている場合は、一人暮らしの継続を真剣に見直す時期です。</p>
+
+    <div class="warn-box">
+      ⚠️ 「本人が一人でいたい」という希望は尊重すべきですが、本人の安全が確保できない状況では、家族が積極的に動く必要があります。「何かあってから」では遅いケースも多いです。
+    </div>
+
+    <ul>
+      <li><strong>同居</strong>：家族の生活への影響が大きい。介護保険サービスと組み合わせることで負担を分散できる</li>
+      <li><strong>サービス付き高齢者向け住宅（サ高住）</strong>：一人暮らしに近い感覚で、スタッフが常駐。自立〜軽度介護の方に向いている</li>
+      <li><strong>グループホーム・有料老人ホーム</strong>：認知症が進んでいる・身体介助が必要な場合に適切</li>
+    </ul>
+
+    <div class="summary-box">
+      <h3>まとめ</h3>
+      <ol>
+        <li>電話の「元気」は信用しすぎない。帰省時に冷蔵庫・薬・郵便物を確認する</li>
+        <li>見守りセンサー・配食サービス・緊急通報ボタンを組み合わせる</li>
+        <li>隣人・民生委員・デイサービスなど「人の目」のネットワークが最重要</li>
+        <li>限界サインが3つ以上なら一人暮らしの継続を真剣に見直す</li>
+        <li>地域包括支援センターに相談すれば、地域のサービスをまとめて紹介してもらえる</li>
+      </ol>
+    </div>
+
+    <div class="cta-box">
+      <p>「親の一人暮らし、どこまで大丈夫？」<br>AIに匿名で相談できます。</p>
+      <a href="../chat.html" class="cta-btn">AIに匿名で相談する（無料）</a>
+    </div>
+
+    
+    <div class="source-box">
+      <div class="source-box-title">📌 参考・出典</div>
+      <ul>
+        <li>厚生労働省「介護保険制度の概要」→ <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/gaiyo/index.html" target="_blank" rel="noopener">https://www.mhlw.go.jp/</a></li>
+        <li>内閣府「高齢社会白書（一人暮らし高齢者の実態）」→ <a href="https://www8.cao.go.jp/kourei/whitepaper/index-w.html" target="_blank" rel="noopener">https://www8.cao.go.jp/kourei/</a></li>
+      </ul>
+    </div>
+    <div class="disclaimer">
+      ※ 各サービスの費用・対応エリアは事業者によって異なります。ご利用前に各社にお問い合わせください。
+    </div>
+
+  </div>
+
+  <div class="related">
+    <div class="related-title">関連記事</div>
+    <div class="related-grid">
+      <a href="long-distance-care.html" class="related-card">
+        <div class="related-card-tag">遠距離介護</div>
+        <div class="related-card-title">遠距離介護を乗り越える方法｜離れて暮らす親のサポート術</div>
+      </a>
+      <a href="dementia-early-signs.html" class="related-card">
+        <div class="related-card-tag">認知症</div>
+        <div class="related-card-title">認知症の初期症状チェックリスト｜早期発見と受診のすすめ</div>
+      </a>
+      <a href="sudden-caregiving.html" class="related-card">
+        <div class="related-card-tag">急な介護開始</div>
+        <div class="related-card-title">親が突然倒れた…介護が始まったとき最初にすること</div>
+      </a>
+      <a href="home-care-limit.html" class="related-card">
+        <div class="related-card-tag">在宅介護・施設入所</div>
+        <div class="related-card-title">在宅介護の限界サイン｜施設入所を考えるタイミング</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 よりそい介護 — 介護の悩みを匿名で相談できるサイト<br><a href="../privacy.html" style="color:#A0AEC0;font-size:12px;">プライバシーポリシー</a></p>
+</footer>
+
+</body>
+</html>

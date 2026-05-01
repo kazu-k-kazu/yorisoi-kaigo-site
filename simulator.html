@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>介護費用シミュレーター｜月額負担と貯蓄の持続年数を無料計算 | CareSpace</title>
+  <meta name="description" content="要介護度・年金・貯蓄額を入力するだけで、在宅介護・施設介護の月額自己負担と貯蓄が何年持つかを無料で試算。施設タイプ別の費用比較も確認できます。">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:#FFFAF0; color:#2D3748; line-height:1.8; }
+    nav { background:#fff; border-bottom:1px solid #E2E8F0; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+    .logo { font-size:20px; font-weight:700; color:#2D3748; text-decoration:none; }
+    .logo span { color:#DD6B20; }
+    .back-link { color:#DD6B20; text-decoration:none; font-size:14px; }
+
+    .hero { background:linear-gradient(135deg,#FFFAF0,#FFF5E6); padding:48px 40px 32px; text-align:center; border-bottom:1px solid #E2E8F0; }
+    .hero-badge { display:inline-block; background:rgba(221,107,32,0.1); color:#DD6B20; font-size:12px; font-weight:600; padding:4px 14px; border-radius:20px; margin-bottom:14px; }
+    .hero h1 { font-size:28px; font-weight:700; color:#1A202C; margin-bottom:10px; line-height:1.4; }
+    .hero p { color:#718096; font-size:14px; }
+
+    .sim-wrap { max-width:680px; margin:40px auto 80px; padding:0 24px; }
+
+    /* プログレスバー */
+    .progress-wrap { margin-bottom:32px; }
+    .progress-steps { display:flex; justify-content:space-between; position:relative; margin-bottom:8px; }
+    .progress-steps::before { content:''; position:absolute; top:14px; left:0; right:0; height:2px; background:#E2E8F0; z-index:0; }
+    .progress-line { position:absolute; top:14px; left:0; height:2px; background:#DD6B20; z-index:1; transition:width 0.4s ease; }
+    .step-dot { width:28px; height:28px; border-radius:50%; background:#E2E8F0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:#A0AEC0; position:relative; z-index:2; transition:all 0.3s; }
+    .step-dot.active { background:#DD6B20; color:#fff; }
+    .step-dot.done { background:#38A169; color:#fff; }
+    .progress-labels { display:flex; justify-content:space-between; }
+    .progress-labels span { font-size:11px; color:#A0AEC0; text-align:center; flex:1; transition:color 0.3s; }
+    .progress-labels span.active { color:#DD6B20; font-weight:700; }
+
+    /* ステップカード */
+    .step-card { background:#fff; border-radius:16px; padding:36px; box-shadow:0 2px 16px rgba(45,55,72,0.08); display:none; }
+    .step-card.active { display:block; animation:fadeIn 0.3s ease; }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+    .step-title { font-size:20px; font-weight:700; color:#2D3748; margin-bottom:6px; }
+    .step-desc { font-size:13px; color:#718096; margin-bottom:28px; }
+
+    .field { margin-bottom:24px; }
+    .field label { display:block; font-size:14px; font-weight:700; color:#4A5568; margin-bottom:10px; }
+    .field label span { font-size:12px; color:#A0AEC0; font-weight:400; margin-left:6px; }
+
+    /* ラジオカード */
+    .radio-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .radio-grid.col3 { grid-template-columns:1fr 1fr 1fr; }
+    .radio-card input { display:none; }
+    .radio-card label { display:block; background:#F7FAFC; border:2px solid #E2E8F0; border-radius:10px; padding:14px 16px; cursor:pointer; transition:all 0.2s; text-align:center; }
+    .radio-card label:hover { border-color:#DD6B20; background:#FFF8F0; }
+    .radio-card input:checked + label { border-color:#DD6B20; background:#FFF5E6; color:#DD6B20; font-weight:700; }
+    .radio-label-main { font-size:14px; font-weight:600; display:block; margin-bottom:2px; }
+    .radio-label-sub { font-size:11px; color:#718096; display:block; }
+    .radio-card input:checked + label .radio-label-sub { color:#C05621; }
+
+    /* スライダー */
+    .slider-wrap { padding:0 4px; }
+    input[type=range] { width:100%; -webkit-appearance:none; height:6px; border-radius:3px; background:linear-gradient(to right, #DD6B20 var(--pct,0%), #E2E8F0 var(--pct,0%)); outline:none; cursor:pointer; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:22px; height:22px; border-radius:50%; background:#DD6B20; box-shadow:0 2px 6px rgba(221,107,32,0.4); cursor:pointer; }
+    .slider-value { font-size:22px; font-weight:700; color:#DD6B20; text-align:center; margin-bottom:8px; }
+    .slider-labels { display:flex; justify-content:space-between; font-size:11px; color:#A0AEC0; margin-top:4px; }
+
+    /* セレクト */
+    select { width:100%; padding:12px 16px; border:2px solid #E2E8F0; border-radius:10px; font-size:14px; font-family:inherit; color:#2D3748; background:#F7FAFC; outline:none; cursor:pointer; appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23718096' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; }
+    select:focus { border-color:#DD6B20; background-color:#FFF8F0; }
+
+    /* ボタン */
+    .btn-row { display:flex; gap:12px; margin-top:32px; }
+    .btn-next { flex:1; background:#DD6B20; color:#fff; border:none; border-radius:10px; padding:14px; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; transition:opacity 0.2s,transform 0.2s; }
+    .btn-next:hover { opacity:0.9; transform:translateY(-1px); }
+    .btn-back { background:#F7FAFC; color:#718096; border:2px solid #E2E8F0; border-radius:10px; padding:14px 20px; font-size:14px; font-weight:600; cursor:pointer; font-family:inherit; transition:all 0.2s; }
+    .btn-back:hover { border-color:#CBD5E0; color:#4A5568; }
+
+    /* 結果 */
+    #result { display:none; animation:fadeIn 0.4s ease; }
+    .result-header { text-align:center; margin-bottom:32px; }
+    .result-header h2 { font-size:22px; font-weight:700; color:#2D3748; margin-bottom:8px; }
+    .result-header p { font-size:14px; color:#718096; }
+
+    .result-main { background:linear-gradient(135deg,#744210,#C05621); border-radius:16px; padding:32px; text-align:center; margin-bottom:24px; color:#fff; }
+    .result-main-label { font-size:13px; opacity:0.8; margin-bottom:8px; }
+    .result-main-value { font-size:48px; font-weight:700; line-height:1; margin-bottom:6px; }
+    .result-main-unit { font-size:16px; opacity:0.8; }
+    .result-main-note { font-size:12px; opacity:0.7; margin-top:12px; }
+
+    .result-cards { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:24px; }
+    .result-card { background:#fff; border:1px solid #E2E8F0; border-radius:12px; padding:20px; text-align:center; }
+    .result-card-icon { font-size:28px; margin-bottom:8px; }
+    .result-card-label { font-size:12px; color:#718096; margin-bottom:4px; }
+    .result-card-value { font-size:22px; font-weight:700; color:#2D3748; }
+    .result-card-sub { font-size:11px; color:#A0AEC0; margin-top:4px; }
+    .result-card.warn .result-card-value { color:#C53030; }
+    .result-card.ok .result-card-value { color:#276749; }
+
+    .facility-table { background:#fff; border-radius:12px; border:1px solid #E2E8F0; overflow:hidden; margin-bottom:24px; }
+    .facility-table-title { font-size:15px; font-weight:700; color:#2D3748; padding:16px 20px; border-bottom:1px solid #E2E8F0; background:#F7FAFC; }
+    .facility-row { display:grid; grid-template-columns:1fr auto auto; gap:12px; padding:14px 20px; border-bottom:1px solid #F0F4F8; align-items:center; }
+    .facility-row:last-child { border-bottom:none; }
+    .facility-row.highlight { background:#FFF8F0; }
+    .facility-name { font-size:14px; font-weight:600; color:#2D3748; }
+    .facility-name-sub { font-size:11px; color:#718096; font-weight:400; }
+    .facility-cost { font-size:15px; font-weight:700; color:#DD6B20; text-align:right; }
+    .facility-tag { font-size:11px; padding:3px 8px; border-radius:10px; font-weight:600; white-space:nowrap; }
+    .tag-cheap { background:#F0FFF4; color:#276749; }
+    .tag-mid { background:#FFFBEB; color:#744210; }
+    .tag-high { background:#FFF5F5; color:#C53030; }
+    .tag-recommend { background:rgba(221,107,32,0.12); color:#DD6B20; }
+
+    .savings-bar-wrap { background:#fff; border-radius:12px; border:1px solid #E2E8F0; padding:20px; margin-bottom:24px; }
+    .savings-bar-title { font-size:14px; font-weight:700; color:#2D3748; margin-bottom:14px; }
+    .savings-bar-item { margin-bottom:14px; }
+    .savings-bar-label { display:flex; justify-content:space-between; font-size:13px; color:#4A5568; margin-bottom:6px; }
+    .savings-bar-track { background:#E2E8F0; border-radius:4px; height:10px; overflow:hidden; }
+    .savings-bar-fill { height:100%; border-radius:4px; transition:width 0.8s ease; }
+
+    .warn-box { background:#FFFBEB; border:1px solid #F6E05E; border-radius:10px; padding:14px 18px; font-size:13px; color:#744210; line-height:1.7; margin-bottom:20px; }
+    .info-box { background:#EBF8FF; border:1px solid #BEE3F8; border-radius:10px; padding:14px 18px; font-size:13px; color:#2A4365; line-height:1.7; margin-bottom:20px; }
+
+    .cta-box { background:linear-gradient(135deg,#744210,#C05621); border-radius:14px; padding:28px; text-align:center; }
+    .cta-box h3 { color:#fff; font-size:18px; font-weight:700; margin-bottom:8px; }
+    .cta-box p { color:rgba(255,255,255,0.8); font-size:13px; margin-bottom:18px; }
+    .cta-btn { display:inline-block; background:#fff; color:#744210; padding:12px 32px; border-radius:8px; font-weight:700; font-size:15px; text-decoration:none; }
+
+    .disclaimer { font-size:11px; color:#A0AEC0; line-height:1.7; margin-top:20px; padding:14px; background:#F7FAFC; border-radius:8px; }
+
+    .retry-btn { display:block; width:100%; margin-top:16px; background:#F7FAFC; border:2px solid #E2E8F0; color:#718096; padding:12px; border-radius:8px; font-size:14px; font-weight:600; cursor:pointer; font-family:inherit; transition:all 0.2s; }
+    .retry-btn:hover { border-color:#CBD5E0; color:#4A5568; }
+
+    footer { text-align:center; padding:40px; color:#A0AEC0; font-size:13px; background:#fff; border-top:1px solid #E2E8F0; margin-top:40px; }
+
+    @media(max-width:640px) {
+      nav { padding:0 16px; }
+      .hero { padding:32px 20px 24px; }
+      .hero h1 { font-size:22px; }
+      .sim-wrap { padding:0 16px; }
+      .step-card { padding:24px 20px; }
+      .radio-grid { grid-template-columns:1fr 1fr; }
+      .radio-grid.col3 { grid-template-columns:1fr 1fr 1fr; }
+      .result-cards { grid-template-columns:1fr 1fr; }
+      .result-main-value { font-size:36px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Care<span>Space</span></a>
+  <a href="index.html" class="back-link">← トップ</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">無料ツール</div>
+  <h1>介護費用シミュレーター</h1>
+  <p>要介護度・年金・貯蓄を入力するだけで、月々の自己負担と<br>貯蓄が何年持つかを自動で試算します</p>
+</div>
+
+<div class="sim-wrap">
+
+  <!-- プログレス -->
+  <div class="progress-wrap">
+    <div class="progress-steps">
+      <div class="progress-line" id="progressLine"></div>
+      <div class="step-dot active" id="dot1">1</div>
+      <div class="step-dot" id="dot2">2</div>
+      <div class="step-dot" id="dot3">3</div>
+    </div>
+    <div class="progress-labels">
+      <span class="active" id="lbl1">介護の状況</span>
+      <span id="lbl2">収入・資産</span>
+      <span id="lbl3">希望する介護</span>
+    </div>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="step-card active" id="step1">
+    <div class="step-title">STEP 1 ／ 介護の状況</div>
+    <div class="step-desc">介護が必要な方の現在の状況を教えてください</div>
+
+    <div class="field">
+      <label>要介護度 <span>※申請中の場合は最も近いものを選択</span></label>
+      <div class="radio-grid col3">
+        <div class="radio-card"><input type="radio" name="care_level" id="lvl0" value="0"><label for="lvl0"><span class="radio-label-main">要支援1</span><span class="radio-label-sub">日常生活ほぼ自立</span></label></div>
+        <div class="radio-card"><input type="radio" name="care_level" id="lvl1" value="1"><label for="lvl1"><span class="radio-label-main">要支援2</span><span class="radio-label-sub">一部支援が必要</span></label></div>
+        <div class="radio-card"><input type="radio" name="care_level" id="lvl2" value="2"><label for="lvl2"><span class="radio-label-main">要介護1</span><span class="radio-label-sub">部分的介護が必要</span></label></div>
+        <div class="radio-card"><input type="radio" name="care_level" id="lvl3" value="3" checked><label for="lvl3"><span class="radio-label-main">要介護2</span><span class="radio-label-sub">日常的介護が必要</span></label></div>
+        <div class="radio-card"><input type="radio" name="care_level" id="lvl4" value="4"><label for="lvl4"><span class="radio-label-main">要介護3</span><span class="radio-label-sub">全面的介護が必要</span></label></div>
+        <div class="radio-card"><input type="radio" name="care_level" id="lvl5" value="5"><label for="lvl5"><span class="radio-label-main">要介護4〜5</span><span class="radio-label-sub">重度介護が必要</span></label></div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>お住まいの地域</label>
+      <div class="radio-grid">
+        <div class="radio-card"><input type="radio" name="region" id="reg0" value="tokyo" checked><label for="reg0"><span class="radio-label-main">東京都23区内</span><span class="radio-label-sub">費用水準：高め</span></label></div>
+        <div class="radio-card"><input type="radio" name="region" id="reg1" value="metro"><label for="reg1"><span class="radio-label-main">首都圏近郊</span><span class="radio-label-sub">神奈川・埼玉・千葉・多摩</span></label></div>
+        <div class="radio-card"><input type="radio" name="region" id="reg2" value="city"><label for="reg2"><span class="radio-label-main">地方都市</span><span class="radio-label-sub">大阪・名古屋・福岡など</span></label></div>
+        <div class="radio-card"><input type="radio" name="region" id="reg3" value="rural"><label for="reg3"><span class="radio-label-main">地方・郊外</span><span class="radio-label-sub">費用水準：低め</span></label></div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-next" onclick="goStep(2)">次へ →</button>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step-card" id="step2">
+    <div class="step-title">STEP 2 ／ 収入・資産</div>
+    <div class="step-desc">介護を受ける方の収入・資産の目安を教えてください</div>
+
+    <div class="field">
+      <label>月々の年金収入（介護を受ける方）</label>
+      <div class="slider-value" id="pension_disp">月 10万円</div>
+      <div class="slider-wrap">
+        <input type="range" id="pension" min="0" max="30" step="1" value="10"
+          oninput="updateSlider(this,'pension_disp','万円','月 ','万円')">
+        <div class="slider-labels"><span>0円</span><span>30万円</span></div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>貯蓄・資産の目安（介護を受ける方）</label>
+      <div class="slider-value" id="saving_disp">500万円</div>
+      <div class="slider-wrap">
+        <input type="range" id="saving" min="0" max="3000" step="100" value="500"
+          oninput="updateSliderM(this,'saving_disp')">
+        <div class="slider-labels"><span>0円</span><span>3,000万円以上</span></div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>住民税の状況 <span>自己負担割合の計算に使います</span></label>
+      <div class="radio-grid">
+        <div class="radio-card"><input type="radio" name="tax" id="tax0" value="0" checked><label for="tax0"><span class="radio-label-main">住民税非課税</span><span class="radio-label-sub">年金のみ・低収入など</span></label></div>
+        <div class="radio-card"><input type="radio" name="tax" id="tax1" value="1"><label for="tax1"><span class="radio-label-main">住民税課税</span><span class="radio-label-sub">一定以上の収入あり</span></label></div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-back" onclick="goStep(1)">← 戻る</button>
+      <button class="btn-next" onclick="goStep(3)">次へ →</button>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step-card" id="step3">
+    <div class="step-title">STEP 3 ／ 希望する介護スタイル</div>
+    <div class="step-desc">どのような介護を希望していますか？</div>
+
+    <div class="field">
+      <label>介護スタイルの希望</label>
+      <div class="radio-grid">
+        <div class="radio-card"><input type="radio" name="style" id="st0" value="home" checked><label for="st0"><span class="radio-label-main">在宅介護</span><span class="radio-label-sub">自宅でサービスを使いながら</span></label></div>
+        <div class="radio-card"><input type="radio" name="style" id="st1" value="facility"><label for="st1"><span class="radio-label-main">施設入所</span><span class="radio-label-sub">老人ホームへの入居</span></label></div>
+        <div class="radio-card"><input type="radio" name="style" id="st2" value="both"><label for="st2"><span class="radio-label-main">どちらでも</span><span class="radio-label-sub">両方の費用を比較したい</span></label></div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>認知症の有無</label>
+      <div class="radio-grid">
+        <div class="radio-card"><input type="radio" name="dementia" id="dm0" value="0" checked><label for="dm0"><span class="radio-label-main">なし・軽度</span><span class="radio-label-sub">物忘れ程度</span></label></div>
+        <div class="radio-card"><input type="radio" name="dementia" id="dm1" value="1"><label for="dm1"><span class="radio-label-main">あり（中度以上）</span><span class="radio-label-sub">診断・専門ケアが必要</span></label></div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-back" onclick="goStep(2)">← 戻る</button>
+      <button class="btn-next" onclick="calcAndShow()">試算する →</button>
+    </div>
+  </div>
+
+  <!-- 結果 -->
+  <div id="result">
+    <div class="result-header">
+      <h2>試算結果</h2>
+      <p>入力された条件をもとに算出しています</p>
+    </div>
+
+    <div class="result-main">
+      <div class="result-main-label" id="res_main_label">月々の介護費用（自己負担目安）</div>
+      <div class="result-main-value" id="res_main_value">—</div>
+      <div class="result-main-unit">万円 / 月</div>
+      <div class="result-main-note" id="res_main_note"></div>
+    </div>
+
+    <div class="result-cards">
+      <div class="result-card" id="card_saving">
+        <div class="result-card-icon">💰</div>
+        <div class="result-card-label">貯蓄の持続年数</div>
+        <div class="result-card-value" id="res_years">—</div>
+        <div class="result-card-sub" id="res_years_sub"></div>
+      </div>
+      <div class="result-card">
+        <div class="result-card-icon">📋</div>
+        <div class="result-card-label">年間の介護費用目安</div>
+        <div class="result-card-value" id="res_annual">—</div>
+        <div class="result-card-sub">万円 / 年</div>
+      </div>
+    </div>
+
+    <div id="warning_box" class="warn-box" style="display:none"></div>
+    <div id="info_box" class="info-box" style="display:none"></div>
+
+    <!-- 施設比較テーブル -->
+    <div class="facility-table" id="facility_table">
+      <div class="facility-table-title">施設タイプ別 月額費用の目安</div>
+      <div id="facility_rows"></div>
+    </div>
+
+    <!-- 貯蓄持続バー -->
+    <div class="savings-bar-wrap">
+      <div class="savings-bar-title">施設タイプ別 貯蓄の持続年数</div>
+      <div id="savings_bars"></div>
+    </div>
+
+    <div class="cta-box">
+      <h3>費用に合う施設を無料で探す</h3>
+      <p>今すぐ予算・エリア・条件に合う施設を専門スタッフが無料でご提案。<br>資料請求・見学予約もまとめてサポートします。</p>
+      <a href="#" class="cta-btn">無料で施設を探してみる</a>
+    </div>
+
+    <div class="disclaimer">
+      ※本シミュレーターは一般的な介護保険制度・公表費用データをもとにした簡易試算です。実際の費用は施設・要介護度・所得状況・利用サービスにより大きく異なります。正確な金額はケアマネジャーや各施設にお問い合わせください。介護保険の自己負担割合は前年所得に基づいて決定されます。
+    </div>
+
+    <button class="retry-btn" onclick="resetSim()">もう一度試算する</button>
+  </div>
+
+</div>
+
+<footer>© 2026 CareSpace. All rights reserved.</footer>
+
+<script>
+// ---- スライダー更新 ----
+function updateSlider(el, dispId, unit, prefix, suffix) {
+  const v = parseInt(el.value);
+  document.getElementById(dispId).textContent = (prefix||'') + v + (suffix||unit);
+  const pct = ((v - el.min) / (el.max - el.min)) * 100;
+  el.style.setProperty('--pct', pct + '%');
+}
+function updateSliderM(el, dispId) {
+  const v = parseInt(el.value);
+  const disp = v >= 3000 ? '3,000万円以上' : v.toLocaleString() + '万円';
+  document.getElementById(dispId).textContent = disp;
+  const pct = ((v - el.min) / (el.max - el.min)) * 100;
+  el.style.setProperty('--pct', pct + '%');
+}
+
+// ---- ステップ移動 ----
+function goStep(n) {
+  [1,2,3].forEach(i => {
+    document.getElementById('step'+i).classList.remove('active');
+    const dot = document.getElementById('dot'+i);
+    const lbl = document.getElementById('lbl'+i);
+    if (i < n) { dot.className='step-dot done'; dot.textContent='✓'; }
+    else if (i === n) { dot.className='step-dot active'; dot.textContent=i; }
+    else { dot.className='step-dot'; dot.textContent=i; }
+    lbl.className = i===n ? 'active' : '';
+  });
+  document.getElementById('step'+n).classList.add('active');
+  // プログレスライン
+  const pct = ((n-1)/2)*100;
+  document.getElementById('progressLine').style.width = pct + '%';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ---- データ定数 ----
+// 在宅: 介護度別の平均的サービス利用額（円/月）※限度額の約70%
+const homeBase = [25000, 52000, 82000, 97000, 133000, 154000, 177000];
+// 施設月額レンジ [min,max] 地域倍率: tokyo=1.35, metro=1.15, city=1.0, rural=0.85
+const facilities = [
+  { name:'特別養護老人ホーム（特養）', sub:'要介護3以上が対象', min:75000, max:130000, tag:'cheap', tagLabel:'費用が安い', minLevel:4 },
+  { name:'介護老人保健施設（老健）',   sub:'リハビリが充実',     min:95000, max:160000, tag:'mid',   tagLabel:'中程度' },
+  { name:'グループホーム',             sub:'認知症専門ケア',     min:140000, max:220000, tag:'mid',   tagLabel:'中程度' },
+  { name:'サービス付き高齢者住宅',     sub:'比較的入りやすい',   min:110000, max:200000, tag:'mid',   tagLabel:'中程度' },
+  { name:'住宅型有料老人ホーム',       sub:'自由度が高い',       min:130000, max:250000, tag:'mid',   tagLabel:'中程度' },
+  { name:'介護付き有料老人ホーム',     sub:'手厚いケア体制',     min:160000, max:350000, tag:'high',  tagLabel:'費用高め' },
+];
+const regionRate = { tokyo:1.35, metro:1.15, city:1.0, rural:0.85 };
+const taxRate    = { '0':1, '1':2 }; // 1割 or 2割（簡易）
+
+// ---- 計算・表示 ----
+function calcAndShow() {
+  const level    = parseInt(document.querySelector('input[name=care_level]:checked').value);
+  const region   = document.querySelector('input[name=region]:checked').value;
+  const pension  = parseInt(document.getElementById('pension').value) * 10000;
+  const saving   = parseInt(document.getElementById('saving').value) * 10000;
+  const tax      = document.querySelector('input[name=tax]:checked').value;
+  const style    = document.querySelector('input[name=style]:checked').value;
+  const dementia = parseInt(document.querySelector('input[name=dementia]:checked').value);
+  const rRate    = regionRate[region];
+  const burden   = taxRate[tax];
+
+  // 在宅費用
+  const homeMonthly = Math.round(homeBase[level] * burden / 10000) * 10000
+                    + (level >= 4 ? 15000 : 8000); // おむつ・実費
+  const homeDisp = Math.round(homeMonthly / 1000) / 10;
+
+  // 施設費用（地域補正）
+  const facCalc = facilities.map(f => ({
+    ...f,
+    calcMin: Math.round(f.min * rRate / 1000) * 1000,
+    calcMax: Math.round(f.max * rRate / 1000) * 1000,
+  }));
+
+  // メイン表示値
+  let mainVal, mainLabel, mainNote;
+  if (style === 'home') {
+    mainVal = homeDisp;
+    mainLabel = '在宅介護の月額自己負担（目安）';
+    mainNote = `介護保険サービス自己負担 + 実費（おむつ・医療費等）を含む`;
+  } else if (style === 'facility') {
+    const avgFac = facCalc.filter(f => !f.minLevel || level >= f.minLevel);
+    const avg = avgFac.length > 0
+      ? Math.round((avgFac.reduce((s,f) => s+(f.calcMin+f.calcMax)/2, 0) / avgFac.length) / 1000) / 10
+      : Math.round((facCalc[0].calcMin + facCalc[0].calcMax) / 2 / 1000) / 10;
+    mainVal = avg;
+    mainLabel = '施設介護の月額費用（施設タイプ平均・目安）';
+    mainNote = `施設タイプ・居室・サービス加算によって大きく変わります`;
+  } else {
+    mainVal = homeDisp;
+    mainLabel = '在宅介護の月額自己負担（目安）';
+    mainNote = `在宅の場合。施設の場合は下の表を参照してください`;
+  }
+
+  document.getElementById('res_main_value').textContent = mainVal.toFixed(1);
+  document.getElementById('res_main_label').textContent = mainLabel;
+  document.getElementById('res_main_note').textContent  = mainNote;
+
+  const monthlyMain = mainVal * 10000;
+  const annualMain  = Math.round(monthlyMain * 12 / 10000);
+  document.getElementById('res_annual').textContent = annualMain.toLocaleString();
+
+  // 貯蓄持続年数
+  const monthSurplus = monthlyMain - pension;
+  let yearsDisp, yearsSub, cardClass;
+  if (monthSurplus <= 0) {
+    yearsDisp = '∞';
+    yearsSub  = '年金だけで賄えます';
+    cardClass = 'ok';
+  } else if (saving === 0) {
+    yearsDisp = '0年';
+    yearsSub  = '貯蓄なし・要確認';
+    cardClass = 'warn';
+  } else {
+    const years = saving / (monthSurplus * 12);
+    yearsDisp = years >= 30 ? '30年以上' : Math.floor(years) + '年';
+    yearsSub  = `月${Math.round(monthSurplus/10000)}万円の取り崩し`;
+    cardClass = years < 5 ? 'warn' : years < 10 ? '' : 'ok';
+  }
+  document.getElementById('res_years').textContent = yearsDisp;
+  document.getElementById('res_years_sub').textContent = yearsSub;
+  document.getElementById('card_saving').className = 'result-card ' + cardClass;
+
+  // 警告・アドバイス
+  const warn = document.getElementById('warning_box');
+  const info = document.getElementById('info_box');
+  warn.style.display = 'none';
+  info.style.display = 'none';
+
+  if (monthSurplus > 0 && saving > 0 && (saving/(monthSurplus*12)) < 5) {
+    warn.textContent = '⚠️ 試算では貯蓄が5年以内に底をつく可能性があります。介護保険の負担軽減制度（高額介護サービス費・補足給付）の活用や、施設タイプの見直しを検討されることをおすすめします。';
+    warn.style.display = 'block';
+  }
+  if (level >= 4 && style !== 'facility') {
+    info.textContent = '💡 要介護3以上の場合、特養への申し込みが可能です。費用が最も安く安定したケアが受けられます。待機期間が長いため、早めの申し込みをおすすめします。';
+    info.style.display = 'block';
+  }
+  if (dementia === 1) {
+    info.textContent = '💡 認知症がある場合、グループホーム（認知症対応型共同生活介護）が適している場合があります。小規模で家庭的な環境でのケアが特徴です。';
+    info.style.display = 'block';
+  }
+
+  // 施設テーブル
+  const rows = document.getElementById('facility_rows');
+  rows.innerHTML = facCalc.map(f => {
+    const isRecommend = (dementia && f.name.includes('グループ')) ||
+                        (!dementia && f.tag === 'cheap' && level >= 4) ||
+                        (style === 'facility' && f.tag === 'mid');
+    const tagClass = isRecommend ? 'recommend' : f.tag;
+    const tagLabel = isRecommend ? 'おすすめ' : f.tagLabel;
+    const disabled = f.minLevel && level < f.minLevel;
+    return `<div class="facility-row${isRecommend?' highlight':''}${disabled?' style="opacity:0.45"':''}">
+      <div>
+        <div class="facility-name">${f.name}</div>
+        <div class="facility-name-sub">${f.sub}${disabled?' ／ 要介護3以上が対象':''}</div>
+      </div>
+      <div class="facility-cost">${Math.round(f.calcMin/10000)}〜${Math.round(f.calcMax/10000)}万円</div>
+      <div><span class="facility-tag tag-${tagClass}">${tagLabel}</span></div>
+    </div>`;
+  }).join('');
+
+  // 持続バー
+  const barsEl = document.getElementById('savings_bars');
+  barsEl.innerHTML = '';
+  const barFacs = facCalc.slice(0,4); // 代表4施設
+  barFacs.forEach(f => {
+    const avg = (f.calcMin + f.calcMax) / 2;
+    const surplus = avg - pension;
+    let yrs;
+    if (surplus <= 0) yrs = 99;
+    else if (saving === 0) yrs = 0;
+    else yrs = Math.min(saving / (surplus * 12), 40);
+    const pct = Math.min((yrs / 40) * 100, 100);
+    const color = yrs < 5 ? '#FC8181' : yrs < 10 ? '#F6AD55' : '#68D391';
+    const label = yrs >= 40 ? '40年以上' : yrs >= 99 ? '∞' : Math.floor(yrs) + '年';
+    barsEl.innerHTML += `
+      <div class="savings-bar-item">
+        <div class="savings-bar-label"><span>${f.name}</span><span style="font-weight:700;color:#2D3748">${label}</span></div>
+        <div class="savings-bar-track"><div class="savings-bar-fill" style="width:${pct}%;background:${color}"></div></div>
+      </div>`;
+  });
+
+  // 表示切替
+  [1,2,3].forEach(i => document.getElementById('step'+i).style.display='none');
+  document.getElementById('progressLine').style.width='100%';
+  ['dot1','dot2','dot3'].forEach(id => {
+    document.getElementById(id).className='step-dot done';
+    document.getElementById(id).textContent='✓';
+  });
+  document.getElementById('result').style.display='block';
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function resetSim() {
+  document.getElementById('result').style.display='none';
+  [1,2,3].forEach(i => {
+    document.getElementById('step'+i).style.display='';
+    const dot = document.getElementById('dot'+i);
+    dot.textContent = i;
+    dot.className = i===1 ? 'step-dot active' : 'step-dot';
+    document.getElementById('lbl'+i).className = i===1 ? 'active' : '';
+  });
+  document.getElementById('progressLine').style.width='0%';
+  goStep(1);
+}
+
+// 初期スライダー描画
+window.addEventListener('DOMContentLoaded', () => {
+  const p = document.getElementById('pension');
+  p.style.setProperty('--pct', ((10/30)*100)+'%');
+  const s = document.getElementById('saving');
+  s.style.setProperty('--pct', ((500/3000)*100)+'%');
+});
+</script>
+
+</body>
+</html>

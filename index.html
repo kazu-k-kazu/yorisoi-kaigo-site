@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>よりそい介護｜親の介護・老後の悩みを匿名相談</title>
+  <meta property="og:title" content="よりそい介護｜親の介護・老後の悩みを匿名相談">
+  <meta property="og:description" content="突然始まる親の介護、施設探し、費用の不安、仕事との両立…。誰にも話せない介護の悩みを匿名で相談できます。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://carespace.netlify.app/">
+  <meta property="og:site_name" content="よりそい介護">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="よりそい介護｜親の介護・老後の悩みを匿名相談">
+  <meta name="twitter:description" content="突然始まる親の介護、施設探し、費用の不安、仕事との両立…。誰にも話せない介護の悩みを匿名で相談できます。">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --main: #744210;
+      --accent: #DD6B20;
+      --accent2: #C05621;
+      --bg: #FFFAF0;
+      --white: #FFFFFF;
+      --text: #1A202C;
+      --text-light: #718096;
+      --border: #E2E8F0;
+    }
+    body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+
+    nav { background:var(--white); border-bottom:1px solid var(--border); padding:0 40px; display:flex; justify-content:space-between; align-items:center; height:64px; position:sticky; top:0; z-index:100; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+    .logo { font-size:20px; font-weight:700; color:var(--text); text-decoration:none; }
+    .logo span { color:var(--accent); }
+    .nav-links { display:flex; gap:32px; list-style:none; }
+    .nav-links a { color:var(--text-light); text-decoration:none; font-size:14px; transition:color 0.2s; }
+    .nav-links a:hover { color:var(--accent); }
+    .nav-cta { background:var(--accent); color:var(--white) !important; padding:8px 20px; border-radius:20px; font-weight:600; }
+
+    .hero { background:linear-gradient(135deg,#FFFAF0 0%,#FFF5E6 50%,#FEF3C7 100%); padding:100px 40px; text-align:center; }
+    .hero-badge { display:inline-block; background:rgba(221,107,32,0.12); border:1px solid rgba(221,107,32,0.3); color:var(--accent); font-size:13px; padding:6px 16px; border-radius:20px; margin-bottom:24px; }
+    .hero h1 { color:var(--text); font-size:42px; font-weight:700; line-height:1.4; margin-bottom:20px; }
+    .hero h1 span { color:var(--accent); }
+    .hero p { color:var(--text-light); font-size:18px; max-width:580px; margin:0 auto 40px; }
+    .hero-buttons { display:flex; gap:16px; justify-content:center; }
+    .btn-primary { background:var(--accent); color:var(--white); padding:14px 36px; border-radius:8px; text-decoration:none; font-weight:600; font-size:16px; transition:opacity 0.2s,transform 0.2s; display:inline-block; }
+    .btn-primary:hover { opacity:0.9; transform:translateY(-2px); }
+    .btn-secondary { background:var(--white); color:var(--accent); padding:14px 36px; border-radius:8px; text-decoration:none; font-weight:600; font-size:16px; border:1px solid var(--accent); transition:all 0.2s; }
+    .btn-secondary:hover { background:var(--accent); color:var(--white); }
+
+    .stats-bar { background:var(--white); border-bottom:1px solid var(--border); padding:24px 40px; display:flex; justify-content:center; gap:64px; }
+    .stat-item { text-align:center; }
+    .stat-number { font-size:28px; font-weight:700; color:var(--accent); display:block; }
+    .stat-label { font-size:13px; color:var(--text-light); }
+
+    section { padding:64px 40px; max-width:1100px; margin:0 auto; }
+    .section-label { font-size:12px; letter-spacing:0.15em; color:var(--accent); font-weight:600; text-transform:uppercase; margin-bottom:8px; }
+    .section-title { font-size:28px; font-weight:700; color:var(--main); margin-bottom:40px; }
+
+    .category-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .category-card { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:28px 24px; transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s; text-decoration:none; color:inherit; display:block; }
+    .category-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(221,107,32,0.1); border-color:var(--accent); }
+    .category-icon { width:48px; height:48px; background:rgba(221,107,32,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:16px; }
+    .category-card h3 { font-size:16px; font-weight:700; margin-bottom:8px; color:var(--main); }
+    .category-card p { font-size:13px; color:var(--text-light); }
+    .category-count { margin-top:12px; font-size:12px; color:var(--accent); font-weight:600; }
+
+    .ai-banner { background:linear-gradient(135deg,#744210,#C05621); border-radius:16px; padding:48px; display:flex; align-items:center; gap:48px; max-width:1020px; margin:0 auto; }
+    .ai-banner-content { flex:1; }
+    .ai-banner h2 { color:var(--white); font-size:26px; font-weight:700; margin-bottom:12px; }
+    .ai-banner p { color:#FBD38D; font-size:15px; margin-bottom:24px; }
+    .ai-features { display:flex; gap:24px; margin-bottom:28px; flex-wrap:wrap; }
+    .ai-feature { display:flex; align-items:center; gap:8px; color:#FEF3C7; font-size:13px; }
+    .ai-feature-icon { color:#FBD38D; }
+    .ai-chat-preview { flex:0 0 320px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:20px; }
+    .chat-label { font-size:11px; color:#CBD5E0; margin-bottom:4px; }
+    .chat-user .chat-label { text-align:right; }
+    .chat-bubble { display:inline-block; padding:10px 14px; border-radius:12px; font-size:13px; max-width:85%; line-height:1.5; }
+    .chat-bubble.chat-user { background:#ffffff; color:#2D3748; border-radius:12px 12px 2px 12px; float:right; }
+    .chat-bubble.chat-ai { background:rgba(0,0,0,0.25); color:#ffffff; border-radius:12px 12px 12px 2px; }
+    .clearfix::after { content:''; display:table; clear:both; }
+    .section-divider { background:#FFF5E6; padding:64px 0; }
+    .section-divider-inner { max-width:1100px; margin:0 auto; padding:0 40px; }
+
+    .qa-list { display:flex; flex-direction:column; gap:16px; }
+    .qa-card { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:24px; display:flex; gap:20px; align-items:flex-start; text-decoration:none; color:inherit; transition:box-shadow 0.2s,border-color 0.2s; }
+    .qa-card:hover { box-shadow:0 4px 16px rgba(221,107,32,0.08); border-color:var(--accent); }
+    .qa-category-tag { background:rgba(221,107,32,0.1); color:var(--accent); font-size:11px; font-weight:600; padding:4px 10px; border-radius:20px; white-space:nowrap; }
+    .qa-content { flex:1; }
+    .qa-title { font-size:15px; font-weight:600; margin-bottom:6px; color:var(--main); }
+    .qa-excerpt { font-size:13px; color:var(--text-light); }
+    .qa-meta { display:flex; gap:16px; margin-top:10px; font-size:12px; color:var(--text-light); }
+
+    footer { background:var(--main); color:#FBD38D; padding:48px 40px 24px; margin-top:80px; }
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; max-width:1100px; margin:0 auto 40px; }
+    .footer-brand .logo { font-size:18px; margin-bottom:12px; display:block; color:#FEF3C7; }
+    .footer-brand p { font-size:13px; line-height:1.7; color:#FBD38D; }
+    .footer-col h4 { color:#FEF3C7; font-size:14px; margin-bottom:16px; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:8px; }
+    .footer-col ul li a { color:#FBD38D; text-decoration:none; font-size:13px; transition:color 0.2s; }
+    .footer-col ul li a:hover { color:#FEF3C7; }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,0.15); padding-top:24px; text-align:center; font-size:12px; max-width:1100px; margin:0 auto; color:#FBD38D; }
+
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
+    .hamburger span { display:block; width:24px; height:2px; background:var(--text); border-radius:2px; transition:all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity:0; }
+    .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    .nav-mobile { display:none; position:fixed; top:64px; left:0; right:0; background:var(--white); border-bottom:1px solid var(--border); padding:16px 24px; z-index:99; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+    .nav-mobile.open { display:block; }
+    .nav-mobile a { display:block; padding:14px 0; color:var(--text); text-decoration:none; font-size:15px; border-bottom:1px solid var(--border); }
+    .nav-mobile a:last-child { border-bottom:none; }
+    .nav-mobile a.cta { background:var(--accent); color:var(--white); text-align:center; border-radius:8px; margin-top:12px; padding:14px; font-weight:600; border:none; }
+
+    @media (max-width:768px) {
+      nav { padding:0 20px; }
+      .nav-links { display:none; }
+      .hamburger { display:flex; }
+      .hero { padding:60px 20px; }
+      .hero h1 { font-size:26px; }
+      .hero p { font-size:15px; }
+      .hero-buttons { flex-direction:column; align-items:center; gap:12px; }
+      .btn-primary, .btn-secondary { width:100%; max-width:320px; text-align:center; padding:14px 24px; }
+      .stats-bar { padding:20px; display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+      .stat-number { font-size:22px; }
+      section { padding:40px 20px; }
+      .section-title { font-size:22px; margin-bottom:24px; }
+      .category-grid { grid-template-columns:1fr; gap:12px; }
+      .ai-banner { flex-direction:column; padding:28px 20px; gap:24px; }
+      .ai-chat-preview { display:none; }
+      .ai-features { flex-wrap:wrap; gap:12px; }
+      .ai-banner h2 { font-size:20px; }
+      .section-divider { padding:40px 0; }
+      .section-divider-inner { padding:0 20px; }
+      .qa-card { flex-direction:column; gap:10px; }
+      footer { padding:40px 20px 24px; margin-top:48px; }
+      .footer-grid { grid-template-columns:1fr; gap:24px; }
+    }
+    @media (min-width:769px) and (max-width:1024px) {
+      .category-grid { grid-template-columns:repeat(2,1fr); }
+      .hero h1 { font-size:34px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">よりそい<span>介護</span></a>
+    <ul class="nav-links">
+      <li><a href="article-list.html">記事</a></li>
+      <li><a href="areas/index.html">地域から探す</a></li>
+      <li><a href="kaigo-check.html">介護度チェック</a></li>
+      <li><a href="simulator.html">費用シミュレーター</a></li>
+      <li><a href="chat.html" class="nav-cta">AIに相談する</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="article-list.html">記事</a>
+    <a href="areas/index.html">地域から探す</a>
+    <a href="kaigo-check.html">介護度チェック</a>
+    <a href="simulator.html">費用シミュレーター</a>
+    <a href="qa.html">Q&A</a>
+    <a href="chat.html" class="cta">AIに相談する（無料）</a>
+  </div>
+  <script>
+    function toggleMenu() {
+      document.getElementById('hamburger').classList.toggle('open');
+      document.getElementById('navMobile').classList.toggle('open');
+    }
+  </script>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-badge">匿名・無料・24時間対応</div>
+    <h1>親の介護、<br><span>一人で抱え込まないで。</span></h1>
+    <p>突然始まる親の介護、施設探し、費用の不安、仕事との両立…。誰にも話せない介護の悩みを匿名で相談できます。</p>
+    <div class="hero-buttons">
+      <a href="chat.html" class="btn-primary">AIに相談してみる</a>
+      <a href="article-list.html" class="btn-secondary">記事を読む</a>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item"><span class="stat-number">21,400+</span><span class="stat-label">累計相談件数</span></div>
+    <div class="stat-item"><span class="stat-number">24h</span><span class="stat-label">AIが対応</span></div>
+    <div class="stat-item"><span class="stat-number">完全匿名</span><span class="stat-label">登録不要で利用可</span></div>
+    <div class="stat-item"><span class="stat-number">6カテゴリ</span><span class="stat-label">幅広い悩みに対応</span></div>
+  </div>
+
+  <section>
+    <div class="section-label">CATEGORIES</div>
+    <div class="section-title">どんな悩みですか？</div>
+    <div class="category-grid">
+      <a href="articles/sudden-caregiving.html" class="category-card">
+        <div class="category-icon">🚑</div>
+        <h3>介護が突然始まった</h3>
+        <p>親が倒れた・入院した・退院後の生活が不安</p>
+        <div class="category-count">→ 記事を読む</div>
+      </a>
+      <a href="articles/dementia-early-signs.html" class="category-card">
+        <div class="category-icon">🧠</div>
+        <h3>認知症の悩み</h3>
+        <p>物忘れが増えた・徘徊・怒りっぽくなった・診断後の対応</p>
+        <div class="category-count">→ 記事を読む</div>
+      </a>
+      <a href="articles/care-money-prep.html" class="category-card">
+        <div class="category-icon">💰</div>
+        <h3>介護とお金</h3>
+        <p>介護費用・施設の料金・介護保険の使い方がわからない</p>
+        <div class="category-count">→ 記事を読む</div>
+      </a>
+      <a href="articles/home-or-facility.html" class="category-card">
+        <div class="category-icon">🏠</div>
+        <h3>施設入居を考えている</h3>
+        <p>老人ホームの種類・選び方・在宅か施設かの判断</p>
+        <div class="category-count">→ 記事を読む</div>
+      </a>
+      <a href="articles/care-work-balance.html" class="category-card">
+        <div class="category-icon">💼</div>
+        <h3>介護と仕事の両立</h3>
+        <p>介護離職・介護休業・職場への相談の仕方</p>
+        <div class="category-count">→ 記事を読む</div>
+      </a>
+      <a href="articles/caregiver-burnout.html" class="category-card">
+        <div class="category-icon">😔</div>
+        <h3>介護疲れ・燃え尽き</h3>
+        <p>限界を感じている・自分の時間がない・もう嫌だと思う</p>
+        <div class="category-count">→ 記事を読む</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 介護度チェックバナー -->
+  <div style="background:#FFF5E6;border-top:1px solid #FED7AA;border-bottom:1px solid #FED7AA;padding:40px;">
+    <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;gap:32px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:240px;">
+        <div style="font-size:12px;font-weight:700;color:#DD6B20;letter-spacing:0.1em;margin-bottom:6px;">CARE LEVEL CHECK</div>
+        <h2 style="font-size:22px;font-weight:700;color:#744210;margin-bottom:8px;line-height:1.4;">今の状態、介護認定は必要？<br>3分で目安がわかります</h2>
+        <p style="font-size:14px;color:#718096;margin-bottom:16px;">身体機能・認知・行動について11問答えるだけ。要支援〜要介護5の目安と使えるサービスが確認できます。</p>
+        <a href="kaigo-check.html" style="display:inline-block;background:#DD6B20;color:#fff;padding:12px 28px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;">無料でチェックする →</a>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <div style="background:#fff;border:1px solid #FED7AA;border-radius:10px;padding:14px 18px;text-align:center;min-width:90px;">
+          <div style="font-size:22px;font-weight:700;color:#DD6B20;">11問</div>
+          <div style="font-size:12px;color:#718096;">質問数</div>
+        </div>
+        <div style="background:#fff;border:1px solid #FED7AA;border-radius:10px;padding:14px 18px;text-align:center;min-width:90px;">
+          <div style="font-size:22px;font-weight:700;color:#DD6B20;">約3分</div>
+          <div style="font-size:12px;color:#718096;">所要時間</div>
+        </div>
+        <div style="background:#fff;border:1px solid #FED7AA;border-radius:10px;padding:14px 18px;text-align:center;min-width:90px;">
+          <div style="font-size:22px;font-weight:700;color:#38A169;">無料</div>
+          <div style="font-size:12px;color:#718096;">登録不要</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-inner">
+      <div class="ai-banner">
+        <div class="ai-banner-content">
+          <h2>AIが24時間、<br>あなたの話を聞きます。</h2>
+          <p>名前も登録も不要。介護の悩みを、いつでも安心して話せます。</p>
+          <div class="ai-features">
+            <div class="ai-feature"><span class="ai-feature-icon">✓</span><span>完全匿名</span></div>
+            <div class="ai-feature"><span class="ai-feature-icon">✓</span><span>無料</span></div>
+            <div class="ai-feature"><span class="ai-feature-icon">✓</span><span>24時間対応</span></div>
+            <div class="ai-feature"><span class="ai-feature-icon">✓</span><span>履歴は残らない</span></div>
+          </div>
+          <a href="chat.html" class="btn-primary">今すぐ相談する（無料）</a>
+        </div>
+        <div class="ai-chat-preview">
+          <div class="chat-message clearfix">
+            <div class="chat-label">あなた</div>
+            <div class="chat-bubble chat-user" style="display:inline-block;float:right;">父が認知症と診断されました。これからどうしたらいいか全くわかりません。</div>
+          </div>
+          <div class="chat-message" style="margin-top:16px;">
+            <div class="chat-label">AI</div>
+            <div class="chat-bubble chat-ai">それは突然のことで、不安ですよね。今のお父様の状態と、ご家族の状況を少し教えてもらえますか？</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-label">LATEST Q&A</div>
+    <div class="section-title">新着の相談</div>
+    <div class="qa-list">
+      <a href="#" class="qa-card">
+        <span class="qa-category-tag">施設入居</span>
+        <div class="qa-content">
+          <div class="qa-title">要介護2の母を施設に入れることを考えています。費用の相場と選び方を教えてください</div>
+          <div class="qa-excerpt">在宅介護に限界を感じています。特養・有料老人ホームの違いもよくわからず...</div>
+          <div class="qa-meta"><span>💬 14件の回答</span><span>👁 1,840 views</span><span>2時間前</span></div>
+        </div>
+      </a>
+      <a href="#" class="qa-card">
+        <span class="qa-category-tag">認知症</span>
+        <div class="qa-content">
+          <div class="qa-title">80代の父が夜中に徘徊するようになりました。見守りカメラ以外に対策はありますか？</div>
+          <div class="qa-excerpt">先週、深夜に外に出てしまい警察に保護されました。在宅での対策を探しています...</div>
+          <div class="qa-meta"><span>💬 9件の回答</span><span>👁 2,310 views</span><span>5時間前</span></div>
+        </div>
+      </a>
+      <a href="#" class="qa-card">
+        <span class="qa-category-tag">介護疲れ</span>
+        <div class="qa-content">
+          <div class="qa-title">在宅介護3年目。もう限界です。施設に入れることに罪悪感があります</div>
+          <div class="qa-excerpt">毎日の介護で自分の時間が全くなく、仕事も辞めてしまいました。でも施設に...</div>
+          <div class="qa-meta"><span>💬 18件の回答</span><span>👁 3,420 views</span><span>1日前</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo">よりそい<span style="color:var(--accent)">介護</span></span>
+        <p>親の介護・老後の悩みを<br>匿名で安心して相談できる場所です。</p>
+      </div>
+      <div class="footer-col">
+        <h4>カテゴリ</h4>
+        <ul>
+          <li><a href="#">介護が突然始まった</a></li>
+          <li><a href="#">認知症の悩み</a></li>
+          <li><a href="#">介護とお金</a></li>
+          <li><a href="#">施設入居を考えている</a></li>
+          <li><a href="#">介護と仕事の両立</a></li>
+          <li><a href="#">介護疲れ・燃え尽き</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>サービス</h4>
+        <ul>
+          <li><a href="chat.html">AI相談</a></li>
+          <li><a href="#">Q&A掲示板</a></li>
+          <li><a href="article-list.html">記事一覧</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>サイト情報</h4>
+        <ul>
+          <li><a href="#">このサイトについて</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="#">免責事項</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 よりそい介護. All rights reserved. ｜ 本サイトは医療・法律アドバイスを提供するものではありません。</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>地域から老人ホーム・介護施設を探す｜都道府県別一覧 | CareSpace</title>
+  <meta name="description" content="都道府県・市区町村から老人ホーム・介護施設を探せます。特養・有料老人ホーム・グループホームの地域別費用相場や待機状況も解説。無料で資料請求・見学予約ができます。">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:#FFFAF0; color:#2D3748; line-height:1.8; }
+    nav { background:#fff; border-bottom:1px solid #E2E8F0; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+    .logo { font-size:20px; font-weight:700; color:#2D3748; text-decoration:none; }
+    .logo span { color:#DD6B20; }
+    .back-link { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .back-link:hover { text-decoration:underline; }
+
+    .hero { background:linear-gradient(135deg,#FFFAF0,#FFF5E6); padding:56px 40px; text-align:center; border-bottom:1px solid #E2E8F0; }
+    .hero-label { display:inline-block; background:rgba(221,107,32,0.1); color:#DD6B20; font-size:12px; font-weight:600; padding:4px 14px; border-radius:20px; margin-bottom:16px; }
+    .hero h1 { font-size:32px; font-weight:700; color:#1A202C; line-height:1.4; margin-bottom:12px; }
+    .hero p { color:#718096; font-size:15px; max-width:560px; margin:0 auto; }
+
+    .container { max-width:1000px; margin:0 auto; padding:48px 24px; }
+
+    .region-section { margin-bottom:48px; }
+    .region-title { font-size:16px; font-weight:700; color:#4A5568; margin-bottom:16px; padding-bottom:8px; border-bottom:2px solid #E2E8F0; display:flex; align-items:center; gap:8px; }
+    .pref-grid { display:grid; grid-template-columns:repeat(5, 1fr); gap:10px; }
+    .pref-card { background:#fff; border:1px solid #E2E8F0; border-radius:10px; padding:14px 12px; text-align:center; text-decoration:none; color:#2D3748; transition:all 0.2s; display:block; }
+    .pref-card:hover { border-color:#DD6B20; background:#FFF8F0; transform:translateY(-2px); box-shadow:0 4px 12px rgba(221,107,32,0.1); }
+    .pref-name { font-size:14px; font-weight:600; display:block; margin-bottom:4px; }
+    .pref-count { font-size:11px; color:#DD6B20; }
+
+    .popular-section { background:#fff; border-radius:16px; padding:32px; margin-bottom:40px; border:1px solid #E2E8F0; }
+    .popular-title { font-size:18px; font-weight:700; color:#2D3748; margin-bottom:20px; display:flex; align-items:center; gap:8px; }
+    .popular-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .popular-card { background:#FFFAF0; border:1px solid rgba(221,107,32,0.2); border-radius:10px; padding:18px 16px; text-decoration:none; color:inherit; transition:all 0.2s; display:block; }
+    .popular-card:hover { border-color:#DD6B20; background:#FFF5E6; }
+    .popular-card-area { font-size:12px; color:#DD6B20; font-weight:600; margin-bottom:6px; }
+    .popular-card-name { font-size:15px; font-weight:700; color:#2D3748; margin-bottom:4px; }
+    .popular-card-desc { font-size:12px; color:#718096; }
+
+    .cta-banner { background:linear-gradient(135deg,#744210,#C05621); border-radius:16px; padding:40px; text-align:center; margin-bottom:40px; }
+    .cta-banner h2 { color:#fff; font-size:22px; font-weight:700; margin-bottom:10px; }
+    .cta-banner p { color:rgba(255,255,255,0.8); font-size:14px; margin-bottom:24px; }
+    .cta-btn { display:inline-block; background:#fff; color:#744210; padding:12px 36px; border-radius:8px; font-weight:700; font-size:15px; text-decoration:none; }
+
+    footer { text-align:center; padding:48px; color:#A0AEC0; font-size:13px; background:#fff; border-top:1px solid #E2E8F0; margin-top:48px; }
+
+    @media (max-width:768px) {
+      nav { padding:0 16px; }
+      .hero { padding:40px 20px; }
+      .hero h1 { font-size:24px; }
+      .container { padding:32px 16px; }
+      .pref-grid { grid-template-columns:repeat(3,1fr); }
+      .popular-grid { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:480px) {
+      .pref-grid { grid-template-columns:repeat(2,1fr); }
+      .popular-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">Care<span>Space</span></a>
+  <a href="../index.html" class="back-link">← トップ</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">地域から探す</div>
+  <h1>都道府県から老人ホーム・<br>介護施設を探す</h1>
+  <p>お住まいの地域を選ぶと、施設の特徴・費用相場・選び方のポイントを確認できます</p>
+</div>
+
+<div class="container">
+
+  <!-- 人気エリア -->
+  <div class="popular-section">
+    <div class="popular-title">🔥 よく検索されているエリア</div>
+    <div class="popular-grid">
+      <a href="tokyo.html" class="popular-card">
+        <div class="popular-card-area">関東</div>
+        <div class="popular-card-name">東京都</div>
+        <div class="popular-card-desc">特養待機数が多く費用が高め。エリア別に選び方が変わる</div>
+      </a>
+      <a href="kanagawa.html" class="popular-card">
+        <div class="popular-card-area">関東</div>
+        <div class="popular-card-name">神奈川県</div>
+        <div class="popular-card-desc">横浜・川崎は都内より費用を抑えやすいエリアも</div>
+      </a>
+      <a href="osaka.html" class="popular-card" style="border-color:#DD6B20;">
+        <div class="popular-card-area">近畿</div>
+        <div class="popular-card-name">大阪府 ✓</div>
+        <div class="popular-card-desc">関西最大の施設数。東京の約2/3の費用が相場</div>
+      </a>
+      <a href="fukuoka.html" class="popular-card" style="border-color:#DD6B20;">
+        <div class="popular-card-area">九州</div>
+        <div class="popular-card-name">福岡県 ✓</div>
+        <div class="popular-card-desc">全国平均を下回る安い費用水準。九州最大の施設数</div>
+      </a>
+      <a href="nagoya.html" class="popular-card" style="border-color:#DD6B20;">
+        <div class="popular-card-area">中部</div>
+        <div class="popular-card-name">名古屋市・愛知県 ✓</div>
+        <div class="popular-card-desc">東京の約6〜7割水準の費用。特養待機も比較的短め</div>
+      </a>
+      <a href="chiba.html" class="popular-card">
+        <div class="popular-card-area">関東</div>
+        <div class="popular-card-name">千葉県</div>
+        <div class="popular-card-desc">千葉市・浦安など都市部と郊外で選択肢が豊富</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 北海道・東北 -->
+  <div class="region-section">
+    <div class="region-title">🗾 北海道・東北</div>
+    <div class="pref-grid">
+      <a href="hokkaido.html" class="pref-card"><span class="pref-name">北海道</span><span class="pref-count">施設を探す</span></a>
+      <a href="aomori.html" class="pref-card"><span class="pref-name">青森県</span><span class="pref-count">施設を探す</span></a>
+      <a href="iwate.html" class="pref-card"><span class="pref-name">岩手県</span><span class="pref-count">施設を探す</span></a>
+      <a href="miyagi.html" class="pref-card"><span class="pref-name">宮城県</span><span class="pref-count">施設を探す</span></a>
+      <a href="akita.html" class="pref-card"><span class="pref-name">秋田県</span><span class="pref-count">施設を探す</span></a>
+      <a href="yamagata.html" class="pref-card"><span class="pref-name">山形県</span><span class="pref-count">施設を探す</span></a>
+      <a href="fukushima.html" class="pref-card"><span class="pref-name">福島県</span><span class="pref-count">施設を探す</span></a>
+    </div>
+  </div>
+
+  <!-- 関東 -->
+  <div class="region-section">
+    <div class="region-title">🏙 関東</div>
+    <div class="pref-grid">
+      <a href="ibaraki.html" class="pref-card"><span class="pref-name">茨城県</span><span class="pref-count">施設を探す</span></a>
+      <a href="tochigi.html" class="pref-card"><span class="pref-name">栃木県</span><span class="pref-count">施設を探す</span></a>
+      <a href="gunma.html" class="pref-card"><span class="pref-name">群馬県</span><span class="pref-count">施設を探す</span></a>
+      <a href="saitama.html" class="pref-card"><span class="pref-name">埼玉県</span><span class="pref-count">施設を探す</span></a>
+      <a href="chiba.html" class="pref-card"><span class="pref-name">千葉県</span><span class="pref-count">施設を探す</span></a>
+      <a href="tokyo.html" class="pref-card" style="border-color:#DD6B20;background:#FFF8F0;"><span class="pref-name">東京都</span><span class="pref-count">✓ ページあり</span></a>
+      <a href="kanagawa.html" class="pref-card"><span class="pref-name">神奈川県</span><span class="pref-count">施設を探す</span></a>
+    </div>
+  </div>
+
+  <!-- 中部 -->
+  <div class="region-section">
+    <div class="region-title">🗻 中部</div>
+    <div class="pref-grid">
+      <a href="niigata.html" class="pref-card"><span class="pref-name">新潟県</span><span class="pref-count">施設を探す</span></a>
+      <a href="toyama.html" class="pref-card"><span class="pref-name">富山県</span><span class="pref-count">施設を探す</span></a>
+      <a href="ishikawa.html" class="pref-card"><span class="pref-name">石川県</span><span class="pref-count">施設を探す</span></a>
+      <a href="fukui.html" class="pref-card"><span class="pref-name">福井県</span><span class="pref-count">施設を探す</span></a>
+      <a href="yamanashi.html" class="pref-card"><span class="pref-name">山梨県</span><span class="pref-count">施設を探す</span></a>
+      <a href="nagano.html" class="pref-card"><span class="pref-name">長野県</span><span class="pref-count">施設を探す</span></a>
+      <a href="shizuoka.html" class="pref-card"><span class="pref-name">静岡県</span><span class="pref-count">施設を探す</span></a>
+      <a href="nagoya.html" class="pref-card" style="border-color:#DD6B20;background:#FFF8F0;"><span class="pref-name">愛知県</span><span class="pref-count">✓ ページあり</span></a>
+      <a href="mie.html" class="pref-card"><span class="pref-name">三重県</span><span class="pref-count">施設を探す</span></a>
+    </div>
+  </div>
+
+  <!-- 近畿 -->
+  <div class="region-section">
+    <div class="region-title">⛩ 近畿</div>
+    <div class="pref-grid">
+      <a href="shiga.html" class="pref-card"><span class="pref-name">滋賀県</span><span class="pref-count">施設を探す</span></a>
+      <a href="kyoto.html" class="pref-card"><span class="pref-name">京都府</span><span class="pref-count">施設を探す</span></a>
+      <a href="osaka.html" class="pref-card" style="border-color:#DD6B20;background:#FFF8F0;"><span class="pref-name">大阪府</span><span class="pref-count">✓ ページあり</span></a>
+      <a href="hyogo.html" class="pref-card"><span class="pref-name">兵庫県</span><span class="pref-count">施設を探す</span></a>
+      <a href="nara.html" class="pref-card"><span class="pref-name">奈良県</span><span class="pref-count">施設を探す</span></a>
+      <a href="wakayama.html" class="pref-card"><span class="pref-name">和歌山県</span><span class="pref-count">施設を探す</span></a>
+    </div>
+  </div>
+
+  <!-- 中国・四国 -->
+  <div class="region-section">
+    <div class="region-title">🌊 中国・四国</div>
+    <div class="pref-grid">
+      <a href="tottori.html" class="pref-card"><span class="pref-name">鳥取県</span><span class="pref-count">施設を探す</span></a>
+      <a href="shimane.html" class="pref-card"><span class="pref-name">島根県</span><span class="pref-count">施設を探す</span></a>
+      <a href="okayama.html" class="pref-card"><span class="pref-name">岡山県</span><span class="pref-count">施設を探す</span></a>
+      <a href="hiroshima.html" class="pref-card"><span class="pref-name">広島県</span><span class="pref-count">施設を探す</span></a>
+      <a href="yamaguchi.html" class="pref-card"><span class="pref-name">山口県</span><span class="pref-count">施設を探す</span></a>
+      <a href="tokushima.html" class="pref-card"><span class="pref-name">徳島県</span><span class="pref-count">施設を探す</span></a>
+      <a href="kagawa.html" class="pref-card"><span class="pref-name">香川県</span><span class="pref-count">施設を探す</span></a>
+      <a href="ehime.html" class="pref-card"><span class="pref-name">愛媛県</span><span class="pref-count">施設を探す</span></a>
+      <a href="kochi.html" class="pref-card"><span class="pref-name">高知県</span><span class="pref-count">施設を探す</span></a>
+    </div>
+  </div>
+
+  <!-- 九州・沖縄 -->
+  <div class="region-section">
+    <div class="region-title">🌺 九州・沖縄</div>
+    <div class="pref-grid">
+      <a href="fukuoka.html" class="pref-card" style="border-color:#DD6B20;background:#FFF8F0;"><span class="pref-name">福岡県</span><span class="pref-count">✓ ページあり</span></a>
+      <a href="saga.html" class="pref-card"><span class="pref-name">佐賀県</span><span class="pref-count">施設を探す</span></a>
+      <a href="nagasaki.html" class="pref-card"><span class="pref-name">長崎県</span><span class="pref-count">施設を探す</span></a>
+      <a href="kumamoto.html" class="pref-card"><span class="pref-name">熊本県</span><span class="pref-count">施設を探す</span></a>
+      <a href="oita.html" class="pref-card"><span class="pref-name">大分県</span><span class="pref-count">施設を探す</span></a>
+      <a href="miyazaki.html" class="pref-card"><span class="pref-name">宮崎県</span><span class="pref-count">施設を探す</span></a>
+      <a href="kagoshima.html" class="pref-card"><span class="pref-name">鹿児島県</span><span class="pref-count">施設を探す</span></a>
+      <a href="okinawa.html" class="pref-card"><span class="pref-name">沖縄県</span><span class="pref-count">施設を探す</span></a>
+    </div>
+  </div>
+
+  <div class="cta-banner">
+    <h2>どのエリアの施設も無料で相談できます</h2>
+    <p>全国対応の施設紹介サービスで、希望条件に合う施設を無料で探せます。<br>資料請求・見学予約もサポートしてもらえます。</p>
+    <a href="#" class="cta-btn">無料で施設を探してみる</a>
+  </div>
+
+</div>
+
+<footer>© 2026 CareSpace. All rights reserved.</footer>
+
+</body>
+</html>

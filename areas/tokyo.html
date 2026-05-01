@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>東京都の老人ホーム・介護施設｜費用相場・エリア別の選び方 | CareSpace</title>
+  <meta name="description" content="東京都の老人ホーム・特養・グループホームの費用相場と選び方を解説。23区・多摩地区のエリア別特徴、特養の待機状況、有料老人ホームの月額費用目安をわかりやすく紹介します。">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:#FFFAF0; color:#2D3748; line-height:1.8; }
+    nav { background:#fff; border-bottom:1px solid #E2E8F0; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+    .logo { font-size:20px; font-weight:700; color:#2D3748; text-decoration:none; }
+    .logo span { color:#DD6B20; }
+    .back-link { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .back-link:hover { text-decoration:underline; }
+
+    .hero { background:linear-gradient(135deg,#EBF8FF,#E6FFFA); padding:48px 40px; border-bottom:1px solid #E2E8F0; }
+    .breadcrumb { font-size:13px; color:#718096; margin-bottom:16px; }
+    .breadcrumb a { color:#DD6B20; text-decoration:none; }
+    .hero h1 { font-size:30px; font-weight:700; color:#1A202C; line-height:1.4; margin-bottom:12px; }
+    .hero-desc { color:#4A5568; font-size:15px; max-width:640px; }
+    .hero-tags { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+    .hero-tag { background:rgba(49,130,206,0.1); color:#3182CE; font-size:12px; font-weight:600; padding:4px 12px; border-radius:20px; }
+
+    .container { max-width:900px; margin:0 auto; padding:48px 24px; }
+
+    .summary-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:40px; }
+    .summary-card { background:#fff; border:1px solid #E2E8F0; border-radius:12px; padding:20px; text-align:center; }
+    .summary-card-label { font-size:12px; color:#718096; margin-bottom:6px; }
+    .summary-card-value { font-size:22px; font-weight:700; color:#DD6B20; }
+    .summary-card-sub { font-size:11px; color:#A0AEC0; margin-top:4px; }
+
+    .content-block { background:#fff; border-radius:16px; padding:36px; box-shadow:0 2px 12px rgba(45,55,72,0.06); margin-bottom:24px; }
+    .content-block h2 { font-size:20px; font-weight:700; color:#2D3748; margin:0 0 20px; padding:12px 16px; border-left:4px solid #DD6B20; background:rgba(221,107,32,0.04); border-radius:0 8px 8px 0; }
+    .content-block h3 { font-size:16px; font-weight:700; color:#4A5568; margin:24px 0 12px; padding-left:12px; border-left:2px solid #CBD5E0; }
+    .content-block p { font-size:15px; line-height:1.9; margin-bottom:16px; color:#4A5568; }
+    .content-block ul { padding-left:20px; margin-bottom:16px; }
+    .content-block li { font-size:14px; margin-bottom:8px; color:#4A5568; line-height:1.7; }
+    .content-block strong { color:#2D3748; }
+
+    .cost-table { width:100%; border-collapse:collapse; margin:16px 0 24px; font-size:14px; }
+    .cost-table th { background:#F7FAFC; padding:10px 14px; text-align:left; font-weight:700; color:#4A5568; border-bottom:2px solid #E2E8F0; }
+    .cost-table td { padding:10px 14px; border-bottom:1px solid #F0F4F8; color:#2D3748; }
+    .cost-table tr:last-child td { border-bottom:none; }
+    .cost-table .high { color:#C05621; font-weight:700; }
+    .cost-table .mid { color:#DD6B20; }
+    .cost-table .low { color:#38A169; }
+
+    .area-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:16px 0; }
+    .area-card { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:10px; padding:16px 18px; }
+    .area-card-name { font-size:15px; font-weight:700; color:#2D3748; margin-bottom:6px; }
+    .area-card-desc { font-size:13px; color:#718096; line-height:1.6; }
+    .area-card-badge { display:inline-block; font-size:11px; padding:2px 8px; border-radius:10px; margin-top:8px; font-weight:600; }
+    .badge-high { background:#FFF5F5; color:#C53030; }
+    .badge-mid { background:#FFFBEB; color:#744210; }
+    .badge-low { background:#F0FFF4; color:#276749; }
+
+    .warn-box { background:#FFFBEB; border:1px solid #F6E05E; border-radius:10px; padding:16px 20px; margin:16px 0; font-size:13px; color:#744210; line-height:1.7; }
+    .info-box { background:#EBF8FF; border:1px solid #BEE3F8; border-radius:10px; padding:16px 20px; margin:16px 0; font-size:13px; color:#2A4365; line-height:1.7; }
+    .point-box { background:rgba(221,107,32,0.06); border:1px solid rgba(221,107,32,0.2); border-radius:10px; padding:18px 22px; margin:16px 0; }
+    .point-box-title { font-size:13px; font-weight:700; color:#DD6B20; margin-bottom:10px; }
+    .point-box ul { margin:0; padding-left:20px; }
+    .point-box li { font-size:14px; margin-bottom:6px; }
+
+    .faq-list { margin:0; }
+    .faq-item { border-bottom:1px solid #E2E8F0; padding:20px 0; }
+    .faq-item:last-child { border-bottom:none; }
+    .faq-q { font-size:15px; font-weight:700; color:#2D3748; margin-bottom:10px; display:flex; gap:10px; }
+    .faq-q::before { content:"Q"; background:#DD6B20; color:#fff; font-size:12px; font-weight:700; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+    .faq-a { font-size:14px; color:#4A5568; line-height:1.8; padding-left:32px; }
+
+    .cta-box { background:linear-gradient(135deg,#744210,#C05621); border-radius:16px; padding:36px; text-align:center; margin:32px 0; }
+    .cta-box h2 { color:#fff; font-size:20px; font-weight:700; margin-bottom:10px; }
+    .cta-box p { color:rgba(255,255,255,0.8); font-size:14px; margin-bottom:20px; }
+    .cta-btn { display:inline-block; background:#fff; color:#744210; padding:12px 36px; border-radius:8px; font-weight:700; font-size:15px; text-decoration:none; }
+
+    .related { margin-top:32px; }
+    .related-title { font-size:16px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .related-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .related-card { background:#fff; border:1px solid #E2E8F0; border-radius:10px; padding:16px; text-decoration:none; color:inherit; transition:border-color 0.2s; }
+    .related-card:hover { border-color:#DD6B20; }
+    .related-card-tag { font-size:11px; color:#DD6B20; font-weight:600; margin-bottom:6px; }
+    .related-card-title { font-size:13px; font-weight:600; color:#2D3748; line-height:1.5; }
+
+    .city-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; margin:10px 0 16px; }
+    .city-link { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:6px; padding:8px 4px; text-align:center; text-decoration:none; color:#4A5568; font-size:12px; font-weight:500; transition:all 0.15s; display:block; line-height:1.3; }
+    .city-link:hover { border-color:#DD6B20; background:#FFF8F0; color:#DD6B20; }
+    .route-block { margin-bottom:16px; }
+    .route-block-name { font-size:13px; font-weight:700; color:#4A5568; margin-bottom:8px; padding-left:8px; border-left:3px solid #DD6B20; }
+    .route-tags { display:flex; flex-wrap:wrap; gap:6px; }
+    .route-tag { background:#EBF8FF; border:1px solid #BEE3F8; border-radius:6px; padding:6px 12px; text-decoration:none; color:#2B6CB0; font-size:12px; font-weight:500; transition:all 0.15s; white-space:nowrap; }
+    .route-tag:hover { background:#BEE3F8; color:#1A365D; }
+
+    footer { text-align:center; padding:48px; color:#A0AEC0; font-size:13px; background:#fff; border-top:1px solid #E2E8F0; margin-top:48px; }
+
+    @media (max-width:768px) {
+      nav { padding:0 16px; }
+      .hero { padding:32px 20px; }
+      .hero h1 { font-size:22px; }
+      .container { padding:32px 16px; }
+      .summary-cards { grid-template-columns:1fr 1fr; }
+      .area-grid { grid-template-columns:1fr; }
+      .related-grid { grid-template-columns:1fr; }
+      .content-block { padding:24px 20px; }
+      .city-grid { grid-template-columns:repeat(4,1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">Care<span>Space</span></a>
+  <a href="index.html" class="back-link">← 地域一覧</a>
+</nav>
+
+<div class="hero">
+  <div class="breadcrumb">
+    <a href="../index.html">CareSpace</a> &rsaquo;
+    <a href="index.html">地域から探す</a> &rsaquo;
+    東京都
+  </div>
+  <h1>東京都の老人ホーム・介護施設<br>費用相場とエリア別の選び方</h1>
+  <p class="hero-desc">東京都の老人ホーム・特養・グループホームの費用相場、特養の待機状況、エリア別の特徴をまとめました。</p>
+  <div class="hero-tags">
+    <span class="hero-tag">特養申込者 約2.4万人（令和4年・東京都調査）</span>
+    <span class="hero-tag">有料老人ホーム月額平均29.7万円（LIFULL介護調べ）</span>
+    <span class="hero-tag">施設数 全国最多クラス</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="summary-cards">
+    <div class="summary-card">
+      <div class="summary-card-label">有料老人ホーム月額平均</div>
+      <div class="summary-card-value">29.7万円</div>
+      <div class="summary-card-sub">LIFULL介護調べ・全国平均の約2倍</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-label">特養の月額（目安）</div>
+      <div class="summary-card-value">7〜15万円</div>
+      <div class="summary-card-sub">所得に応じた減額制度あり</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-label">特養入所申込者数</div>
+      <div class="summary-card-value">約2.4万人</div>
+      <div class="summary-card-sub">令和4年4月・東京都調査</div>
+    </div>
+  </div>
+
+  <!-- 市区町村リンク集 -->
+  <div class="content-block">
+    <h2 id="cities">東京都の市区町村から施設を探す</h2>
+    <h3>23区</h3>
+    <div class="city-grid">
+      <a href="../chat.html" class="city-link">千代田区</a>
+      <a href="../chat.html" class="city-link">中央区</a>
+      <a href="../chat.html" class="city-link">港区</a>
+      <a href="../chat.html" class="city-link">新宿区</a>
+      <a href="../chat.html" class="city-link">文京区</a>
+      <a href="../chat.html" class="city-link">台東区</a>
+      <a href="../chat.html" class="city-link">墨田区</a>
+      <a href="../chat.html" class="city-link">江東区</a>
+      <a href="../chat.html" class="city-link">品川区</a>
+      <a href="../chat.html" class="city-link">目黒区</a>
+      <a href="../chat.html" class="city-link">大田区</a>
+      <a href="../chat.html" class="city-link">世田谷区</a>
+      <a href="../chat.html" class="city-link">渋谷区</a>
+      <a href="../chat.html" class="city-link">中野区</a>
+      <a href="../chat.html" class="city-link">杉並区</a>
+      <a href="../chat.html" class="city-link">豊島区</a>
+      <a href="../chat.html" class="city-link">北区</a>
+      <a href="../chat.html" class="city-link">荒川区</a>
+      <a href="../chat.html" class="city-link">板橋区</a>
+      <a href="../chat.html" class="city-link">練馬区</a>
+      <a href="../chat.html" class="city-link">足立区</a>
+      <a href="../chat.html" class="city-link">葛飾区</a>
+      <a href="../chat.html" class="city-link">江戸川区</a>
+    </div>
+    <h3>多摩地区</h3>
+    <div class="city-grid">
+      <a href="../chat.html" class="city-link">八王子市</a>
+      <a href="../chat.html" class="city-link">立川市</a>
+      <a href="../chat.html" class="city-link">武蔵野市</a>
+      <a href="../chat.html" class="city-link">三鷹市</a>
+      <a href="../chat.html" class="city-link">青梅市</a>
+      <a href="../chat.html" class="city-link">府中市</a>
+      <a href="../chat.html" class="city-link">昭島市</a>
+      <a href="../chat.html" class="city-link">調布市</a>
+      <a href="../chat.html" class="city-link">町田市</a>
+      <a href="../chat.html" class="city-link">小金井市</a>
+      <a href="../chat.html" class="city-link">小平市</a>
+      <a href="../chat.html" class="city-link">日野市</a>
+      <a href="../chat.html" class="city-link">東村山市</a>
+      <a href="../chat.html" class="city-link">国分寺市</a>
+      <a href="../chat.html" class="city-link">国立市</a>
+      <a href="../chat.html" class="city-link">福生市</a>
+      <a href="../chat.html" class="city-link">狛江市</a>
+      <a href="../chat.html" class="city-link">東大和市</a>
+      <a href="../chat.html" class="city-link">清瀬市</a>
+      <a href="../chat.html" class="city-link">東久留米市</a>
+      <a href="../chat.html" class="city-link">武蔵村山市</a>
+      <a href="../chat.html" class="city-link">多摩市</a>
+      <a href="../chat.html" class="city-link">稲城市</a>
+      <a href="../chat.html" class="city-link">羽村市</a>
+      <a href="../chat.html" class="city-link">あきる野市</a>
+      <a href="../chat.html" class="city-link">西東京市</a>
+    </div>
+    <p style="font-size:12px;color:#A0AEC0;margin-top:8px;">※ 各エリアのリンクをクリックするとAI相談でエリア別の施設情報を確認できます</p>
+  </div>
+
+  <!-- 路線別リンク集 -->
+  <div class="content-block">
+    <h2 id="routes">路線・沿線から施設を探す</h2>
+    <p style="font-size:14px;color:#718096;margin-bottom:20px;">よく利用される路線沿いの施設をAIに相談できます。</p>
+    <div class="route-block">
+      <div class="route-block-name">JR</div>
+      <div class="route-tags">
+        <a href="../chat.html" class="route-tag">山手線</a>
+        <a href="../chat.html" class="route-tag">中央線</a>
+        <a href="../chat.html" class="route-tag">京浜東北線</a>
+        <a href="../chat.html" class="route-tag">総武線</a>
+        <a href="../chat.html" class="route-tag">常磐線</a>
+        <a href="../chat.html" class="route-tag">埼京線</a>
+        <a href="../chat.html" class="route-tag">横須賀線</a>
+        <a href="../chat.html" class="route-tag">南武線</a>
+        <a href="../chat.html" class="route-tag">八高線</a>
+      </div>
+    </div>
+    <div class="route-block">
+      <div class="route-block-name">東京メトロ</div>
+      <div class="route-tags">
+        <a href="../chat.html" class="route-tag">銀座線</a>
+        <a href="../chat.html" class="route-tag">丸ノ内線</a>
+        <a href="../chat.html" class="route-tag">日比谷線</a>
+        <a href="../chat.html" class="route-tag">東西線</a>
+        <a href="../chat.html" class="route-tag">千代田線</a>
+        <a href="../chat.html" class="route-tag">有楽町線</a>
+        <a href="../chat.html" class="route-tag">半蔵門線</a>
+        <a href="../chat.html" class="route-tag">南北線</a>
+        <a href="../chat.html" class="route-tag">副都心線</a>
+      </div>
+    </div>
+    <div class="route-block">
+      <div class="route-block-name">都営地下鉄</div>
+      <div class="route-tags">
+        <a href="../chat.html" class="route-tag">浅草線</a>
+        <a href="../chat.html" class="route-tag">三田線</a>
+        <a href="../chat.html" class="route-tag">新宿線</a>
+        <a href="../chat.html" class="route-tag">大江戸線</a>
+      </div>
+    </div>
+    <div class="route-block">
+      <div class="route-block-name">私鉄各線</div>
+      <div class="route-tags">
+        <a href="../chat.html" class="route-tag">東急東横線</a>
+        <a href="../chat.html" class="route-tag">東急田園都市線</a>
+        <a href="../chat.html" class="route-tag">東急目黒線</a>
+        <a href="../chat.html" class="route-tag">小田急線</a>
+        <a href="../chat.html" class="route-tag">京王線</a>
+        <a href="../chat.html" class="route-tag">京王井の頭線</a>
+        <a href="../chat.html" class="route-tag">西武池袋線</a>
+        <a href="../chat.html" class="route-tag">西武新宿線</a>
+        <a href="../chat.html" class="route-tag">東武東上線</a>
+        <a href="../chat.html" class="route-tag">東武スカイツリーライン</a>
+        <a href="../chat.html" class="route-tag">京成本線</a>
+        <a href="../chat.html" class="route-tag">京急本線</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 東京都の介護施設の特徴 -->
+  <div class="content-block">
+    <h2 id="feature">東京都の介護施設の特徴</h2>
+    <p>東京都は全国で最も高齢者人口が多く、介護施設の数も多い一方で、<strong>需要が供給を上回っている</strong>のが現状です。特に特別養護老人ホーム（特養）は待機者が多く、申し込みから入所まで数年かかるケースが珍しくありません。</p>
+    <p>一方で民間の有料老人ホームやサービス付き高齢者向け住宅（サ高住）は選択肢が豊富で、希望条件に合う施設が見つかりやすいという側面もあります。ただし<strong>費用は全国平均を大きく上回る</strong>ため、早めの資金計画が重要です。</p>
+
+    <div class="point-box">
+      <div class="point-box-title">東京都の施設探しで押さえるべきポイント</div>
+      <ul>
+        <li>特養は申し込み先を複数にしておく（複数の区市に申し込むことも可能）</li>
+        <li>都内より費用を抑えたい場合は神奈川・埼玉・千葉の施設も候補に</li>
+        <li>有料老人ホームは「入居一時金あり」と「月額のみ」でトータル費用が変わる</li>
+        <li>認知症がある場合はグループホーム（区市町村ごとに定員制限あり）も検討</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 施設タイプ別費用 -->
+  <div class="content-block">
+    <h2 id="cost">東京都の施設タイプ別 費用相場</h2>
+    <p style="font-size:13px;color:#718096;margin-bottom:12px;">出典：<a href="https://kaigo.homes.co.jp/market_price/pref=13/" target="_blank" rel="noopener" style="color:#DD6B20;">LIFULL介護 東京都費用相場</a>、<a href="https://www.sagasix.jp/knowledge/cost/tokuyo/" target="_blank" rel="noopener" style="color:#DD6B20;">さがしっくす 特養費用解説</a>（2025年データ）</p>
+
+    <table class="cost-table">
+      <tr>
+        <th>施設タイプ</th>
+        <th>月額費用の目安</th>
+        <th>入居一時金</th>
+        <th>待機・空き</th>
+      </tr>
+      <tr>
+        <td><strong>特別養護老人ホーム（特養）</strong></td>
+        <td class="low">7〜15万円</td>
+        <td>なし</td>
+        <td class="high">申込者約2.4万人（令和4年）</td>
+      </tr>
+      <tr>
+        <td><strong>介護老人保健施設（老健）</strong></td>
+        <td class="mid">10〜18万円</td>
+        <td>なし</td>
+        <td class="mid">数ヶ月〜1年程度</td>
+      </tr>
+      <tr>
+        <td><strong>有料老人ホーム（介護付）</strong></td>
+        <td class="high">平均29.7万円</td>
+        <td>0〜数百万円</td>
+        <td class="low">比較的入りやすい</td>
+      </tr>
+      <tr>
+        <td><strong>有料老人ホーム（住宅型）</strong></td>
+        <td class="mid">15〜30万円</td>
+        <td>0〜数十万円</td>
+        <td class="low">比較的入りやすい</td>
+      </tr>
+      <tr>
+        <td><strong>グループホーム</strong></td>
+        <td class="mid">15〜25万円</td>
+        <td>10〜30万円程度</td>
+        <td class="mid">施設による</td>
+      </tr>
+      <tr>
+        <td><strong>サービス付き高齢者向け住宅</strong></td>
+        <td class="mid">12〜25万円</td>
+        <td>敷金程度</td>
+        <td class="low">比較的入りやすい</td>
+      </tr>
+    </table>
+
+    <div class="warn-box">
+      ⚠️ 費用は施設・居室タイプ・要介護度によって大きく変わります。上記は目安です。「安い施設」を探す際は月額だけでなく、介護サービス費・食費・光熱費などの合計で比較しましょう。
+    </div>
+  </div>
+
+  <!-- エリア別特徴 -->
+  <div class="content-block">
+    <h2 id="area">エリア別の特徴</h2>
+    <p>東京都は大きく「23区」「多摩地区」に分かれ、さらに区・市ごとに施設数・費用水準・待機状況が異なります。</p>
+
+    <h3>23区（都心・城東・城北・城西・城南）</h3>
+    <div class="area-grid">
+      <div class="area-card">
+        <div class="area-card-name">都心・港区・渋谷区・新宿区</div>
+        <div class="area-card-desc">施設数は多いが費用が最も高い。有料老人ホームの月額が30万円超えも珍しくない。</div>
+        <span class="area-card-badge badge-high">費用：高め</span>
+      </div>
+      <div class="area-card">
+        <div class="area-card-name">城東（江東区・墨田区・葛飾区など）</div>
+        <div class="area-card-desc">都心より比較的費用を抑えやすい。特養の整備も進んでいるエリアあり。</div>
+        <span class="area-card-badge badge-mid">費用：中程度</span>
+      </div>
+      <div class="area-card">
+        <div class="area-card-name">城北（北区・板橋区・足立区など）</div>
+        <div class="area-card-desc">有料老人ホームの選択肢が多く、23区内では比較的費用を抑えやすい傾向。</div>
+        <span class="area-card-badge badge-mid">費用：中程度</span>
+      </div>
+      <div class="area-card">
+        <div class="area-card-name">城南（品川区・目黒区・世田谷区など）</div>
+        <div class="area-card-desc">住宅地として人気が高く、施設の質も高い傾向だが費用もそれなりに高い。</div>
+        <span class="area-card-badge badge-high">費用：高め</span>
+      </div>
+    </div>
+
+    <h3>多摩地区（立川・八王子・町田など）</h3>
+    <div class="area-grid">
+      <div class="area-card">
+        <div class="area-card-name">立川市・八王子市・多摩市</div>
+        <div class="area-card-desc">23区と比べて施設費用が抑えられるケースが多い。医療機関も充実しており選びやすい。</div>
+        <span class="area-card-badge badge-low">費用：比較的安め</span>
+      </div>
+      <div class="area-card">
+        <div class="area-card-name">町田市・調布市・府中市</div>
+        <div class="area-card-desc">神奈川・埼玉との境界エリア。隣県の施設との比較検討も有効。</div>
+        <span class="area-card-badge badge-low">費用：比較的安め</span>
+      </div>
+    </div>
+
+    <div class="info-box">
+      💡 「住み慣れた地域で」という希望は理解できますが、費用が年間100〜200万円変わることもあります。車・電車で1時間程度なら、多摩地区や近隣県も含めて探すことをおすすめします。
+    </div>
+  </div>
+
+  <!-- 特養について -->
+  <div class="content-block">
+    <h2 id="tokuyou">東京都の特養（特別養護老人ホーム）について</h2>
+    <p>特養は費用が安く安定したケアが受けられますが、東京都では入所申込者が<strong>約23,694人（令和4年4月・東京都調査）</strong>おり、申し込みから入所まで数年かかるケースが多いのが現状です。<small>（出典：<a href="https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2022/12/23/09.html" target="_blank" rel="noopener" style="color:#DD6B20;">東京都報道発表 2022年12月</a>）</small></p>
+
+    <h3>特養を申し込む際のポイント</h3>
+    <ul>
+      <li>要介護3以上が入所条件（特例あり）——要介護認定を受けたらすぐに申し込む</li>
+      <li>複数の施設に同時申し込みが可能——できるだけ多くの施設に申し込んでおく</li>
+      <li>緊急度（独居・介護者の病気など）が高いと優先されることがある——ケアマネジャーに相談</li>
+      <li>特養が空くまでの間は老健やショートステイを活用</li>
+    </ul>
+
+    <div class="warn-box">
+      ⚠️ 「特養が空くまで待つ」という方針だけでは、介護者が先に倒れてしまうことがあります。有料老人ホームやグループホームへの入所を並行して検討することが重要です。
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="content-block">
+    <h2 id="faq">よくある質問</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">東京都で費用を抑えて老人ホームに入れる方法はありますか？</div>
+        <div class="faq-a">特養への早期申し込みが最も有効です。入所まで時間がかかる間は、低価格帯のサービス付き高齢者向け住宅を利用するのも一つの方法です。また多摩地区や近隣の神奈川・埼玉・千葉の施設と比較すると費用を抑えられるケースがあります。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">東京都の特養の申し込みはどこにすればいいですか？</div>
+        <div class="faq-a">申し込みは各特養施設に直接行います。担当のケアマネジャーに相談すると、複数施設への申し込みをサポートしてもらえます。区のホームページに特養一覧が掲載されているほか、東京都が提供する「東京都福祉サービス第三者評価」のサイトでも確認できます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">認知症の親のグループホームを東京都で探すには？</div>
+        <div class="faq-a">グループホームは認知症の診断を受けていることが入居条件で、住民票のある区市町村内の施設しか利用できません（原則）。空き状況はケアマネジャーに確認するか、各施設に直接問い合わせる方法が一般的です。東京都は施設数が多い反面、人気施設は空きが出づらいため、複数の施設を候補にしておくことをおすすめします。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">有料老人ホームの「入居一時金ゼロ」は信頼できますか？</div>
+        <div class="faq-a">入居一時金がゼロの場合は、その分が月額費用に上乗せされているケースが多いです。入居一時金ありのプランと総費用で比較することが重要です。また「短期解約特例」という制度があり、入居後90日以内に退去した場合は一時金の多くが返金されます。</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#F7FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:24px;margin:0 0 16px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+    <div>
+      <div style="font-size:12px;font-weight:700;color:#DD6B20;margin-bottom:4px;">RANKING</div>
+      <div style="font-size:16px;font-weight:700;color:#2D3748;margin-bottom:4px;">東京都 施設タイプ別ランキング</div>
+      <div style="font-size:13px;color:#718096;">費用・入居しやすさ・認知症対応など目的別に比較</div>
+    </div>
+    <a href="tokyo-ranking.html" style="background:#DD6B20;color:#fff;padding:10px 24px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;">ランキングを見る →</a>
+  </div>
+
+  <div class="cta-box">
+    <h2>東京都の施設を無料で探してみる</h2>
+    <p>希望条件（エリア・費用・施設タイプ・認知症対応など）を伝えるだけで、<br>専門スタッフが合う施設を無料でご提案します。</p>
+    <a href="../chat.html" class="cta-btn">AIに相談して施設を探す</a>
+  </div>
+
+  <div class="related">
+    <div class="related-title">介護施設選びに役立つ記事</div>
+    <div class="related-grid">
+      <a href="../articles/care-facility-types.html" class="related-card">
+        <div class="related-card-tag">施設選び</div>
+        <div class="related-card-title">特養・有料老人ホーム・グループホームの違いと選び方</div>
+      </a>
+      <a href="../articles/tokuyou-application.html" class="related-card">
+        <div class="related-card-tag">施設選び</div>
+        <div class="related-card-title">特養の申し込みと入所待機の基礎知識</div>
+      </a>
+      <a href="../articles/care-facility-visit.html" class="related-card">
+        <div class="related-card-tag">施設選び</div>
+        <div class="related-card-title">老人ホーム見学チェックリスト30項目</div>
+      </a>
+      <a href="../articles/home-care-limit.html" class="related-card">
+        <div class="related-card-tag">在宅介護・施設入所</div>
+        <div class="related-card-title">在宅介護の限界サイン｜施設入所を考えるタイミング</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>© 2026 CareSpace. All rights reserved.</footer>
+
+</body>
+</html>

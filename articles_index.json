@@ -1,0 +1,162 @@
+[
+  {
+    "file": "articles/sudden-caregiving.html",
+    "title": "親が突然倒れた…介護が始まったとき最初にすること",
+    "category": "start",
+    "cat_label": "急な介護開始",
+    "keyword": "突然 介護 始まった 最初にすること",
+    "created_at": "2026-04-20T09:00:00"
+  },
+  {
+    "file": "articles/care-insurance.html",
+    "title": "介護保険の使い方と自己負担額の基本知識",
+    "category": "money",
+    "cat_label": "介護費用・保険",
+    "keyword": "介護保険 自己負担 要介護認定 申請",
+    "created_at": "2026-04-22T09:00:00"
+  },
+  {
+    "file": "articles/care-facility-types.html",
+    "title": "特養・有料老人ホーム・グループホームの違いと選び方",
+    "category": "facility",
+    "cat_label": "施設選び",
+    "keyword": "特養 有料老人ホーム グループホーム 違い 選び方",
+    "created_at": "2026-04-24T09:00:00"
+  },
+  {
+    "file": "articles/dementia-diagnosis.html",
+    "title": "親が認知症と診断されたら最初にすること",
+    "category": "dementia",
+    "cat_label": "認知症",
+    "keyword": "認知症 診断 最初にすること 手続き",
+    "created_at": "2026-04-26T09:00:00"
+  },
+  {
+    "file": "articles/care-work-balance.html",
+    "title": "介護と仕事の両立｜介護離職を避けるために",
+    "category": "work",
+    "cat_label": "仕事との両立",
+    "keyword": "介護離職 仕事 両立 介護休業",
+    "created_at": "2026-04-28T09:00:00"
+  },
+  {
+    "file": "articles/home-care-limit.html",
+    "title": "在宅介護の限界サイン｜施設入所を考えるタイミングと準備",
+    "category": "facility",
+    "cat_label": "在宅介護・施設入所",
+    "keyword": "在宅介護 限界 施設入所 タイミング",
+    "created_at": "2026-04-29T09:00:00"
+  },
+  {
+    "file": "articles/long-distance-care.html",
+    "title": "遠距離介護を乗り越える方法｜離れて暮らす親のサポート術",
+    "category": "start",
+    "cat_label": "遠距離介護",
+    "keyword": "遠距離介護 離れて暮らす 見守り サポート",
+    "created_at": "2026-04-29T09:10:00"
+  },
+  {
+    "file": "articles/care-money-prep.html",
+    "title": "介護にかかるお金の現実｜費用の目安と親の資産管理",
+    "category": "money",
+    "cat_label": "介護費用・保険",
+    "keyword": "介護費用 いくら 資産管理 家族信託",
+    "created_at": "2026-04-29T09:20:00"
+  },
+  {
+    "file": "articles/caregiver-burnout.html",
+    "title": "介護ストレスと燃え尽き症候群を防ぐ方法｜介護者自身のケア",
+    "category": "start",
+    "cat_label": "介護者のメンタルケア",
+    "keyword": "介護 ストレス 燃え尽き バーンアウト セルフケア",
+    "created_at": "2026-04-29T09:30:00"
+  },
+  {
+    "file": "articles/dementia-early-signs.html",
+    "title": "認知症の初期症状チェックリスト｜早期発見と受診のすすめ",
+    "category": "dementia",
+    "cat_label": "認知症",
+    "keyword": "認知症 初期症状 チェックリスト 物忘れ 受診",
+    "created_at": "2026-04-29T10:00:00"
+  },
+  {
+    "file": "articles/persuade-parent-care.html",
+    "title": "病院・施設に行きたがらない親を説得する方法",
+    "category": "start",
+    "cat_label": "受診・施設説得",
+    "keyword": "親 病院 施設 拒否 説得 認知症",
+    "created_at": "2026-04-29T10:10:00"
+  },
+  {
+    "file": "articles/tokuyou-application.html",
+    "title": "特養（特別養護老人ホーム）の申し込みと入所待機の基礎知識",
+    "category": "facility",
+    "cat_label": "施設選び",
+    "keyword": "特養 申し込み 待機 入所 費用",
+    "created_at": "2026-04-29T10:20:00"
+  },
+  {
+    "file": "articles/care-service-guide.html",
+    "title": "デイサービス・訪問介護を使いこなす｜在宅介護サービス完全ガイド",
+    "category": "start",
+    "cat_label": "在宅介護サービス",
+    "keyword": "デイサービス 訪問介護 ヘルパー ショートステイ 使い方",
+    "created_at": "2026-04-29T10:30:00"
+  },
+  {
+    "file": "articles/family-care-conflict.html",
+    "title": "きょうだい間の介護の役割分担問題｜揉めないための話し合いのコツ",
+    "category": "start",
+    "cat_label": "家族・きょうだい問題",
+    "keyword": "きょうだい 介護 役割分担 揉める 話し合い",
+    "created_at": "2026-04-29T10:40:00"
+  },
+  {
+    "file": "articles/care-leave-system.html",
+    "title": "介護休業・介護休暇の制度をフル活用する方法",
+    "category": "work",
+    "cat_label": "仕事との両立",
+    "keyword": "介護休業 介護休暇 給付金 両立 申請",
+    "created_at": "2026-04-29T10:50:00"
+  },
+  {
+    "file": "articles/care-facility-visit.html",
+    "title": "老人ホーム見学チェックリスト30項目｜失敗しない施設選びの見方",
+    "category": "facility",
+    "cat_label": "施設選び",
+    "keyword": "老人ホーム 見学 チェックリスト 施設選び ポイント",
+    "created_at": "2026-04-29T11:00:00"
+  },
+  {
+    "file": "articles/elderly-alone.html",
+    "title": "一人暮らしの親が心配｜見守りサービスと緊急時対応の準備",
+    "category": "start",
+    "cat_label": "一人暮らし見守り",
+    "keyword": "一人暮らし 親 見守り 緊急時 安否確認 サービス",
+    "created_at": "2026-04-29T11:10:00"
+  },
+  {
+    "file": "articles/care-manager-tips.html",
+    "title": "ケアマネジャーとの上手な付き合い方｜相談・活用・担当変更のコツ",
+    "category": "start",
+    "cat_label": "介護の始め方",
+    "keyword": "ケアマネ 付き合い方 相談 担当変更 活用",
+    "created_at": "2026-04-29T11:20:00"
+  },
+  {
+    "file": "articles/night-caregiving.html",
+    "title": "夜間介護で眠れない…夜中の対応と睡眠を確保する5つの方法",
+    "category": "start",
+    "cat_label": "介護者のメンタルケア",
+    "keyword": "夜間介護 眠れない 睡眠不足 夜中 対応",
+    "created_at": "2026-04-30T09:00:00"
+  },
+  {
+    "file": "articles/home-renovation-care.html",
+    "title": "介護リフォームの費用と補助金｜介護保険で20万円まで補助される住宅改修",
+    "category": "money",
+    "cat_label": "介護費用・保険",
+    "keyword": "介護リフォーム 補助金 住宅改修 手すり 費用",
+    "created_at": "2026-04-30T09:10:00"
+  }
+]

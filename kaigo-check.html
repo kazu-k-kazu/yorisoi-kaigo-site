@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>介護度チェック｜要支援・要介護の目安を無料診断（約3分） | CareSpace</title>
+  <meta name="description" content="11の質問に答えるだけ。身体機能・認知・行動を総合的にチェックし、要支援1〜要介護5の目安と利用できるサービス・費用をわかりやすく表示します。">
+  <meta property="og:title" content="介護度チェック｜要支援・要介護の目安を無料診断 | CareSpace">
+  <meta property="og:description" content="11の質問で介護度の目安がわかる無料ツール。使えるサービスと月額費用の目安も確認できます。">
+  <meta property="og:type" content="website">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --main: #744210;
+      --accent: #DD6B20;
+      --accent2: #C05621;
+      --bg: #FFFAF0;
+      --white: #FFFFFF;
+      --text: #2D3748;
+      --text-light: #718096;
+      --border: #E2E8F0;
+    }
+    body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+
+    nav { background:var(--white); border-bottom:1px solid var(--border); padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+    .logo { font-size:20px; font-weight:700; color:var(--text); text-decoration:none; }
+    .logo span { color:var(--accent); }
+    .back-link { color:var(--accent); text-decoration:none; font-size:14px; display:flex; align-items:center; gap:4px; }
+    .back-link:hover { text-decoration:underline; }
+
+    .hero { background:linear-gradient(135deg,#FFFAF0,#FFF5E6); padding:48px 40px 32px; text-align:center; border-bottom:1px solid var(--border); }
+    .hero-badge { display:inline-block; background:rgba(221,107,32,0.1); color:var(--accent); font-size:12px; font-weight:600; padding:4px 14px; border-radius:20px; margin-bottom:14px; }
+    .hero h1 { font-size:28px; font-weight:700; color:#1A202C; margin-bottom:10px; line-height:1.4; }
+    .hero p { color:var(--text-light); font-size:15px; max-width:560px; margin:0 auto; }
+    .hero-meta { display:flex; justify-content:center; gap:24px; margin-top:16px; flex-wrap:wrap; }
+    .hero-meta span { font-size:13px; color:var(--text-light); display:flex; align-items:center; gap:4px; }
+    .hero-meta span b { color:var(--accent); }
+
+    .check-wrap { max-width:680px; margin:40px auto 80px; padding:0 24px; }
+
+    /* プログレス */
+    .progress-wrap { margin-bottom:32px; }
+    .progress-steps { display:flex; justify-content:space-between; position:relative; margin-bottom:10px; }
+    .progress-steps::before { content:''; position:absolute; top:14px; left:0; right:0; height:2px; background:var(--border); z-index:0; }
+    .progress-line { position:absolute; top:14px; left:0; height:2px; background:var(--accent); z-index:1; transition:width 0.4s ease; }
+    .step-dot { width:28px; height:28px; border-radius:50%; background:var(--border); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:#A0AEC0; position:relative; z-index:2; transition:all 0.3s; }
+    .step-dot.active { background:var(--accent); color:#fff; box-shadow:0 0 0 4px rgba(221,107,32,0.2); }
+    .step-dot.done { background:#38A169; color:#fff; }
+    .progress-labels { display:flex; justify-content:space-between; }
+    .progress-labels span { font-size:11px; color:#A0AEC0; text-align:center; flex:1; transition:color 0.3s; }
+    .progress-labels span.active { color:var(--accent); font-weight:700; }
+    .progress-labels span.done { color:#38A169; }
+
+    /* ステップカード */
+    .step-card { background:var(--white); border-radius:16px; padding:36px; box-shadow:0 2px 16px rgba(45,55,72,0.08); display:none; }
+    .step-card.active { display:block; animation:fadeIn 0.35s ease; }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+
+    .step-header { margin-bottom:28px; }
+    .step-num { font-size:11px; font-weight:700; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:4px; }
+    .step-title { font-size:20px; font-weight:700; color:var(--text); margin-bottom:6px; }
+    .step-desc { font-size:13px; color:var(--text-light); }
+
+    /* 質問 */
+    .question { margin-bottom:28px; }
+    .question-label { font-size:15px; font-weight:700; color:#1A202C; margin-bottom:14px; display:flex; align-items:flex-start; gap:8px; }
+    .q-num { display:inline-flex; align-items:center; justify-content:center; min-width:24px; height:24px; background:rgba(221,107,32,0.12); color:var(--accent); border-radius:50%; font-size:12px; font-weight:700; flex-shrink:0; margin-top:1px; }
+
+    /* ラジオカード */
+    .radio-list { display:flex; flex-direction:column; gap:8px; }
+    .radio-item input[type=radio] { display:none; }
+    .radio-item label { display:flex; align-items:center; gap:14px; background:#F7FAFC; border:2px solid var(--border); border-radius:10px; padding:14px 16px; cursor:pointer; transition:all 0.2s; }
+    .radio-item label:hover { border-color:var(--accent); background:#FFF8F0; }
+    .radio-item input:checked + label { border-color:var(--accent); background:#FFF5E6; }
+    .radio-icon { font-size:22px; flex-shrink:0; width:32px; text-align:center; }
+    .radio-text { flex:1; }
+    .radio-main { font-size:14px; font-weight:600; color:var(--text); display:block; }
+    .radio-sub { font-size:12px; color:var(--text-light); }
+    .radio-item input:checked + label .radio-main { color:var(--accent2); }
+    .radio-item input:checked + label .radio-sub { color:#C05621; }
+    .radio-check { width:20px; height:20px; border-radius:50%; border:2px solid var(--border); flex-shrink:0; transition:all 0.2s; display:flex; align-items:center; justify-content:center; }
+    .radio-item input:checked + label .radio-check { border-color:var(--accent); background:var(--accent); }
+    .radio-item input:checked + label .radio-check::after { content:''; width:8px; height:8px; border-radius:50%; background:#fff; }
+
+    /* ボタン */
+    .btn-row { display:flex; gap:12px; margin-top:32px; }
+    .btn-next { flex:1; background:var(--accent); color:#fff; border:none; border-radius:10px; padding:14px; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit; transition:opacity 0.2s,transform 0.2s; }
+    .btn-next:hover:not(:disabled) { opacity:0.9; transform:translateY(-1px); }
+    .btn-next:disabled { background:#CBD5E0; cursor:not-allowed; }
+    .btn-back { background:#F7FAFC; color:var(--text-light); border:2px solid var(--border); border-radius:10px; padding:14px 20px; font-size:14px; font-weight:600; cursor:pointer; font-family:inherit; transition:all 0.2s; }
+    .btn-back:hover { border-color:#CBD5E0; color:#4A5568; }
+
+    /* 区切り線 */
+    .question-divider { border:none; border-top:1px solid #F0F4F8; margin:24px 0; }
+
+    /* ===== 結果画面 ===== */
+    #result { display:none; animation:fadeIn 0.4s ease; }
+
+    .result-intro { text-align:center; margin-bottom:24px; }
+    .result-intro p { font-size:14px; color:var(--text-light); }
+
+    .result-level-card { border-radius:16px; padding:36px 28px; text-align:center; margin-bottom:20px; color:#fff; position:relative; overflow:hidden; }
+    .result-level-card::before { content:''; position:absolute; top:-40px; right:-40px; width:150px; height:150px; border-radius:50%; background:rgba(255,255,255,0.07); }
+    .result-level-label { font-size:13px; opacity:0.85; margin-bottom:6px; letter-spacing:0.05em; }
+    .result-level-name { font-size:42px; font-weight:700; line-height:1; margin-bottom:6px; }
+    .result-level-sub { font-size:16px; opacity:0.85; margin-bottom:14px; }
+    .result-score-badge { display:inline-block; background:rgba(255,255,255,0.2); border-radius:20px; padding:4px 14px; font-size:13px; }
+
+    .result-section { background:var(--white); border-radius:14px; padding:24px; box-shadow:0 2px 12px rgba(45,55,72,0.06); margin-bottom:16px; }
+    .result-section-title { font-size:16px; font-weight:700; color:var(--main); margin-bottom:16px; display:flex; align-items:center; gap:8px; }
+    .result-section-title span { font-size:18px; }
+
+    .result-desc-text { font-size:15px; line-height:2.0; color:var(--text); }
+
+    .service-list { display:flex; flex-direction:column; gap:8px; }
+    .service-item { display:flex; align-items:center; gap:10px; padding:10px 14px; border-radius:8px; background:#FFFAF0; border:1px solid #FED7AA; }
+    .service-icon { font-size:16px; flex-shrink:0; }
+    .service-text { font-size:14px; color:var(--text); font-weight:500; }
+
+    .cost-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .cost-card { text-align:center; padding:16px; border-radius:10px; }
+    .cost-card.limit { background:#FFF5E6; border:1px solid #FED7AA; }
+    .cost-card.pay { background:#F0FFF4; border:1px solid #C6F6D5; }
+    .cost-label { font-size:12px; color:var(--text-light); margin-bottom:4px; }
+    .cost-value { font-size:22px; font-weight:700; }
+    .cost-card.limit .cost-value { color:var(--accent); }
+    .cost-card.pay .cost-value { color:#276749; }
+    .cost-note { font-size:11px; color:var(--text-light); margin-top:4px; }
+
+    .steps-list { display:flex; flex-direction:column; gap:0; }
+    .step-item { display:flex; gap:16px; align-items:flex-start; padding:14px 0; border-bottom:1px solid #F0F4F8; }
+    .step-item:last-child { border-bottom:none; }
+    .step-circle { width:32px; height:32px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+    .step-content { flex:1; }
+    .step-content-title { font-size:14px; font-weight:700; color:var(--text); margin-bottom:3px; }
+    .step-content-desc { font-size:12px; color:var(--text-light); line-height:1.6; }
+
+    .cta-section { background:linear-gradient(135deg,#744210,#C05621); border-radius:16px; padding:28px; text-align:center; margin-bottom:16px; }
+    .cta-section h3 { color:#fff; font-size:18px; font-weight:700; margin-bottom:8px; }
+    .cta-section p { color:rgba(255,255,255,0.8); font-size:13px; margin-bottom:20px; }
+    .cta-btns { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+    .cta-btn-primary { display:inline-block; background:#fff; color:#744210; padding:12px 28px; border-radius:8px; font-weight:700; font-size:15px; text-decoration:none; transition:opacity 0.2s; }
+    .cta-btn-primary:hover { opacity:0.9; }
+    .cta-btn-secondary { display:inline-block; background:rgba(255,255,255,0.15); color:#fff; padding:12px 24px; border-radius:8px; font-weight:600; font-size:14px; text-decoration:none; border:1px solid rgba(255,255,255,0.3); transition:all 0.2s; }
+    .cta-btn-secondary:hover { background:rgba(255,255,255,0.25); }
+
+    .sub-cta-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px; }
+    .sub-cta-card { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:18px; text-decoration:none; color:inherit; transition:all 0.2s; display:block; text-align:center; }
+    .sub-cta-card:hover { border-color:var(--accent); box-shadow:0 4px 12px rgba(221,107,32,0.1); transform:translateY(-2px); }
+    .sub-cta-icon { font-size:24px; margin-bottom:8px; }
+    .sub-cta-title { font-size:14px; font-weight:700; color:var(--main); margin-bottom:4px; }
+    .sub-cta-desc { font-size:12px; color:var(--text-light); }
+
+    .disclaimer { font-size:11px; color:#A0AEC0; line-height:1.8; background:#F7FAFC; border-radius:8px; padding:14px 16px; margin-top:16px; }
+
+    .retry-btn { display:block; width:100%; margin-top:12px; background:#F7FAFC; border:2px solid var(--border); color:var(--text-light); padding:12px; border-radius:10px; font-size:14px; font-weight:600; cursor:pointer; font-family:inherit; transition:all 0.2s; }
+    .retry-btn:hover { border-color:#CBD5E0; color:#4A5568; }
+
+    .info-box { background:#EBF8FF; border:1px solid #BEE3F8; border-radius:10px; padding:12px 16px; font-size:13px; color:#2A4365; line-height:1.7; margin-bottom:16px; }
+
+    footer { background:var(--main); color:#FBD38D; padding:32px 40px 24px; text-align:center; margin-top:40px; }
+    .footer-inner { max-width:680px; margin:0 auto; }
+    .footer-links { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:16px; }
+    .footer-links a { color:#FBD38D; text-decoration:none; font-size:13px; }
+    .footer-links a:hover { color:#FEF3C7; }
+    .footer-copy { font-size:12px; color:rgba(251,211,141,0.7); }
+
+    @media(max-width:640px) {
+      nav { padding:0 16px; }
+      .hero { padding:36px 20px 24px; }
+      .hero h1 { font-size:22px; }
+      .hero p { font-size:14px; }
+      .check-wrap { padding:0 16px; margin:24px auto 64px; }
+      .step-card { padding:24px 20px; }
+      .result-level-name { font-size:34px; }
+      .cost-grid { grid-template-columns:1fr 1fr; }
+      .sub-cta-grid { grid-template-columns:1fr 1fr; }
+      .cta-btns { flex-direction:column; align-items:center; }
+      .cta-btn-primary, .cta-btn-secondary { width:100%; max-width:280px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Care<span>Space</span></a>
+  <a href="index.html" class="back-link">← トップへ戻る</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">無料・匿名・約3分</div>
+  <h1>介護度チェック</h1>
+  <p>身体機能・認知・行動について11の質問に答えるだけ。<br>要支援〜要介護5の目安と、使えるサービスがわかります。</p>
+  <div class="hero-meta">
+    <span>⏱ <b>約3分</b>で完了</span>
+    <span>📋 <b>11問</b>の質問</span>
+    <span>🔒 登録・個人情報</b>不要</span>
+  </div>
+</div>
+
+<div class="check-wrap">
+
+  <!-- プログレスバー -->
+  <div class="progress-wrap" id="progressWrap">
+    <div class="progress-steps">
+      <div class="step-dot active" id="dot1">1</div>
+      <div class="step-dot" id="dot2">2</div>
+      <div class="step-dot" id="dot3">3</div>
+      <div class="step-dot" id="dot4">4</div>
+      <div class="progress-line" id="progressLine" style="width:0%"></div>
+    </div>
+    <div class="progress-labels">
+      <span class="active" id="lbl1">基本情報</span>
+      <span id="lbl2">身体機能</span>
+      <span id="lbl3">認知・記憶</span>
+      <span id="lbl4">行動・生活</span>
+    </div>
+  </div>
+
+  <!-- ステップ1: 基本情報（スコアなし） -->
+  <div class="step-card active" id="step1">
+    <div class="step-header">
+      <div class="step-num">STEP 1 / 4</div>
+      <div class="step-title">チェックする方について教えてください</div>
+      <div class="step-desc">あなたとの関係や年齢を確認します（スコアには影響しません）</div>
+    </div>
+
+    <div class="question">
+      <div class="question-label"><span class="q-num">1</span>チェックする方との関係は？</div>
+      <div class="radio-list">
+        <div class="radio-item">
+          <input type="radio" name="q_relation" id="rel1" value="father">
+          <label for="rel1">
+            <span class="radio-icon">👴</span>
+            <span class="radio-text"><span class="radio-main">父親</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_relation" id="rel2" value="mother">
+          <label for="rel2">
+            <span class="radio-icon">👵</span>
+            <span class="radio-text"><span class="radio-main">母親</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_relation" id="rel3" value="spouse">
+          <label for="rel3">
+            <span class="radio-icon">💑</span>
+            <span class="radio-text"><span class="radio-main">配偶者・パートナー</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_relation" id="rel4" value="other">
+          <label for="rel4">
+            <span class="radio-icon">🤝</span>
+            <span class="radio-text"><span class="radio-main">その他の家族・知人</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <hr class="question-divider">
+
+    <div class="question">
+      <div class="question-label"><span class="q-num">2</span>おおよその年齢は？</div>
+      <div class="radio-list">
+        <div class="radio-item">
+          <input type="radio" name="q_age" id="age1" value="60s">
+          <label for="age1">
+            <span class="radio-icon">🙂</span>
+            <span class="radio-text"><span class="radio-main">60代</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_age" id="age2" value="70s">
+          <label for="age2">
+            <span class="radio-icon">😊</span>
+            <span class="radio-text"><span class="radio-main">70代</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_age" id="age3" value="80s">
+          <label for="age3">
+            <span class="radio-icon">🧓</span>
+            <span class="radio-text"><span class="radio-main">80代</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_age" id="age4" value="90s">
+          <label for="age4">
+            <span class="radio-icon">👴</span>
+            <span class="radio-text"><span class="radio-main">90歳以上</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-next" onclick="goNext(1)" id="btn1">身体機能をチェック →</button>
+    </div>
+  </div>
+
+  <!-- ステップ2: 身体機能 -->
+  <div class="step-card" id="step2">
+    <div class="step-header">
+      <div class="step-num">STEP 2 / 4</div>
+      <div class="step-title">身体機能について</div>
+      <div class="step-desc">移動・食事・入浴など日常の身体動作を確認します</div>
+    </div>
+
+    <!-- Q3: 歩行 -->
+    <div class="question">
+      <div class="question-label"><span class="q-num">3</span>歩いて移動する様子はどうですか？</div>
+      <div class="radio-list">
+        <div class="radio-item">
+          <input type="radio" name="q_walk" id="walk0" value="0">
+          <label for="walk0">
+            <span class="radio-icon">🚶</span>
+            <span class="radio-text"><span class="radio-main">一人で安全に歩ける</span><span class="radio-sub">補助なしで問題なし</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_walk" id="walk1" value="1">
+          <label for="walk1">
+            <span class="radio-icon">🦯</span>
+            <span class="radio-text"><span class="radio-main">壁や杖につかまれば歩ける</span><span class="radio-sub">転倒が少し心配</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_walk" id="walk2" value="2">
+          <label for="walk2">
+            <span class="radio-icon">♿</span>
+            <span class="radio-text"><span class="radio-main">支えてもらわないと歩けない・車椅子を使っている</span><span class="radio-sub">常時介助が必要</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_walk" id="walk3" value="3">
+          <label for="walk3">
+            <span class="radio-icon">🛏</span>
+            <span class="radio-text"><span class="radio-main">ほとんどベッドから離れられない</span><span class="radio-sub">寝たきり・寝て過ごすことが多い</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <hr class="question-divider">
+
+    <!-- Q4: 食事 -->
+    <div class="question">
+      <div class="question-label"><span class="q-num">4</span>食事はどのようにしていますか？</div>
+      <div class="radio-list">
+        <div class="radio-item">
+          <input type="radio" name="q_eat" id="eat0" value="0">
+          <label for="eat0">
+            <span class="radio-icon">🍱</span>
+            <span class="radio-text"><span class="radio-main">自分で普通に食べられる</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_eat" id="eat1" value="1">
+          <label for="eat1">
+            <span class="radio-icon">🥄</span>
+            <span class="radio-text"><span class="radio-main">時々こぼす・刻み食など一部介助が必要</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_eat" id="eat2" value="2">
+          <label for="eat2">
+            <span class="radio-icon">👐</span>
+            <span class="radio-text"><span class="radio-main">食べさせてもらっている（全介助）</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <hr class="question-divider">
+
+    <!-- Q5: 入浴 -->
+    <div class="question">
+      <div class="question-label"><span class="q-num">5</span>入浴・体を洗うことについては？</div>
+      <div class="radio-list">
+        <div class="radio-item">
+          <input type="radio" name="q_bath" id="bath0" value="0">
+          <label for="bath0">
+            <span class="radio-icon">🛁</span>
+            <span class="radio-text"><span class="radio-main">一人で問題なく入れる</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_bath" id="bath1" value="1">
+          <label for="bath1">
+            <span class="radio-icon">🫧</span>
+            <span class="radio-text"><span class="radio-main">見守りや一部手伝いが必要</span><span class="radio-sub">背中を流してもらうなど</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_bath" id="bath2" value="2">
+          <label for="bath2">
+            <span class="radio-icon">🤲</span>
+            <span class="radio-text"><span class="radio-main">ほぼ全部介助してもらっている</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <hr class="question-divider">
+
+    <!-- Q6: 排泄 -->
+    <div class="question">
+      <div class="question-label"><span class="q-num">6</span>排泄（トイレ）はどうですか？</div>
+      <div class="radio-list">
+        <div class="radio-item">
+          <input type="radio" name="q_toilet" id="toilet0" value="0">
+          <label for="toilet0">
+            <span class="radio-icon">🚽</span>
+            <span class="radio-text"><span class="radio-main">自分でトイレに行けている</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_toilet" id="toilet1" value="1">
+          <label for="toilet1">
+            <span class="radio-icon">⚠️</span>
+            <span class="radio-text"><span class="radio-main">時々失禁がある・声かけや一部介助が必要</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_toilet" id="toilet2" value="2">
+          <label for="toilet2">
+            <span class="radio-icon">🩹</span>
+            <span class="radio-text"><span class="radio-main">おむつを使用・ほぼ全介助</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <hr class="question-divider">
+
+    <!-- Q7: 着替え -->
+    <div class="question">
+      <div class="question-label"><span class="q-num">7</span>着替えはどうですか？</div>
+      <div class="radio-list">
+        <div class="radio-item">
+          <input type="radio" name="q_dress" id="dress0" value="0">
+          <label for="dress0">
+            <span class="radio-icon">👕</span>
+            <span class="radio-text"><span class="radio-main">自分で着替えられる</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_dress" id="dress1" value="1">
+          <label for="dress1">
+            <span class="radio-icon">🔘</span>
+            <span class="radio-text"><span class="radio-main">ボタンなど一部手伝いが必要</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_dress" id="dress2" value="2">
+          <label for="dress2">
+            <span class="radio-icon">🫂</span>
+            <span class="radio-text"><span class="radio-main">ほぼ全部介助してもらっている</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-back" onclick="goBack(2)">← 戻る</button>
+      <button class="btn-next" onclick="goNext(2)" id="btn2">認知・記憶をチェック →</button>
+    </div>
+  </div>
+
+  <!-- ステップ3: 認知・記憶 -->
+  <div class="step-card" id="step3">
+    <div class="step-header">
+      <div class="step-num">STEP 3 / 4</div>
+      <div class="step-title">認知・記憶について</div>
+      <div class="step-desc">物忘れや判断力など、認知機能に関する状態を確認します</div>
+    </div>
+
+    <!-- Q8: 物忘れ -->
+    <div class="question">
+      <div class="question-label"><span class="q-num">8</span>物忘れの程度はどうですか？</div>
+      <div class="radio-list">
+        <div class="radio-item">
+          <input type="radio" name="q_memory" id="mem0" value="0">
+          <label for="mem0">
+            <span class="radio-icon">💡</span>
+            <span class="radio-text"><span class="radio-main">ほとんど問題ない</span><span class="radio-sub">年齢相応の物忘れ程度</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_memory" id="mem1" value="1">
+          <label for="mem1">
+            <span class="radio-icon">🤔</span>
+            <span class="radio-text"><span class="radio-main">最近のことをよく忘れる</span><span class="radio-sub">約束・鍵・薬を飲んだかなど</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_memory" id="mem2" value="2">
+          <label for="mem2">
+            <span class="radio-icon">😶</span>
+            <span class="radio-text"><span class="radio-main">以前のこともあいまいになってきた</span><span class="radio-sub">家族の名前・昔の出来事も忘れがち</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <hr class="question-divider">
+
+    <!-- Q9: 日付・場所 -->
+    <div class="question">
+      <div class="question-label"><span class="q-num">9</span>今日の日付や、今いる場所がわかりますか？</div>
+      <div class="radio-list">
+        <div class="radio-item">
+          <input type="radio" name="q_orient" id="ori0" value="0">
+          <label for="ori0">
+            <span class="radio-icon">📅</span>
+            <span class="radio-text"><span class="radio-main">正確にわかる</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_orient" id="ori1" value="1">
+          <label for="ori1">
+            <span class="radio-icon">❓</span>
+            <span class="radio-text"><span class="radio-main">時々わからなくなることがある</span><span class="radio-sub">季節や曜日が混乱することがある</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_orient" id="ori2" value="2">
+          <label for="ori2">
+            <span class="radio-icon">🌫</span>
+            <span class="radio-text"><span class="radio-main">ほとんどわからない</span><span class="radio-sub">家の中でも迷うことがある</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <hr class="question-divider">
+
+    <!-- Q10: 日常判断 -->
+    <div class="question">
+      <div class="question-label"><span class="q-num">10</span>日常的な判断・管理はできますか？</div>
+      <div class="radio-list">
+        <div class="radio-item">
+          <input type="radio" name="q_judge" id="jud0" value="0">
+          <label for="jud0">
+            <span class="radio-icon">✅</span>
+            <span class="radio-text"><span class="radio-main">買い物・薬の管理・お金の管理など自分でできる</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_judge" id="jud1" value="1">
+          <label for="jud1">
+            <span class="radio-icon">🗣</span>
+            <span class="radio-text"><span class="radio-main">声かけや確認があればできる</span><span class="radio-sub">一人だと不安なことがある</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_judge" id="jud2" value="2">
+          <label for="jud2">
+            <span class="radio-icon">🤝</span>
+            <span class="radio-text"><span class="radio-main">一人ではほとんど難しい</span><span class="radio-sub">誰かの助けが常に必要</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-back" onclick="goBack(3)">← 戻る</button>
+      <button class="btn-next" onclick="goNext(3)" id="btn3">行動・生活をチェック →</button>
+    </div>
+  </div>
+
+  <!-- ステップ4: 行動・生活 -->
+  <div class="step-card" id="step4">
+    <div class="step-header">
+      <div class="step-num">STEP 4 / 4</div>
+      <div class="step-title">行動・生活の様子について</div>
+      <div class="step-desc">徘徊・夜間の状態・介護への反応などを確認します（最後です！）</div>
+    </div>
+
+    <!-- Q11: 徘徊 -->
+    <div class="question">
+      <div class="question-label"><span class="q-num">11</span>外に出て迷子になることや、徘徊はありますか？</div>
+      <div class="radio-list">
+        <div class="radio-item">
+          <input type="radio" name="q_wander" id="wan0" value="0">
+          <label for="wan0">
+            <span class="radio-icon">🏠</span>
+            <span class="radio-text"><span class="radio-main">ない</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_wander" id="wan1" value="1">
+          <label for="wan1">
+            <span class="radio-icon">🗺</span>
+            <span class="radio-text"><span class="radio-main">外出して帰れなくなったことが1〜2度ある</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_wander" id="wan2" value="2">
+          <label for="wan2">
+            <span class="radio-icon">🚨</span>
+            <span class="radio-text"><span class="radio-main">よくある・昼夜問わず出ようとする</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <hr class="question-divider">
+
+    <!-- Q12: 夜間 -->
+    <div class="question">
+      <div class="question-label"><span class="q-num">12</span>夜間の状態はどうですか？</div>
+      <div class="radio-list">
+        <div class="radio-item">
+          <input type="radio" name="q_night" id="night0" value="0">
+          <label for="night0">
+            <span class="radio-icon">😴</span>
+            <span class="radio-text"><span class="radio-main">特に問題なく眠れている</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_night" id="night1" value="1">
+          <label for="night1">
+            <span class="radio-icon">🌙</span>
+            <span class="radio-text"><span class="radio-main">夜中に起きることがあり、対応が必要なことがある</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_night" id="night2" value="2">
+          <label for="night2">
+            <span class="radio-icon">😩</span>
+            <span class="radio-text"><span class="radio-main">ほぼ毎晩夜間対応が必要で、家族も眠れない</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <hr class="question-divider">
+
+    <!-- Q13: 介護への抵抗 -->
+    <div class="question">
+      <div class="question-label"><span class="q-num">13</span>介護・サポートへの抵抗や問題行動はありますか？</div>
+      <div class="radio-list">
+        <div class="radio-item">
+          <input type="radio" name="q_resist" id="res0" value="0">
+          <label for="res0">
+            <span class="radio-icon">😊</span>
+            <span class="radio-text"><span class="radio-main">穏やか・協力的</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_resist" id="res1" value="1">
+          <label for="res1">
+            <span class="radio-icon">😤</span>
+            <span class="radio-text"><span class="radio-main">時々介護を嫌がる・不穏になることがある</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="q_resist" id="res2" value="2">
+          <label for="res2">
+            <span class="radio-icon">😠</span>
+            <span class="radio-text"><span class="radio-main">頻繁に介護を拒否・大声・暴力などがある</span></span>
+            <span class="radio-check"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-back" onclick="goBack(4)">← 戻る</button>
+      <button class="btn-next" onclick="showResult()" id="btn4">結果を見る →</button>
+    </div>
+  </div>
+
+  <!-- ===== 結果画面 ===== -->
+  <div id="result">
+
+    <div class="result-intro">
+      <p>チェック完了！実際の認定結果と<strong>±1〜2段階異なる場合があります</strong>。あくまで目安としてご参照ください。</p>
+    </div>
+
+    <!-- 推定介護度 -->
+    <div id="resultLevelCard" class="result-level-card" style="background:linear-gradient(135deg,#744210,#C05621)">
+      <div class="result-level-label">このチェックでの目安</div>
+      <div class="result-level-name" id="resultLevelName">要介護2</div>
+      <div class="result-level-sub" id="resultLevelSub">相当の状態が疑われます</div>
+      <div class="result-score-badge">スコア <span id="resultScore">0</span> / 23点</div>
+    </div>
+
+    <!-- 状態の説明 -->
+    <div class="result-section">
+      <div class="result-section-title"><span>📋</span>この目安レベルについて</div>
+      <p class="result-desc-text" id="resultDesc">—</p>
+    </div>
+
+    <!-- 使えるサービス -->
+    <div class="result-section">
+      <div class="result-section-title"><span>🧩</span>利用できる主なサービス</div>
+      <div class="service-list" id="resultServices"></div>
+    </div>
+
+    <!-- 費用目安 -->
+    <div class="result-section">
+      <div class="result-section-title"><span>💰</span>介護保険の支給限度額と自己負担目安</div>
+      <div class="cost-grid">
+        <div class="cost-card limit">
+          <div class="cost-label">支給限度額（月）</div>
+          <div class="cost-value" id="resultLimit">—</div>
+          <div class="cost-note">この範囲でサービス利用可</div>
+        </div>
+        <div class="cost-card pay">
+          <div class="cost-label">自己負担目安（月）</div>
+          <div class="cost-value" id="resultSelfpay">—</div>
+          <div class="cost-note">1割負担の場合</div>
+        </div>
+      </div>
+      <p style="font-size:12px;color:#A0AEC0;margin-top:10px;">※ 自己負担割合は所得により1〜3割。詳しくは費用シミュレーターで確認できます。</p>
+    </div>
+
+    <!-- 次のステップ -->
+    <div class="result-section">
+      <div class="result-section-title"><span>📝</span>介護認定を申請するには</div>
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-circle">1</div>
+          <div class="step-content">
+            <div class="step-content-title">市区町村の窓口または地域包括支援センターへ申請</div>
+            <div class="step-content-desc">本人・家族・ケアマネジャーが代理申請できます。窓口に行けない場合は電話やオンライン申請も可能な自治体があります。</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-circle">2</div>
+          <div class="step-content">
+            <div class="step-content-title">認定調査員が自宅を訪問（約1時間）</div>
+            <div class="step-content-desc">74項目の聞き取り調査を行います。普段の状態を正確に伝えることが重要です。できることを「できる」と答えすぎると低く判定される場合があります。</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-circle">3</div>
+          <div class="step-content">
+            <div class="step-content-title">審査・判定（約30日）→ 認定結果が届く</div>
+            <div class="step-content-desc">医師の意見書と調査結果をもとに介護認定審査会が判定します。申請から結果まで通常1ヶ月程度かかります。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- メインCTA -->
+    <div class="cta-section">
+      <h3>次のステップに進みましょう</h3>
+      <p id="ctaDesc">施設の種類や費用について、AIが詳しく説明します</p>
+      <div class="cta-btns">
+        <a href="chat.html" class="cta-btn-primary">AIに無料相談する</a>
+        <a href="simulator.html" class="cta-btn-secondary">費用を詳しく計算する</a>
+      </div>
+    </div>
+
+    <!-- サブCTA -->
+    <div class="sub-cta-grid">
+      <a href="areas/index.html" class="sub-cta-card">
+        <div class="sub-cta-icon">🗾</div>
+        <div class="sub-cta-title">地域の施設を探す</div>
+        <div class="sub-cta-desc">都道府県から老人ホームを検索</div>
+      </a>
+      <a href="article-list.html" class="sub-cta-card">
+        <div class="sub-cta-icon">📚</div>
+        <div class="sub-cta-title">介護の基礎知識</div>
+        <div class="sub-cta-desc">初めての方向け記事を読む</div>
+      </a>
+    </div>
+
+    <div class="disclaimer">
+      【重要】このチェックツールは介護認定調査の主要項目をもとに作成した参考ツールであり、公式な介護認定の結果ではありません。実際の介護認定は市区町村の認定調査員による74項目の訪問調査・主治医意見書・介護認定審査会の審査を経て決定されるものであり、本ツールの結果と実際の認定結果は<strong>±1〜2段階以上異なる場合があります</strong>。本ツールの結果のみをもとに介護サービスの利用可否や費用を判断しないようお願いします。正確な判定のためには、お住まいの市区町村窓口または地域包括支援センターへの相談・申請をご利用ください。
+    </div>
+
+    <button class="retry-btn" onclick="retry()">← もう一度チェックする</button>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="index.html">トップ</a>
+      <a href="article-list.html">記事一覧</a>
+      <a href="simulator.html">費用シミュレーター</a>
+      <a href="chat.html">AI相談</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </div>
+    <div class="footer-copy">© 2026 CareSpace. このツールは参考情報の提供を目的としており、医療・福祉の専門的判断を代替するものではありません。</div>
+  </div>
+</footer>
+
+<script>
+  // ===== データ定義 =====
+  const levelData = [
+    {
+      key: 'jiritu',
+      name: '自立',
+      sub: '介護認定 非該当',
+      bg: 'linear-gradient(135deg,#276749,#38A169)',
+      desc: '現時点では介護保険の認定対象外と推定されます。日常生活は自立していますが、転倒予防や将来に備えた生活環境の整備を始めておくと安心です。',
+      services: [
+        { icon: '🏥', text: '地域包括支援センターへの相談（無料）' },
+        { icon: '🏃', text: '介護予防教室・筋力トレーニング' },
+        { icon: '🤝', text: '民間のホームヘルプ・生活支援サービス' },
+        { icon: '🏠', text: '自宅のバリアフリーリフォーム相談' },
+      ],
+      limit: '—',
+      selfpay: '—（非該当）',
+      ctaDesc: '今のうちに将来の介護について準備しておきましょう。AIがアドバイスします。'
+    },
+    {
+      key: 'shien1',
+      name: '要支援1',
+      sub: '介護予防サービス（軽度）',
+      bg: 'linear-gradient(135deg,#2B6CB0,#4299E1)',
+      desc: '日常生活のほとんどは自分でできますが、一部の動作に支援が必要な状態です。介護予防サービスを利用して、状態の悪化を防ぐことが重要です。',
+      services: [
+        { icon: '🏠', text: '訪問型サービス（週1回程度・掃除・買い物等）' },
+        { icon: '🚌', text: '通所型サービス（週1回程度・デイサービス）' },
+        { icon: '🦯', text: '福祉用具の貸与（杖・歩行器など）' },
+        { icon: '👤', text: '介護予防ケアプランの作成（無料）' },
+      ],
+      limit: '約5万円/月',
+      selfpay: '約5,000円〜',
+      ctaDesc: '要支援1で使えるサービスについて、AIが詳しく説明します。'
+    },
+    {
+      key: 'shien2',
+      name: '要支援2',
+      sub: '介護予防サービス（軽中度）',
+      bg: 'linear-gradient(135deg,#2C5F8A,#3182CE)',
+      desc: '要支援1よりやや介助が必要で、デイサービスや訪問介護を週2回程度利用できます。適切なサービスを入れることで在宅生活を続けられる段階です。',
+      services: [
+        { icon: '🏠', text: '訪問介護・訪問リハビリ（週2回程度）' },
+        { icon: '🚌', text: '通所リハビリ・デイサービス（週2回程度）' },
+        { icon: '🛏', text: 'ショートステイの利用（短期間）' },
+        { icon: '🦯', text: '福祉用具の貸与・住宅改修費の補助' },
+      ],
+      limit: '約10万円/月',
+      selfpay: '約10,000円〜',
+      ctaDesc: '要支援2のサービス選びについてAIに相談してみましょう。'
+    },
+    {
+      key: 'kaigo1',
+      name: '要介護1',
+      sub: '一部介護が必要な状態',
+      bg: 'linear-gradient(135deg,#B7791F,#D69E2E)',
+      desc: '日常生活に一部介護が必要な状態です。訪問介護・デイサービスを組み合わせた在宅介護が可能な段階です。ケアマネジャーにケアプランを作成してもらいましょう。',
+      services: [
+        { icon: '🏠', text: '訪問介護（ホームヘルパー派遣）' },
+        { icon: '🚌', text: 'デイサービス・デイケア（通所介護）' },
+        { icon: '🛏', text: 'ショートステイ（短期入所生活介護）' },
+        { icon: '🏥', text: '訪問看護・訪問リハビリ' },
+        { icon: '🦯', text: '福祉用具の貸与（ベッド・車椅子等）' },
+      ],
+      limit: '約16万円/月',
+      selfpay: '約16,000円〜',
+      ctaDesc: '要介護1で使えるサービスと在宅介護のコツをAIが説明します。'
+    },
+    {
+      key: 'kaigo2',
+      name: '要介護2',
+      sub: '中程度の介護が必要な状態',
+      bg: 'linear-gradient(135deg,#9C4221,#DD6B20)',
+      desc: '移動や排泄に介助が必要で、認知機能の低下も見られる状態です。在宅介護を続けるためには、複数のサービスを組み合わせることが重要です。施設入居も選択肢の一つです。',
+      services: [
+        { icon: '🏠', text: '訪問介護（身体介護・生活援助）' },
+        { icon: '🚌', text: 'デイサービス・デイケア（週3〜4回）' },
+        { icon: '🛏', text: 'ショートステイ・グループホーム' },
+        { icon: '🏥', text: '訪問看護・訪問リハビリ' },
+        { icon: '🏢', text: 'サービス付き高齢者向け住宅（サ高住）' },
+      ],
+      limit: '約19万円/月',
+      selfpay: '約19,000円〜',
+      ctaDesc: '施設か在宅か迷っている方、AIが状況に合わせてアドバイスします。'
+    },
+    {
+      key: 'kaigo3',
+      name: '要介護3',
+      sub: '常時介護が必要な状態',
+      bg: 'linear-gradient(135deg,#822727,#C53030)',
+      desc: '日常生活のほとんどに介護が必要で、夜間の対応も必要になってくる状態です。特別養護老人ホーム（特養）への入居申請が可能になります。',
+      services: [
+        { icon: '🏢', text: '特別養護老人ホーム（特養）への入居資格' },
+        { icon: '🏨', text: '介護老人保健施設（老健）' },
+        { icon: '🏠', text: '訪問介護（夜間対応型含む）' },
+        { icon: '🌙', text: '夜間対応型訪問介護' },
+        { icon: '🛏', text: 'ショートステイ（頻繁な利用も可）' },
+      ],
+      limit: '約27万円/月',
+      selfpay: '約27,000円〜',
+      ctaDesc: '要介護3は施設入居の選択肢が広がります。AIが施設の種類を説明します。'
+    },
+    {
+      key: 'kaigo4',
+      name: '要介護4',
+      sub: '重度の介護が必要な状態',
+      bg: 'linear-gradient(135deg,#63171B,#9B2C2C)',
+      desc: '自分でできることがほとんどなく、常時介護が必要な状態です。多くの場合、施設入居が現実的な選択肢になります。家族の負担軽減のためにも専門施設を検討しましょう。',
+      services: [
+        { icon: '🏢', text: '特別養護老人ホーム（特養）の優先入居' },
+        { icon: '🏨', text: '介護老人保健施設（老健）・療養型' },
+        { icon: '🏥', text: '有料老人ホーム（介護付き）' },
+        { icon: '🏠', text: '在宅の場合：24時間対応の介護サービス' },
+        { icon: '💊', text: '訪問診療・訪問看護（医療的ケア）' },
+      ],
+      limit: '約30万円/月',
+      selfpay: '約30,000円〜',
+      ctaDesc: '施設を探すなら、地域・費用・特徴を比較することが大切です。AIが相談に乗ります。'
+    },
+    {
+      key: 'kaigo5',
+      name: '要介護5',
+      sub: '最も重度の介護が必要な状態',
+      bg: 'linear-gradient(135deg,#4A1818,#822727)',
+      desc: '寝たきりに近く、医療的なケアも必要な最重度の状態です。特養や介護療養型医療施設など、医療と介護が一体となった施設が選択肢になります。ご家族のケアも重要です。',
+      services: [
+        { icon: '🏢', text: '特別養護老人ホーム（最優先入居）' },
+        { icon: '🏥', text: '介護医療院・療養型医療施設' },
+        { icon: '💊', text: '訪問診療・訪問看護（医療管理）' },
+        { icon: '🤲', text: '在宅の場合：24時間体制の介護' },
+        { icon: '💙', text: '家族向けのレスパイトサービス' },
+      ],
+      limit: '約36万円/月',
+      selfpay: '約36,000円〜',
+      ctaDesc: '最重度でも利用できるサービスはあります。まずAIに相談してみましょう。'
+    },
+  ];
+
+  // ===== スコアしきい値 =====
+  // Q3(歩行):0-3, Q4-Q13: 0-2, 合計最大23
+  function getLevelIndex(score) {
+    if (score === 0)      return 0; // 自立
+    if (score <= 3)       return 1; // 要支援1
+    if (score <= 6)       return 2; // 要支援2
+    if (score <= 9)       return 3; // 要介護1
+    if (score <= 13)      return 4; // 要介護2
+    if (score <= 16)      return 5; // 要介護3
+    if (score <= 19)      return 6; // 要介護4
+    return 7;                       // 要介護5
+  }
+
+  // ===== ページナビ =====
+  let currentStep = 1;
+
+  function goNext(step) {
+    if (!validateStep(step)) return;
+    currentStep = step + 1;
+    showStep(currentStep);
+  }
+
+  function goBack(step) {
+    currentStep = step - 1;
+    showStep(currentStep);
+  }
+
+  function showStep(n) {
+    for (let i = 1; i <= 4; i++) {
+      document.getElementById('step' + i).classList.remove('active');
+    }
+    document.getElementById('step' + n).classList.add('active');
+    updateProgress(n);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function updateProgress(n) {
+    const dots = [null, 'dot1', 'dot2', 'dot3', 'dot4'];
+    const lbls = [null, 'lbl1', 'lbl2', 'lbl3', 'lbl4'];
+    const pcts = [0, 0, 33, 66, 100];
+
+    for (let i = 1; i <= 4; i++) {
+      const dot = document.getElementById(dots[i]);
+      const lbl = document.getElementById(lbls[i]);
+      dot.classList.remove('active', 'done');
+      lbl.classList.remove('active', 'done');
+      if (i < n) { dot.classList.add('done'); dot.textContent = '✓'; lbl.classList.add('done'); }
+      else if (i === n) { dot.classList.add('active'); dot.textContent = i; lbl.classList.add('active'); }
+      else { dot.textContent = i; }
+    }
+    document.getElementById('progressLine').style.width = pcts[n] + '%';
+  }
+
+  // ===== バリデーション =====
+  function validateStep(step) {
+    const required = {
+      1: ['q_relation', 'q_age'],
+      2: ['q_walk', 'q_eat', 'q_bath', 'q_toilet', 'q_dress'],
+      3: ['q_memory', 'q_orient', 'q_judge'],
+      4: ['q_wander', 'q_night', 'q_resist'],
+    };
+    const names = required[step];
+    for (const name of names) {
+      if (!document.querySelector(`input[name="${name}"]:checked`)) {
+        alert('すべての質問に答えてください。');
+        return false;
+      }
+    }
+    return true;
+  }
+
+  // ===== スコア計算・結果表示 =====
+  function showResult() {
+    if (!validateStep(4)) return;
+
+    const get = (name) => parseInt(document.querySelector(`input[name="${name}"]:checked`).value);
+
+    const score =
+      get('q_walk') +
+      get('q_eat') +
+      get('q_bath') +
+      get('q_toilet') +
+      get('q_dress') +
+      get('q_memory') +
+      get('q_orient') +
+      get('q_judge') +
+      get('q_wander') +
+      get('q_night') +
+      get('q_resist');
+
+    const idx = getLevelIndex(score);
+    const level = levelData[idx];
+
+    // カード更新
+    document.getElementById('resultLevelCard').style.background = level.bg;
+    document.getElementById('resultLevelName').textContent = level.name + '相当';
+    document.getElementById('resultLevelSub').textContent = level.sub + 'の可能性があります';
+    document.getElementById('resultScore').textContent = score;
+    document.getElementById('resultDesc').textContent = level.desc;
+    document.getElementById('resultLimit').textContent = level.limit;
+    document.getElementById('resultSelfpay').textContent = level.selfpay;
+    document.getElementById('ctaDesc').textContent = level.ctaDesc;
+
+    // サービス一覧
+    const serviceEl = document.getElementById('resultServices');
+    serviceEl.innerHTML = level.services.map(s =>
+      `<div class="service-item"><span class="service-icon">${s.icon}</span><span class="service-text">${s.text}</span></div>`
+    ).join('');
+
+    // 非該当の場合は費用セクションを調整
+    if (idx === 0) {
+      document.getElementById('resultLimit').closest('.cost-card').style.display = 'none';
+    }
+
+    // 表示切り替え
+    for (let i = 1; i <= 4; i++) document.getElementById('step' + i).classList.remove('active');
+    document.getElementById('progressWrap').style.display = 'none';
+    document.getElementById('result').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function retry() {
+    // フォームリセット
+    document.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
+    document.getElementById('result').style.display = 'none';
+    document.getElementById('progressWrap').style.display = 'block';
+    currentStep = 1;
+    showStep(1);
+  }
+</script>
+
+</body>
+</html>

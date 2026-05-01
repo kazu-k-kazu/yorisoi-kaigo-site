@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大阪府の老人ホーム・介護施設｜費用相場・エリア別の選び方 | CareSpace</title>
+  <meta name="description" content="大阪府の老人ホーム・特養・グループホームの費用相場と選び方を解説。大阪市・北摂・堺・河内エリア別の特徴、特養の待機状況、有料老人ホームの月額費用目安をわかりやすく紹介します。">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:#FFFAF0; color:#2D3748; line-height:1.8; }
+    nav { background:#fff; border-bottom:1px solid #E2E8F0; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+    .logo { font-size:20px; font-weight:700; color:#2D3748; text-decoration:none; }
+    .logo span { color:#DD6B20; }
+    .back-link { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .back-link:hover { text-decoration:underline; }
+
+    .hero { background:linear-gradient(135deg,#EBF8FF,#E6FFFA); padding:48px 40px; border-bottom:1px solid #E2E8F0; }
+    .breadcrumb { font-size:13px; color:#718096; margin-bottom:16px; }
+    .breadcrumb a { color:#DD6B20; text-decoration:none; }
+    .hero h1 { font-size:30px; font-weight:700; color:#1A202C; line-height:1.4; margin-bottom:12px; }
+    .hero-desc { color:#4A5568; font-size:15px; max-width:640px; }
+    .hero-tags { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+    .hero-tag { background:rgba(49,130,206,0.1); color:#3182CE; font-size:12px; font-weight:600; padding:4px 12px; border-radius:20px; }
+
+    .container { max-width:900px; margin:0 auto; padding:48px 24px; }
+
+    .summary-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:40px; }
+    .summary-card { background:#fff; border:1px solid #E2E8F0; border-radius:12px; padding:20px; text-align:center; }
+    .summary-card-label { font-size:12px; color:#718096; margin-bottom:6px; }
+    .summary-card-value { font-size:22px; font-weight:700; color:#DD6B20; }
+    .summary-card-sub { font-size:11px; color:#A0AEC0; margin-top:4px; }
+
+    .content-block { background:#fff; border-radius:16px; padding:36px; box-shadow:0 2px 12px rgba(45,55,72,0.06); margin-bottom:24px; }
+    .content-block h2 { font-size:20px; font-weight:700; color:#2D3748; margin:0 0 20px; padding:12px 16px; border-left:4px solid #DD6B20; background:rgba(221,107,32,0.04); border-radius:0 8px 8px 0; }
+    .content-block h3 { font-size:16px; font-weight:700; color:#4A5568; margin:24px 0 12px; padding-left:12px; border-left:2px solid #CBD5E0; }
+    .content-block p { font-size:15px; line-height:1.9; margin-bottom:16px; color:#4A5568; }
+    .content-block ul { padding-left:20px; margin-bottom:16px; }
+    .content-block li { font-size:14px; margin-bottom:8px; color:#4A5568; line-height:1.7; }
+    .content-block strong { color:#2D3748; }
+
+    .cost-table { width:100%; border-collapse:collapse; margin:16px 0 24px; font-size:14px; }
+    .cost-table th { background:#F7FAFC; padding:10px 14px; text-align:left; font-weight:700; color:#4A5568; border-bottom:2px solid #E2E8F0; }
+    .cost-table td { padding:10px 14px; border-bottom:1px solid #F0F4F8; color:#2D3748; }
+    .cost-table tr:last-child td { border-bottom:none; }
+    .cost-table .high { color:#C05621; font-weight:700; }
+    .cost-table .mid { color:#DD6B20; }
+    .cost-table .low { color:#38A169; }
+
+    .area-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:16px 0; }
+    .area-card { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:10px; padding:16px 18px; }
+    .area-card-name { font-size:15px; font-weight:700; color:#2D3748; margin-bottom:6px; }
+    .area-card-desc { font-size:13px; color:#718096; line-height:1.6; }
+    .area-card-badge { display:inline-block; font-size:11px; padding:2px 8px; border-radius:10px; margin-top:8px; font-weight:600; }
+    .badge-high { background:#FFF5F5; color:#C53030; }
+    .badge-mid { background:#FFFBEB; color:#744210; }
+    .badge-low { background:#F0FFF4; color:#276749; }
+
+    .warn-box { background:#FFFBEB; border:1px solid #F6E05E; border-radius:10px; padding:16px 20px; margin:16px 0; font-size:13px; color:#744210; line-height:1.7; }
+    .info-box { background:#EBF8FF; border:1px solid #BEE3F8; border-radius:10px; padding:16px 20px; margin:16px 0; font-size:13px; color:#2A4365; line-height:1.7; }
+    .point-box { background:rgba(221,107,32,0.06); border:1px solid rgba(221,107,32,0.2); border-radius:10px; padding:18px 22px; margin:16px 0; }
+    .point-box-title { font-size:13px; font-weight:700; color:#DD6B20; margin-bottom:10px; }
+    .point-box ul { margin:0; padding-left:20px; }
+    .point-box li { font-size:14px; margin-bottom:6px; }
+
+    .faq-list { margin:0; }
+    .faq-item { border-bottom:1px solid #E2E8F0; padding:20px 0; }
+    .faq-item:last-child { border-bottom:none; }
+    .faq-q { font-size:15px; font-weight:700; color:#2D3748; margin-bottom:10px; display:flex; gap:10px; }
+    .faq-q::before { content:"Q"; background:#DD6B20; color:#fff; font-size:12px; font-weight:700; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+    .faq-a { font-size:14px; color:#4A5568; line-height:1.8; padding-left:32px; }
+
+    .cta-box { background:linear-gradient(135deg,#744210,#C05621); border-radius:16px; padding:36px; text-align:center; margin:32px 0; }
+    .cta-box h2 { color:#fff; font-size:20px; font-weight:700; margin-bottom:10px; }
+    .cta-box p { color:rgba(255,255,255,0.8); font-size:14px; margin-bottom:20px; }
+    .cta-btn { display:inline-block; background:#fff; color:#744210; padding:12px 36px; border-radius:8px; font-weight:700; font-size:15px; text-decoration:none; }
+
+    .related { margin-top:32px; }
+    .related-title { font-size:16px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .related-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .related-card { background:#fff; border:1px solid #E2E8F0; border-radius:10px; padding:16px; text-decoration:none; color:inherit; transition:border-color 0.2s; }
+    .related-card:hover { border-color:#DD6B20; }
+    .related-card-tag { font-size:11px; color:#DD6B20; font-weight:600; margin-bottom:6px; }
+    .related-card-title { font-size:13px; font-weight:600; color:#2D3748; line-height:1.5; }
+
+    .city-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; margin:10px 0 16px; }
+    .city-link { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:6px; padding:8px 4px; text-align:center; text-decoration:none; color:#4A5568; font-size:12px; font-weight:500; transition:all 0.15s; display:block; line-height:1.3; }
+    .city-link:hover { border-color:#DD6B20; background:#FFF8F0; color:#DD6B20; }
+    .route-block { margin-bottom:16px; }
+    .route-block-name { font-size:13px; font-weight:700; color:#4A5568; margin-bottom:8px; padding-left:8px; border-left:3px solid #DD6B20; }
+    .route-tags { display:flex; flex-wrap:wrap; gap:6px; }
+    .route-tag { background:#EBF8FF; border:1px solid #BEE3F8; border-radius:6px; padding:6px 12px; text-decoration:none; color:#2B6CB0; font-size:12px; font-weight:500; transition:all 0.15s; white-space:nowrap; }
+    .route-tag:hover { background:#BEE3F8; color:#1A365D; }
+    .rank-table { width:100%; border-collapse:collapse; margin:12px 0; font-size:14px; }
+    .rank-table th { background:#F7FAFC; padding:10px 14px; text-align:left; font-weight:700; color:#4A5568; border-bottom:2px solid #E2E8F0; font-size:13px; }
+    .rank-table td { padding:10px 14px; border-bottom:1px solid #F0F4F8; color:#2D3748; vertical-align:top; }
+    .rank-table tr:last-child td { border-bottom:none; }
+    .rank-num { font-size:18px; font-weight:700; color:#DD6B20; display:inline-block; width:28px; }
+    .rank-badge { display:inline-block; font-size:11px; padding:2px 8px; border-radius:10px; font-weight:600; margin-left:6px; }
+    .badge-best { background:#FEF3C7; color:#744210; }
+    .badge-good { background:#F0FFF4; color:#276749; }
+
+    footer { text-align:center; padding:48px; color:#A0AEC0; font-size:13px; background:#fff; border-top:1px solid #E2E8F0; margin-top:48px; }
+
+    @media (max-width:768px) {
+      nav { padding:0 16px; }
+      .hero { padding:32px 20px; }
+      .hero h1 { font-size:22px; }
+      .container { padding:32px 16px; }
+      .summary-cards { grid-template-columns:1fr 1fr; }
+      .area-grid { grid-template-columns:1fr; }
+      .related-grid { grid-template-columns:1fr; }
+      .content-block { padding:24px 20px; }
+      .city-grid { grid-template-columns:repeat(4,1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">Care<span>Space</span></a>
+  <a href="index.html" class="back-link">← 地域一覧</a>
+</nav>
+
+<div class="hero">
+  <div class="breadcrumb">
+    <a href="../index.html">CareSpace</a> &rsaquo;
+    <a href="index.html">地域から探す</a> &rsaquo;
+    大阪府
+  </div>
+  <h1>大阪府の老人ホーム・介護施設<br>費用相場とエリア別の選び方</h1>
+  <p class="hero-desc">大阪府の老人ホーム・特養・グループホームの費用相場、特養の待機状況、エリア別の特徴をまとめました。東京都より費用を抑えやすく、施設の選択肢も豊富です。</p>
+  <div class="hero-tags">
+    <span class="hero-tag">有料老人ホーム月額 17〜24万円（東京より安め）</span>
+    <span class="hero-tag">施設数 全国2位クラス</span>
+    <span class="hero-tag">特養待機者 約1.1万人（令和4年度・厚労省）</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="summary-cards">
+    <div class="summary-card">
+      <div class="summary-card-label">有料老人ホーム月額平均</div>
+      <div class="summary-card-value">17〜24万円</div>
+      <div class="summary-card-sub">入居一時金の有無で変動（東京より安め）</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-label">特養の月額（目安）</div>
+      <div class="summary-card-value">7〜14万円</div>
+      <div class="summary-card-sub">所得に応じた減額制度あり</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-label">特養入所申込者数（目安）</div>
+      <div class="summary-card-value">約1.1万人</div>
+      <div class="summary-card-sub">令和4年度・厚生労働省調査</div>
+    </div>
+  </div>
+
+  <!-- 市区町村リンク集 -->
+  <div class="content-block">
+    <h2 id="cities">大阪府の市区町村から施設を探す</h2>
+    <h3>大阪市（24区）</h3>
+    <div class="city-grid">
+      <a href="chat.html" class="city-link">北区</a>
+      <a href="chat.html" class="city-link">中央区</a>
+      <a href="chat.html" class="city-link">天王寺区</a>
+      <a href="chat.html" class="city-link">浪速区</a>
+      <a href="chat.html" class="city-link">西区</a>
+      <a href="chat.html" class="city-link">港区</a>
+      <a href="chat.html" class="city-link">大正区</a>
+      <a href="chat.html" class="city-link">西淀川区</a>
+      <a href="chat.html" class="city-link">此花区</a>
+      <a href="chat.html" class="city-link">淀川区</a>
+      <a href="chat.html" class="city-link">東淀川区</a>
+      <a href="chat.html" class="city-link">福島区</a>
+      <a href="chat.html" class="city-link">住吉区</a>
+      <a href="chat.html" class="city-link">住之江区</a>
+      <a href="chat.html" class="city-link">東住吉区</a>
+      <a href="chat.html" class="city-link">平野区</a>
+      <a href="chat.html" class="city-link">城東区</a>
+      <a href="chat.html" class="city-link">鶴見区</a>
+      <a href="chat.html" class="city-link">都島区</a>
+      <a href="chat.html" class="city-link">旭区</a>
+      <a href="chat.html" class="city-link">東成区</a>
+      <a href="chat.html" class="city-link">生野区</a>
+      <a href="chat.html" class="city-link">阿倍野区</a>
+      <a href="chat.html" class="city-link">西成区</a>
+    </div>
+    <h3>市外（堺市・北摂・河内・泉州）</h3>
+    <div class="city-grid">
+      <a href="chat.html" class="city-link">堺市</a>
+      <a href="chat.html" class="city-link">豊中市</a>
+      <a href="chat.html" class="city-link">吹田市</a>
+      <a href="chat.html" class="city-link">高槻市</a>
+      <a href="chat.html" class="city-link">枚方市</a>
+      <a href="chat.html" class="city-link">茨木市</a>
+      <a href="chat.html" class="city-link">八尾市</a>
+      <a href="chat.html" class="city-link">寝屋川市</a>
+      <a href="chat.html" class="city-link">東大阪市</a>
+      <a href="chat.html" class="city-link">岸和田市</a>
+      <a href="chat.html" class="city-link">和泉市</a>
+      <a href="chat.html" class="city-link">箕面市</a>
+      <a href="chat.html" class="city-link">池田市</a>
+      <a href="chat.html" class="city-link">門真市</a>
+      <a href="chat.html" class="city-link">守口市</a>
+      <a href="chat.html" class="city-link">摂津市</a>
+      <a href="chat.html" class="city-link">松原市</a>
+      <a href="chat.html" class="city-link">大東市</a>
+      <a href="chat.html" class="city-link">羽曳野市</a>
+      <a href="chat.html" class="city-link">富田林市</a>
+      <a href="chat.html" class="city-link">河内長野市</a>
+      <a href="chat.html" class="city-link">藤井寺市</a>
+      <a href="chat.html" class="city-link">泉大津市</a>
+      <a href="chat.html" class="city-link">泉佐野市</a>
+      <a href="chat.html" class="city-link">柏原市</a>
+      <a href="chat.html" class="city-link">交野市</a>
+      <a href="chat.html" class="city-link">四條畷市</a>
+      <a href="chat.html" class="city-link">大阪狭山市</a>
+      <a href="chat.html" class="city-link">泉南市</a>
+      <a href="chat.html" class="city-link">阪南市</a>
+    </div>
+    <p style="font-size:12px;color:#A0AEC0;margin-top:8px;">※ 各エリアのリンクをクリックするとAI相談でエリア別の施設情報を確認できます</p>
+  </div>
+
+  <!-- 大阪府の特徴 -->
+  <div class="content-block">
+    <h2 id="feature">大阪府の介護施設の特徴</h2>
+    <p>大阪府は東京都に次ぐ全国有数の介護施設集積地です。有料老人ホームの月額費用は<strong>東京都の約2/3程度</strong>と比較的抑えられており、費用面での選択肢が広いのが特徴です。特養の待機者数は依然として多いものの、近年は施設整備が進みつつあります。</p>
+    <p>大阪市内の都心部（梅田・難波周辺）では施設費用が高めになりますが、郊外の堺市・東大阪市・河内長野市などでは費用を抑えた施設が見つかりやすい傾向があります。また兵庫県・京都府・奈良県に隣接しているため、<strong>近隣府県の施設との比較検討</strong>が費用を抑える有効な手段になります。</p>
+
+    <div class="point-box">
+      <div class="point-box-title">大阪府の施設探しで押さえるべきポイント</div>
+      <ul>
+        <li>大阪市内より郊外（堺・東大阪・枚方）を選ぶと費用が10〜20%程度安くなるケースがある</li>
+        <li>特養は複数施設への同時申し込みが可能——早めの申し込みが重要</li>
+        <li>兵庫・京都・奈良の施設も候補に入れると選択肢が広がる</li>
+        <li>大阪市の統一様式（様式1）で複数施設に個別申し込みができる</li>
+        <li>認知症対応が必要な場合はグループホームの空き状況もあわせて確認</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 施設タイプ別費用 -->
+  <div class="content-block">
+    <h2 id="cost">大阪府の施設タイプ別 費用相場</h2>
+    <p style="font-size:13px;color:#718096;margin-bottom:12px;">出典：LIFULL介護・みんなの介護 大阪府費用データ、厚生労働省 介護サービス情報公表システム（2024〜2025年データ）をもとに作成</p>
+
+    <table class="cost-table">
+      <tr>
+        <th>施設タイプ</th>
+        <th>月額費用の目安</th>
+        <th>入居一時金</th>
+        <th>待機・空き</th>
+      </tr>
+      <tr>
+        <td><strong>特別養護老人ホーム（特養）</strong></td>
+        <td class="low">7〜14万円</td>
+        <td>なし</td>
+        <td class="high">約1.1万人（令和4年度・厚労省）</td>
+      </tr>
+      <tr>
+        <td><strong>介護老人保健施設（老健）</strong></td>
+        <td class="mid">9〜17万円</td>
+        <td>なし</td>
+        <td class="mid">3〜6ヶ月ごとに在宅復帰審査あり</td>
+      </tr>
+      <tr>
+        <td><strong>有料老人ホーム（介護付）</strong></td>
+        <td class="mid">17〜24万円（条件による）</td>
+        <td>0〜数百万円</td>
+        <td class="low">比較的入りやすい</td>
+      </tr>
+      <tr>
+        <td><strong>有料老人ホーム（住宅型）</strong></td>
+        <td class="low">12〜22万円</td>
+        <td>0〜数十万円</td>
+        <td class="low">比較的入りやすい</td>
+      </tr>
+      <tr>
+        <td><strong>グループホーム</strong></td>
+        <td class="low">13〜20万円</td>
+        <td>10〜30万円程度</td>
+        <td class="mid">施設による</td>
+      </tr>
+      <tr>
+        <td><strong>サービス付き高齢者向け住宅</strong></td>
+        <td class="low">10〜20万円</td>
+        <td>敷金程度</td>
+        <td class="low">比較的入りやすい</td>
+      </tr>
+    </table>
+
+    <div class="warn-box">
+      ⚠️ 費用は施設・居室タイプ・要介護度によって大きく変わります。上記は目安です。「介護サービス費＋食費＋居住費」の合計で比較することが重要です。
+    </div>
+  </div>
+
+  <!-- エリア別特徴 -->
+  <div class="content-block">
+    <h2 id="area">エリア別の特徴</h2>
+    <p>大阪府は「大阪市（24区）」「北摂エリア」「南河内・泉州エリア」「河内エリア」で費用水準や施設の特徴が大きく異なります。</p>
+
+    <h3>大阪市内（24区）</h3>
+    <div class="area-grid">
+      <div class="area-card">
+        <div class="area-card-name">都心部（北区・中央区・浪速区）</div>
+        <div class="area-card-desc">交通アクセスがよく施設数も多いが、月額費用は高め。有料老人ホームは25万円超の施設も。</div>
+        <span class="area-card-badge badge-high">費用：高め</span>
+      </div>
+      <div class="area-card">
+        <div class="area-card-name">城東・鶴見・住吉・阿倍野区</div>
+        <div class="area-card-desc">住宅地として成熟しており施設の選択肢が多い。都心部より費用を抑えやすい傾向。</div>
+        <span class="area-card-badge badge-mid">費用：中程度</span>
+      </div>
+      <div class="area-card">
+        <div class="area-card-name">平野・東住吉・西成区</div>
+        <div class="area-card-desc">大阪市内では比較的費用を抑えやすいエリア。特養の施設数も一定程度確保されている。</div>
+        <span class="area-card-badge badge-low">費用：比較的安め</span>
+      </div>
+      <div class="area-card">
+        <div class="area-card-name">此花・港・大正・西淀川区</div>
+        <div class="area-card-desc">交通利便性はやや低下するが施設費用は抑えられる。家族の面会アクセスも考慮を。</div>
+        <span class="area-card-badge badge-low">費用：比較的安め</span>
+      </div>
+    </div>
+
+    <h3>北摂エリア（豊中・吹田・箕面・池田など）</h3>
+    <div class="area-grid">
+      <div class="area-card">
+        <div class="area-card-name">豊中市・吹田市</div>
+        <div class="area-card-desc">大阪市へのアクセスがよく施設の質も高い。費用は大阪市都心部に近い水準になりやすい。</div>
+        <span class="area-card-badge badge-mid">費用：中〜高め</span>
+      </div>
+      <div class="area-card">
+        <div class="area-card-name">箕面市・池田市・茨木市</div>
+        <div class="area-card-desc">落ち着いた住環境の施設が多い。豊中・吹田よりやや費用を抑えられるケースも。</div>
+        <span class="area-card-badge badge-mid">費用：中程度</span>
+      </div>
+    </div>
+
+    <h3>河内・泉州エリア（東大阪・堺・和泉・岸和田など）</h3>
+    <div class="area-grid">
+      <div class="area-card">
+        <div class="area-card-name">東大阪市・八尾市・柏原市</div>
+        <div class="area-card-desc">大阪市に隣接しつつも費用は抑えられる傾向。施設数も多く選びやすい。</div>
+        <span class="area-card-badge badge-low">費用：比較的安め</span>
+      </div>
+      <div class="area-card">
+        <div class="area-card-name">堺市・和泉市・岸和田市</div>
+        <div class="area-card-desc">大阪府南部は費用が安め。施設の選択肢も豊富で、特養の待機期間が短いケースも。</div>
+        <span class="area-card-badge badge-low">費用：安め</span>
+      </div>
+    </div>
+
+    <div class="info-box">
+      💡 大阪府は南北に長く、エリアによって費用が大きく変わります。「家族が会いに行ける距離」を優先しつつ、隣接する兵庫・京都・奈良・和歌山の施設も候補に加えることで費用を年間数十万円抑えられることがあります。
+    </div>
+  </div>
+
+  <!-- 路線別リンク集 -->
+  <div class="content-block">
+    <h2 id="routes">路線・沿線から施設を探す</h2>
+    <p style="font-size:14px;color:#718096;margin-bottom:20px;">よく利用される路線沿いの施設をAIに相談できます。</p>
+    <div class="route-block">
+      <div class="route-block-name">JR</div>
+      <div class="route-tags">
+        <a href="../chat.html" class="route-tag">大阪環状線</a>
+        <a href="../chat.html" class="route-tag">JR京都線</a>
+        <a href="../chat.html" class="route-tag">JR神戸線</a>
+        <a href="../chat.html" class="route-tag">阪和線</a>
+        <a href="../chat.html" class="route-tag">大和路線</a>
+        <a href="../chat.html" class="route-tag">おおさか東線</a>
+      </div>
+    </div>
+    <div class="route-block">
+      <div class="route-block-name">阪急電鉄</div>
+      <div class="route-tags">
+        <a href="../chat.html" class="route-tag">神戸線</a>
+        <a href="../chat.html" class="route-tag">宝塚線</a>
+        <a href="../chat.html" class="route-tag">京都線</a>
+        <a href="../chat.html" class="route-tag">千里線</a>
+        <a href="../chat.html" class="route-tag">箕面線</a>
+      </div>
+    </div>
+    <div class="route-block">
+      <div class="route-block-name">近鉄電鉄</div>
+      <div class="route-tags">
+        <a href="../chat.html" class="route-tag">大阪線</a>
+        <a href="../chat.html" class="route-tag">奈良線</a>
+        <a href="../chat.html" class="route-tag">南大阪線</a>
+        <a href="../chat.html" class="route-tag">道明寺線</a>
+      </div>
+    </div>
+    <div class="route-block">
+      <div class="route-block-name">大阪メトロ</div>
+      <div class="route-tags">
+        <a href="../chat.html" class="route-tag">御堂筋線</a>
+        <a href="../chat.html" class="route-tag">谷町線</a>
+        <a href="../chat.html" class="route-tag">中央線</a>
+        <a href="../chat.html" class="route-tag">四つ橋線</a>
+        <a href="../chat.html" class="route-tag">千日前線</a>
+        <a href="../chat.html" class="route-tag">堺筋線</a>
+        <a href="../chat.html" class="route-tag">長堀鶴見緑地線</a>
+        <a href="../chat.html" class="route-tag">今里筋線</a>
+      </div>
+    </div>
+    <div class="route-block">
+      <div class="route-block-name">南海電鉄・阪神</div>
+      <div class="route-tags">
+        <a href="../chat.html" class="route-tag">南海本線</a>
+        <a href="../chat.html" class="route-tag">南海高野線</a>
+        <a href="../chat.html" class="route-tag">阪神本線</a>
+        <a href="../chat.html" class="route-tag">阪神なんば線</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 特養について -->
+  <div class="content-block">
+    <h2 id="tokuyou">大阪府の特養（特別養護老人ホーム）について</h2>
+    <p>大阪府の特養は費用が安く安定したケアが受けられますが、待機者が多く申し込みから入所まで数年かかるケースがあります。<strong>要介護3以上が入所の条件</strong>となっており、認定を受けたらできるだけ早く申し込みを行うことが重要です。</p>
+    <p>大阪市では「大阪市社会福祉施設連絡会」の特養一覧から施設情報を確認できます。また、大阪府全体の施設情報は「介護サービス情報公表システム（厚生労働省）」で検索できます。</p>
+
+    <h3>特養を申し込む際のポイント</h3>
+    <ul>
+      <li>要介護3以上が入所条件（特例あり）——認定後すぐに申し込む</li>
+      <li>複数施設への同時申し込みが可能——担当ケアマネジャーに相談</li>
+      <li>大阪市内より郊外の特養は待機が短い傾向がある</li>
+      <li>緊急度が高い場合（独居・介護者の疾病等）は優先度が上がることがある</li>
+      <li>特養に入所できるまでの間は老健やショートステイを積極的に活用</li>
+    </ul>
+
+    <div class="warn-box">
+      ⚠️ 費用が安いからといって特養だけを待ち続けると、介護者が先に限界を迎えるリスクがあります。有料老人ホームやグループホームへの入所も並行して検討することが重要です。
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="content-block">
+    <h2 id="faq">よくある質問</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">大阪府で費用を抑えて老人ホームに入れる方法はありますか？</div>
+        <div class="faq-a">最も費用を抑えられるのは特養ですが、待機者が多いため早期申し込みが前提です。待機中は月額10〜15万円程度のサービス付き高齢者向け住宅（サ高住）を活用する方法があります。また大阪市内より堺市・東大阪市・八尾市など郊外を選ぶと、同タイプでも月額2〜5万円程度安くなるケースがあります。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">大阪の特養の申し込み方法を教えてください</div>
+        <div class="faq-a">各特養施設に直接申し込みます。担当のケアマネジャーがいる場合は一緒に行うとスムーズです。大阪市内の施設は大阪市の「介護サービス情報公表システム」で一覧を確認でき、複数施設に同時申し込みが可能です。申込書類は施設ごとに異なりますが、要介護認定証・介護保険被保険者証・主治医の情報などが必要になります。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">認知症の親の施設を大阪で探すには？</div>
+        <div class="faq-a">認知症の程度によって選択肢が変わります。軽度〜中度であればグループホームが適しており、住民票のある市区町村内の施設を優先的に探します。重度になると特養や介護付き有料老人ホームが選択肢に加わります。担当のケアマネジャーへの相談が最も確実ですが、「みんなの介護」「LIFULL介護」などの施設検索サイトでも大阪府内の認知症対応施設を検索できます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">大阪府内で施設の見学はどうやって申し込めばいいですか？</div>
+        <div class="faq-a">施設の公式サイトや電話で見学の予約ができます。ケアマネジャーが担当している場合は代わりに手続きしてもらえることも多いです。見学の際は費用の内訳（月額・加算費用・食費・光熱費など）、スタッフの対応、居室の広さ、医療連携の状況を必ず確認しましょう。複数施設を比較することを強くおすすめします。</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#F7FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:24px;margin:0 0 16px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+    <div>
+      <div style="font-size:12px;font-weight:700;color:#DD6B20;margin-bottom:4px;">RANKING</div>
+      <div style="font-size:16px;font-weight:700;color:#2D3748;margin-bottom:4px;">大阪府 施設タイプ別ランキング</div>
+      <div style="font-size:13px;color:#718096;">費用・入居しやすさ・認知症対応など目的別に比較</div>
+    </div>
+    <a href="osaka-ranking.html" style="background:#DD6B20;color:#fff;padding:10px 24px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;">ランキングを見る →</a>
+  </div>
+
+  <div class="cta-box">
+    <h2>大阪府の施設を無料で探してみる</h2>
+    <p>希望条件（エリア・費用・施設タイプ・認知症対応など）を伝えるだけで、<br>専門スタッフが合う施設を無料でご提案します。</p>
+    <a href="../chat.html" class="cta-btn">AIに相談して施設を探す</a>
+  </div>
+
+  <div class="related">
+    <div class="related-title">介護施設選びに役立つ記事</div>
+    <div class="related-grid">
+      <a href="../articles/care-facility-types.html" class="related-card">
+        <div class="related-card-tag">施設選び</div>
+        <div class="related-card-title">特養・有料老人ホーム・グループホームの違いと選び方</div>
+      </a>
+      <a href="../articles/tokuyou-application.html" class="related-card">
+        <div class="related-card-tag">施設選び</div>
+        <div class="related-card-title">特養の申し込みと入所待機の基礎知識</div>
+      </a>
+      <a href="../articles/care-facility-visit.html" class="related-card">
+        <div class="related-card-tag">施設選び</div>
+        <div class="related-card-title">老人ホーム見学チェックリスト30項目</div>
+      </a>
+      <a href="../articles/home-care-limit.html" class="related-card">
+        <div class="related-card-tag">在宅介護・施設入所</div>
+        <div class="related-card-title">在宅介護の限界サイン｜施設入所を考えるタイミング</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>© 2026 CareSpace. All rights reserved.</footer>
+
+</body>
+</html>

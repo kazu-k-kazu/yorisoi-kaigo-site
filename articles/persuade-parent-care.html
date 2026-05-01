@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>病院・施設に行きたがらない親を説得する方法 | よりそい介護</title>
+  <meta name="description" content="「病院に行かない」「施設には入らない」と言い張る親への対処法。なぜ拒否するのかの理由別に、家族ができる具体的なアプローチを解説します。">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Hiragino Sans','Yu Gothic',sans-serif; background:#FFFAF0; color:#2D3748; line-height:1.8; }
+    nav { background:#fff; border-bottom:1px solid #E2E8F0; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+    .logo { font-size:20px; font-weight:700; color:#2D3748; text-decoration:none; }
+    .logo span { color:#DD6B20; }
+    .back-link { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .back-link:hover { text-decoration:underline; }
+    .container { max-width:780px; margin:48px auto; padding:0 24px; }
+    .article-header { margin-bottom:32px; }
+    .cat-tag { display:inline-block; background:rgba(221,107,32,0.1); color:#DD6B20; font-size:12px; font-weight:600; padding:4px 12px; border-radius:20px; margin-bottom:12px; }
+    h1 { font-size:28px; font-weight:700; color:#1A202C; line-height:1.4; margin-bottom:16px; }
+    .article-meta { display:flex; gap:20px; font-size:13px; color:#718096; flex-wrap:wrap; }
+    .toc { background:#fff; border:1px solid #E2E8F0; border-radius:12px; padding:24px 28px; margin-bottom:32px; }
+    .toc-title { font-size:14px; font-weight:700; color:#2D3748; margin-bottom:12px; }
+    .toc ol { padding-left:20px; }
+    .toc li { margin-bottom:8px; }
+    .toc a { color:#DD6B20; text-decoration:none; font-size:14px; }
+    .toc a:hover { text-decoration:underline; }
+    .article-body { background:#fff; border-radius:16px; padding:40px; box-shadow:0 2px 12px rgba(45,55,72,0.06); margin-bottom:24px; }
+    .article-body h2 { font-size:22px; font-weight:700; color:#2D3748; margin:40px 0 16px; padding:12px 16px; border-left:4px solid #DD6B20; background:rgba(221,107,32,0.04); border-radius:0 8px 8px 0; }
+    .article-body h2:first-child { margin-top:0; }
+    .article-body h3 { font-size:17px; font-weight:700; color:#4A5568; margin:28px 0 12px; padding-left:12px; border-left:2px solid #CBD5E0; }
+    .article-body p { margin-bottom:18px; font-size:16px; line-height:2.0; }
+    .article-body ul, .article-body ol { margin:12px 0 20px 24px; }
+    .article-body li { margin-bottom:10px; font-size:15px; line-height:1.7; }
+    .article-body strong { color:#2D3748; font-weight:700; }
+    .point-box { background:rgba(221,107,32,0.06); border:1px solid rgba(221,107,32,0.2); border-radius:10px; padding:20px 24px; margin:24px 0; }
+    .point-box-title { font-size:13px; font-weight:700; color:#DD6B20; margin-bottom:10px; }
+    .point-box ul { margin:0; padding-left:20px; }
+    .point-box li { font-size:14px; margin-bottom:8px; }
+    .warn-box { background:#FFFBEB; border:1px solid #F6E05E; border-radius:10px; padding:16px 20px; margin:24px 0; font-size:13px; color:#744210; line-height:1.7; }
+    .reason-card { border:1px solid #E2E8F0; border-radius:10px; padding:20px 24px; margin:16px 0; }
+    .reason-title { font-size:15px; font-weight:700; color:#2D3748; margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid #E2E8F0; }
+    .reason-why { font-size:13px; color:#718096; margin-bottom:10px; }
+    .reason-how { font-size:14px; color:#4A5568; line-height:1.7; }
+    .summary-box { background:linear-gradient(135deg,#FFF5E6,#FEF3C7); border-radius:12px; padding:28px; margin:32px 0; }
+    .summary-box h3 { font-size:18px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .summary-box ol { padding-left:20px; }
+    .summary-box li { margin-bottom:10px; font-size:14px; font-weight:600; color:#4A5568; }
+    .cta-box { background:linear-gradient(135deg,#744210,#C05621); border-radius:12px; padding:28px; text-align:center; margin-top:32px; }
+    .cta-box p { color:rgba(255,255,255,0.85); font-size:14px; margin-bottom:16px; }
+    .cta-btn { display:inline-block; background:#fff; color:#744210; padding:12px 32px; border-radius:8px; font-weight:700; font-size:15px; text-decoration:none; }
+    .disclaimer { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:14px 18px; font-size:12px; color:#718096; line-height:1.7; margin-top:24px; }
+    .related { margin-top:32px; }
+    .related-title { font-size:16px; font-weight:700; margin-bottom:16px; color:#2D3748; }
+    .related-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .related-card { background:#fff; border:1px solid #E2E8F0; border-radius:10px; padding:16px; text-decoration:none; color:inherit; transition:border-color 0.2s; }
+    .related-card:hover { border-color:#DD6B20; }
+    .related-card-tag { font-size:11px; color:#DD6B20; font-weight:600; margin-bottom:6px; }
+    .related-card-title { font-size:13px; font-weight:600; color:#2D3748; line-height:1.5; }
+    footer { text-align:center; padding:48px; color:#A0AEC0; font-size:13px; margin-top:48px; }
+    @media (max-width:768px) {
+      nav { padding:0 16px; }
+      .container { margin:24px auto; }
+      h1 { font-size:22px; }
+      .article-body { padding:24px 20px; }
+      .related-grid { grid-template-columns:1fr; }
+    }
+  
+    .source-box { background:#F7FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:16px 20px; margin:24px 0 0; }
+    .source-box-title { font-size:12px; font-weight:700; color:#4A5568; margin-bottom:10px; }
+    .source-box ul { padding-left:16px; margin:0; }
+    .source-box li { font-size:11px; color:#718096; margin-bottom:6px; line-height:1.7; }
+    .source-box a { color:#DD6B20; text-decoration:none; }
+    .source-box a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">よりそい<span>介護</span></a>
+  <a href="../article-list.html" class="back-link">← 記事一覧に戻る</a>
+</nav>
+
+<div class="container">
+  <div class="article-header">
+    <span class="cat-tag">受診・施設説得</span>
+    <h1>病院・施設に行きたがらない親を説得する方法</h1>
+    <div class="article-meta">
+      <span>2026年4月29日</span>
+      <span>読了時間：約8分</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">目次</div>
+    <ol>
+      <li><a href="#why">なぜ親は拒否するのか</a></li>
+      <li><a href="#hospital">受診を拒否する親への対応</a></li>
+      <li><a href="#facility">施設入所を嫌がる親への対応</a></li>
+      <li><a href="#ng">やってはいけないNG対応</a></li>
+      <li><a href="#lastresort">どうしても動かない場合の最終手段</a></li>
+      <li><a href="#summary">まとめ</a></li>
+    </ol>
+  </div>
+
+  <div class="article-body">
+
+    <h2 id="why">なぜ親は拒否するのか</h2>
+    <p>「病院に行かなくていい」「施設なんて入らない」——この言葉の裏には、さまざまな感情や理由が隠れています。頭ごなしに説得しようとすると、かえって関係が悪化します。まず<strong>なぜ拒否しているのかを理解する</strong>ことが第一歩です。</p>
+
+    <div class="point-box">
+      <div class="point-box-title">拒否の背景にある主な理由</div>
+      <ul>
+        <li>「まだ大丈夫」という自尊心・プライド（弱さを認めたくない）</li>
+        <li>「認知症と言われたくない」という恐怖</li>
+        <li>「施設＝姥捨て山」という古い固定観念</li>
+        <li>「自分の家にいたい」という強い愛着と安心感</li>
+        <li>費用への不安（「お金がかかるから迷惑をかけたくない」）</li>
+        <li>認知症の初期段階で「問題があること」自体を認識できていない</li>
+      </ul>
+    </div>
+
+    <h2 id="hospital">受診を拒否する親への対応</h2>
+
+    <div class="reason-card">
+      <div class="reason-title">パターン①「病気じゃないから行く必要がない」</div>
+      <div class="reason-why">自覚症状がなく、必要性を感じていない</div>
+      <div class="reason-how">「健康診断の一環で血液検査だけ」「コレステロールや血圧が心配で一緒に確認したい」など、<strong>認知症・診断という言葉を使わず</strong>、別の目的を入口にして受診につなげる。</div>
+    </div>
+
+    <div class="reason-card">
+      <div class="reason-title">パターン②「病院に行くと入院させられる・悪い病名をつけられる」</div>
+      <div class="reason-why">受診への不安・恐怖心が強い</div>
+      <div class="reason-how">「診察だけで入院はしない」「何もなければ安心できる」と具体的に不安を解消する。かかりつけ医に事前に電話して「本人が不安を持っている」と伝えておくと、医師が柔らかく接してくれる。</div>
+    </div>
+
+    <div class="reason-card">
+      <div class="reason-title">パターン③「自分で大丈夫と思っている（認知症の初期）」</div>
+      <div class="reason-why">病識（自分が病気という認識）が失われている</div>
+      <div class="reason-how">直接「物忘れが心配」と言うのは逆効果。「腰痛・頭痛・足の調子」など本人が気にしている別の症状を理由に受診し、その流れで医師が認知機能の評価をする形にする。かかりつけ医と事前に相談を。</div>
+    </div>
+
+    <h2 id="facility">施設入所を嫌がる親への対応</h2>
+
+    <div class="reason-card">
+      <div class="reason-title">パターン①「施設はいやだ、家にいたい」</div>
+      <div class="reason-why">住み慣れた家への愛着・施設への偏見</div>
+      <div class="reason-how">いきなり「施設に入ってほしい」と言わず、<strong>まずデイサービスや短期入所（ショートステイ）から試す</strong>。「お試し」「一時的」という言い方で抵抗感を下げ、施設の雰囲気に慣れてもらう。</div>
+    </div>
+
+    <div class="reason-card">
+      <div class="reason-title">パターン②「子どもに迷惑をかけたくない」という遠慮</div>
+      <div class="reason-why">費用・手間への気遣い</div>
+      <div class="reason-how">「介護保険でかなりカバーできる」「自分たちが元気でいるためにも必要なこと」と正直に伝える。費用の見積もりを一緒に確認し、「現実的に続けられる選択肢」として話し合う。</div>
+    </div>
+
+    <div class="reason-card">
+      <div class="reason-title">パターン③「配偶者を置いて行けない」</div>
+      <div class="reason-why">夫婦どちらかが入所する場合の罪悪感</div>
+      <div class="reason-how">二人一緒に入居できる施設を探す・配偶者の面会が毎日できる近くの施設を選ぶなど、「離ればなれにならない方法」を具体的に提示する。</div>
+    </div>
+
+    <h2 id="ng">やってはいけないNG対応</h2>
+
+    <div class="warn-box">
+      ⚠️ 次の対応はかえって関係を悪化させ、その後の説得をずっと難しくします。
+    </div>
+
+    <ul>
+      <li><strong>「認知症でしょ」「もうムリでしょ」と決めつける言い方をする</strong>——本人のプライドを傷つけ、強い拒絶につながる</li>
+      <li><strong>複数の家族で一度に迫る</strong>——「全員で攻められている」と感じて防衛的になる</li>
+      <li><strong>「あなたのため」を繰り返す</strong>——「自分が決めることを奪われている」という感覚につながる</li>
+      <li><strong>騙して連れて行く</strong>——一時的に成功しても信頼関係が壊れ、その後の介護に深刻な影響が出る</li>
+      <li><strong>「入らないなら面倒を見ない」と脅す</strong>——感情的な傷を残し、後悔につながる</li>
+    </ul>
+
+    <h2 id="lastresort">どうしても動かない場合の最終手段</h2>
+    <p>家族だけで何度説得しても動かない場合、第三者の力を借りることが有効です。</p>
+
+    <ul>
+      <li><strong>かかりつけ医からの勧め</strong>：親が信頼している医師から「一度検査しましょう」と言ってもらう。家族より医師の言葉を受け入れやすい</li>
+      <li><strong>地域包括支援センターの相談員に訪問してもらう</strong>：第三者の専門家が来ることで「私が言わせている」感が薄れる</li>
+      <li><strong>信頼している別の家族・友人に頼む</strong>：子どもより昔の友人・兄弟の言葉に動くことがある</li>
+      <li><strong>時間を置く</strong>：転倒・体調悪化などのきっかけで気持ちが変わることもある。無理やり進めず、「もし何かあったらこの話を思い出してほしい」と種まきをしておく</li>
+    </ul>
+
+    <div class="summary-box">
+      <h3>まとめ</h3>
+      <ol>
+        <li>拒否の背景にある「恐怖・プライド・愛着」を理解することが先決</li>
+        <li>受診は「健康診断・別の症状」を入口にして認知症という言葉を使わずに誘導</li>
+        <li>施設はいきなりではなく「デイサービス・ショートステイ」のお試しから</li>
+        <li>脅す・騙す・追い詰めるは信頼関係を壊す。感情ではなく選択肢を提示する</li>
+        <li>家族だけで限界なら、医師・包括支援センター・第三者の力を借りる</li>
+      </ol>
+    </div>
+
+    <div class="cta-box">
+      <p>「どう説得すれば受け入れてもらえるか分からない」<br>具体的な状況をAIに相談してみてください。</p>
+      <a href="../chat.html" class="cta-btn">AIに匿名で相談する（無料）</a>
+    </div>
+
+    
+    <div class="source-box">
+      <div class="source-box-title">📌 参考・出典</div>
+      <ul>
+        <li>厚生労働省「地域包括支援センター（親への働きかけ相談先）」→ <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/chiiki-houkatsu/" target="_blank" rel="noopener">https://www.mhlw.go.jp/</a></li>
+        <li>厚生労働省「認知症施策について」→ <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/ninchisho/index.html" target="_blank" rel="noopener">https://www.mhlw.go.jp/</a></li>
+      </ul>
+    </div>
+    <div class="disclaimer">
+      ※ 本記事は一般的な情報提供を目的としています。認知症による判断能力の低下が疑われる場合は、医師や地域包括支援センターにご相談ください。
+    </div>
+
+  </div>
+
+  <div class="related">
+    <div class="related-title">関連記事</div>
+    <div class="related-grid">
+      <a href="dementia-early-signs.html" class="related-card">
+        <div class="related-card-tag">認知症</div>
+        <div class="related-card-title">認知症の初期症状チェックリスト｜早期発見と受診のすすめ</div>
+      </a>
+      <a href="home-care-limit.html" class="related-card">
+        <div class="related-card-tag">在宅介護・施設入所</div>
+        <div class="related-card-title">在宅介護の限界サイン｜施設入所を考えるタイミングと準備</div>
+      </a>
+      <a href="care-facility-types.html" class="related-card">
+        <div class="related-card-tag">施設選び</div>
+        <div class="related-card-title">特養・有料老人ホーム・グループホームの違いと選び方</div>
+      </a>
+      <a href="caregiver-burnout.html" class="related-card">
+        <div class="related-card-tag">介護者のメンタルケア</div>
+        <div class="related-card-title">介護ストレスと燃え尽き症候群を防ぐ方法</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 よりそい介護 — 介護の悩みを匿名で相談できるサイト<br><a href="../privacy.html" style="color:#A0AEC0;font-size:12px;">プライバシーポリシー</a></p>
+</footer>
+
+</body>
+</html>
